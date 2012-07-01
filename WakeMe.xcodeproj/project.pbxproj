@@ -1,0 +1,683 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E77C3CC5159E8B02000B9B3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D07159A0A2200380EA5 /* main.m */; };
+		E77C3CC6159E8B02000B9B3A /* WakeMeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D0B159A0A2200380EA5 /* WakeMeAppDelegate.m */; };
+		E77C3CC7159E8B02000B9B3A /* WakeMeFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D14159A0A2200380EA5 /* WakeMeFirstViewController.m */; };
+		E77C3CC8159E8B02000B9B3A /* WakeMeSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D1B159A0A2200380EA5 /* WakeMeSecondViewController.m */; };
+		E77C3CCA159E8B02000B9B3A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F54CFB159A0A2200380EA5 /* UIKit.framework */; };
+		E77C3CCB159E8B02000B9B3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F54CFD159A0A2200380EA5 /* Foundation.framework */; };
+		E77C3CCC159E8B02000B9B3A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F54CFF159A0A2200380EA5 /* CoreGraphics.framework */; };
+		E77C3CCE159E8B02000B9B3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D04159A0A2200380EA5 /* InfoPlist.strings */; };
+		E77C3CCF159E8B02000B9B3A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D0D159A0A2200380EA5 /* MainStoryboard_iPhone.storyboard */; };
+		E77C3CD0159E8B02000B9B3A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D10159A0A2200380EA5 /* MainStoryboard_iPad.storyboard */; };
+		E77C3CD1159E8B02000B9B3A /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D16159A0A2200380EA5 /* first.png */; };
+		E77C3CD2159E8B02000B9B3A /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D18159A0A2200380EA5 /* first@2x.png */; };
+		E77C3CD3159E8B02000B9B3A /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D1D159A0A2200380EA5 /* second.png */; };
+		E77C3CD4159E8B02000B9B3A /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D1F159A0A2200380EA5 /* second@2x.png */; };
+		E7BC6C0F159E8DE300AFF601 /* my_first.feature in Resources */ = {isa = PBXBuildFile; fileRef = E7BC6C06159E8DE300AFF601 /* my_first.feature */; };
+		E7BC6C10159E8DE300AFF601 /* launch_steps.rb in Resources */ = {isa = PBXBuildFile; fileRef = E7BC6C08159E8DE300AFF601 /* launch_steps.rb */; };
+		E7BC6C11159E8DE300AFF601 /* env.rb in Resources */ = {isa = PBXBuildFile; fileRef = E7BC6C0A159E8DE300AFF601 /* env.rb */; };
+		E7BC6C12159E8DE300AFF601 /* frank_static_resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E7BC6C0B159E8DE300AFF601 /* frank_static_resources.bundle */; };
+		E7BC6C13159E8DE300AFF601 /* frankify.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E7BC6C0C159E8DE300AFF601 /* frankify.xcconfig */; };
+		E7BC6C14159E8DE300AFF601 /* libFrank.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BC6C0D159E8DE300AFF601 /* libFrank.a */; };
+		E7BC6C15159E8DE300AFF601 /* libShelley.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BC6C0E159E8DE300AFF601 /* libShelley.a */; };
+		E7BC6C18159E8DFD00AFF601 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BC6C17159E8DFD00AFF601 /* CFNetwork.framework */; };
+		E7F54CFC159A0A2200380EA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F54CFB159A0A2200380EA5 /* UIKit.framework */; };
+		E7F54CFE159A0A2200380EA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F54CFD159A0A2200380EA5 /* Foundation.framework */; };
+		E7F54D00159A0A2200380EA5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F54CFF159A0A2200380EA5 /* CoreGraphics.framework */; };
+		E7F54D06159A0A2200380EA5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D04159A0A2200380EA5 /* InfoPlist.strings */; };
+		E7F54D08159A0A2200380EA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D07159A0A2200380EA5 /* main.m */; };
+		E7F54D0C159A0A2200380EA5 /* WakeMeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D0B159A0A2200380EA5 /* WakeMeAppDelegate.m */; };
+		E7F54D0F159A0A2200380EA5 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D0D159A0A2200380EA5 /* MainStoryboard_iPhone.storyboard */; };
+		E7F54D12159A0A2200380EA5 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D10159A0A2200380EA5 /* MainStoryboard_iPad.storyboard */; };
+		E7F54D15159A0A2200380EA5 /* WakeMeFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D14159A0A2200380EA5 /* WakeMeFirstViewController.m */; };
+		E7F54D17159A0A2200380EA5 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D16159A0A2200380EA5 /* first.png */; };
+		E7F54D19159A0A2200380EA5 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D18159A0A2200380EA5 /* first@2x.png */; };
+		E7F54D1C159A0A2200380EA5 /* WakeMeSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D1B159A0A2200380EA5 /* WakeMeSecondViewController.m */; };
+		E7F54D1E159A0A2200380EA5 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D1D159A0A2200380EA5 /* second.png */; };
+		E7F54D20159A0A2200380EA5 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D1F159A0A2200380EA5 /* second@2x.png */; };
+		E7F54D28159A0A2300380EA5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F54D27159A0A2300380EA5 /* SenTestingKit.framework */; };
+		E7F54D29159A0A2300380EA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F54CFB159A0A2200380EA5 /* UIKit.framework */; };
+		E7F54D2A159A0A2300380EA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F54CFD159A0A2200380EA5 /* Foundation.framework */; };
+		E7F54D32159A0A2300380EA5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D30159A0A2300380EA5 /* InfoPlist.strings */; };
+		E7F54D35159A0A2300380EA5 /* WakeMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D34159A0A2300380EA5 /* WakeMeTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E7F54D2B159A0A2300380EA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7F54CEE159A0A2200380EA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7F54CF6159A0A2200380EA5;
+			remoteInfo = WakeMe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E77C3CD8159E8B02000B9B3A /* WakeMeFrankified.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WakeMeFrankified.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E77C3CDA159E8B03000B9B3A /* WakeMeFrankified-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WakeMeFrankified-Info.plist"; path = "/Users/verdywid/Dropbox/Projects/WakeMe/WakeMeFrankified-Info.plist"; sourceTree = "<absolute>"; };
+		E7BC6C06159E8DE300AFF601 /* my_first.feature */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = my_first.feature; sourceTree = "<group>"; };
+		E7BC6C08159E8DE300AFF601 /* launch_steps.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = launch_steps.rb; sourceTree = "<group>"; };
+		E7BC6C0A159E8DE300AFF601 /* env.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = env.rb; sourceTree = "<group>"; };
+		E7BC6C0B159E8DE300AFF601 /* frank_static_resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = frank_static_resources.bundle; sourceTree = "<group>"; };
+		E7BC6C0C159E8DE300AFF601 /* frankify.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = frankify.xcconfig; sourceTree = "<group>"; };
+		E7BC6C0D159E8DE300AFF601 /* libFrank.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFrank.a; sourceTree = "<group>"; };
+		E7BC6C0E159E8DE300AFF601 /* libShelley.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libShelley.a; sourceTree = "<group>"; };
+		E7BC6C17159E8DFD00AFF601 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E7BC6C19159EB51300AFF601 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		E7BC6C1B159EB58900AFF601 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E7F54CF7159A0A2200380EA5 /* WakeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WakeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7F54CFB159A0A2200380EA5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E7F54CFD159A0A2200380EA5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E7F54CFF159A0A2200380EA5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E7F54D03159A0A2200380EA5 /* WakeMe-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WakeMe-Info.plist"; sourceTree = "<group>"; };
+		E7F54D05159A0A2200380EA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E7F54D07159A0A2200380EA5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E7F54D09159A0A2200380EA5 /* WakeMe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WakeMe-Prefix.pch"; sourceTree = "<group>"; };
+		E7F54D0A159A0A2200380EA5 /* WakeMeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WakeMeAppDelegate.h; sourceTree = "<group>"; };
+		E7F54D0B159A0A2200380EA5 /* WakeMeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WakeMeAppDelegate.m; sourceTree = "<group>"; };
+		E7F54D0E159A0A2200380EA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		E7F54D11159A0A2200380EA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		E7F54D13159A0A2200380EA5 /* WakeMeFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WakeMeFirstViewController.h; sourceTree = "<group>"; };
+		E7F54D14159A0A2200380EA5 /* WakeMeFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WakeMeFirstViewController.m; sourceTree = "<group>"; };
+		E7F54D16159A0A2200380EA5 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		E7F54D18159A0A2200380EA5 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		E7F54D1A159A0A2200380EA5 /* WakeMeSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WakeMeSecondViewController.h; sourceTree = "<group>"; };
+		E7F54D1B159A0A2200380EA5 /* WakeMeSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WakeMeSecondViewController.m; sourceTree = "<group>"; };
+		E7F54D1D159A0A2200380EA5 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		E7F54D1F159A0A2200380EA5 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		E7F54D26159A0A2300380EA5 /* WakeMeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WakeMeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7F54D27159A0A2300380EA5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		E7F54D2F159A0A2300380EA5 /* WakeMeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WakeMeTests-Info.plist"; sourceTree = "<group>"; };
+		E7F54D31159A0A2300380EA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E7F54D33159A0A2300380EA5 /* WakeMeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WakeMeTests.h; sourceTree = "<group>"; };
+		E7F54D34159A0A2300380EA5 /* WakeMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WakeMeTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E77C3CC9159E8B02000B9B3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7BC6C18159E8DFD00AFF601 /* CFNetwork.framework in Frameworks */,
+				E77C3CCA159E8B02000B9B3A /* UIKit.framework in Frameworks */,
+				E77C3CCB159E8B02000B9B3A /* Foundation.framework in Frameworks */,
+				E77C3CCC159E8B02000B9B3A /* CoreGraphics.framework in Frameworks */,
+				E7BC6C14159E8DE300AFF601 /* libFrank.a in Frameworks */,
+				E7BC6C15159E8DE300AFF601 /* libShelley.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7F54CF4159A0A2200380EA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7F54CFC159A0A2200380EA5 /* UIKit.framework in Frameworks */,
+				E7F54CFE159A0A2200380EA5 /* Foundation.framework in Frameworks */,
+				E7F54D00159A0A2200380EA5 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7F54D22159A0A2300380EA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7F54D28159A0A2300380EA5 /* SenTestingKit.framework in Frameworks */,
+				E7F54D29159A0A2300380EA5 /* UIKit.framework in Frameworks */,
+				E7F54D2A159A0A2300380EA5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E7BC6C04159E8DE300AFF601 /* Frank */ = {
+			isa = PBXGroup;
+			children = (
+				E7BC6C05159E8DE300AFF601 /* features */,
+				E7BC6C0B159E8DE300AFF601 /* frank_static_resources.bundle */,
+				E7BC6C0C159E8DE300AFF601 /* frankify.xcconfig */,
+				E7BC6C0D159E8DE300AFF601 /* libFrank.a */,
+				E7BC6C0E159E8DE300AFF601 /* libShelley.a */,
+			);
+			path = Frank;
+			sourceTree = "<group>";
+		};
+		E7BC6C05159E8DE300AFF601 /* features */ = {
+			isa = PBXGroup;
+			children = (
+				E7BC6C06159E8DE300AFF601 /* my_first.feature */,
+				E7BC6C07159E8DE300AFF601 /* step_definitions */,
+				E7BC6C09159E8DE300AFF601 /* support */,
+			);
+			path = features;
+			sourceTree = "<group>";
+		};
+		E7BC6C07159E8DE300AFF601 /* step_definitions */ = {
+			isa = PBXGroup;
+			children = (
+				E7BC6C08159E8DE300AFF601 /* launch_steps.rb */,
+			);
+			path = step_definitions;
+			sourceTree = "<group>";
+		};
+		E7BC6C09159E8DE300AFF601 /* support */ = {
+			isa = PBXGroup;
+			children = (
+				E7BC6C0A159E8DE300AFF601 /* env.rb */,
+			);
+			path = support;
+			sourceTree = "<group>";
+		};
+		E7F54CEC159A0A2200380EA5 = {
+			isa = PBXGroup;
+			children = (
+				E7BC6C1B159EB58900AFF601 /* Security.framework */,
+				E7BC6C19159EB51300AFF601 /* CoreFoundation.framework */,
+				E7BC6C17159E8DFD00AFF601 /* CFNetwork.framework */,
+				E7BC6C04159E8DE300AFF601 /* Frank */,
+				E7F54D01159A0A2200380EA5 /* WakeMe */,
+				E7F54D2D159A0A2300380EA5 /* WakeMeTests */,
+				E7F54CFA159A0A2200380EA5 /* Frameworks */,
+				E7F54CF8159A0A2200380EA5 /* Products */,
+				E77C3CDA159E8B03000B9B3A /* WakeMeFrankified-Info.plist */,
+			);
+			sourceTree = "<group>";
+		};
+		E7F54CF8159A0A2200380EA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E7F54CF7159A0A2200380EA5 /* WakeMe.app */,
+				E7F54D26159A0A2300380EA5 /* WakeMeTests.octest */,
+				E77C3CD8159E8B02000B9B3A /* WakeMeFrankified.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E7F54CFA159A0A2200380EA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E7F54CFB159A0A2200380EA5 /* UIKit.framework */,
+				E7F54CFD159A0A2200380EA5 /* Foundation.framework */,
+				E7F54CFF159A0A2200380EA5 /* CoreGraphics.framework */,
+				E7F54D27159A0A2300380EA5 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E7F54D01159A0A2200380EA5 /* WakeMe */ = {
+			isa = PBXGroup;
+			children = (
+				E7F54D0A159A0A2200380EA5 /* WakeMeAppDelegate.h */,
+				E7F54D0B159A0A2200380EA5 /* WakeMeAppDelegate.m */,
+				E7F54D0D159A0A2200380EA5 /* MainStoryboard_iPhone.storyboard */,
+				E7F54D10159A0A2200380EA5 /* MainStoryboard_iPad.storyboard */,
+				E7F54D13159A0A2200380EA5 /* WakeMeFirstViewController.h */,
+				E7F54D14159A0A2200380EA5 /* WakeMeFirstViewController.m */,
+				E7F54D16159A0A2200380EA5 /* first.png */,
+				E7F54D18159A0A2200380EA5 /* first@2x.png */,
+				E7F54D1A159A0A2200380EA5 /* WakeMeSecondViewController.h */,
+				E7F54D1B159A0A2200380EA5 /* WakeMeSecondViewController.m */,
+				E7F54D1D159A0A2200380EA5 /* second.png */,
+				E7F54D1F159A0A2200380EA5 /* second@2x.png */,
+				E7F54D02159A0A2200380EA5 /* Supporting Files */,
+			);
+			path = WakeMe;
+			sourceTree = "<group>";
+		};
+		E7F54D02159A0A2200380EA5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E7F54D03159A0A2200380EA5 /* WakeMe-Info.plist */,
+				E7F54D04159A0A2200380EA5 /* InfoPlist.strings */,
+				E7F54D07159A0A2200380EA5 /* main.m */,
+				E7F54D09159A0A2200380EA5 /* WakeMe-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E7F54D2D159A0A2300380EA5 /* WakeMeTests */ = {
+			isa = PBXGroup;
+			children = (
+				E7F54D33159A0A2300380EA5 /* WakeMeTests.h */,
+				E7F54D34159A0A2300380EA5 /* WakeMeTests.m */,
+				E7F54D2E159A0A2300380EA5 /* Supporting Files */,
+			);
+			path = WakeMeTests;
+			sourceTree = "<group>";
+		};
+		E7F54D2E159A0A2300380EA5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E7F54D2F159A0A2300380EA5 /* WakeMeTests-Info.plist */,
+				E7F54D30159A0A2300380EA5 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E77C3CC3159E8B02000B9B3A /* WakeMeFrankified */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E77C3CD5159E8B02000B9B3A /* Build configuration list for PBXNativeTarget "WakeMeFrankified" */;
+			buildPhases = (
+				E77C3CC4159E8B02000B9B3A /* Sources */,
+				E77C3CC9159E8B02000B9B3A /* Frameworks */,
+				E77C3CCD159E8B02000B9B3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WakeMeFrankified;
+			productName = WakeMe;
+			productReference = E77C3CD8159E8B02000B9B3A /* WakeMeFrankified.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E7F54CF6159A0A2200380EA5 /* WakeMe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7F54D38159A0A2300380EA5 /* Build configuration list for PBXNativeTarget "WakeMe" */;
+			buildPhases = (
+				E7F54CF3159A0A2200380EA5 /* Sources */,
+				E7F54CF4159A0A2200380EA5 /* Frameworks */,
+				E7F54CF5159A0A2200380EA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WakeMe;
+			productName = WakeMe;
+			productReference = E7F54CF7159A0A2200380EA5 /* WakeMe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E7F54D25159A0A2300380EA5 /* WakeMeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7F54D3B159A0A2300380EA5 /* Build configuration list for PBXNativeTarget "WakeMeTests" */;
+			buildPhases = (
+				E7F54D21159A0A2300380EA5 /* Sources */,
+				E7F54D22159A0A2300380EA5 /* Frameworks */,
+				E7F54D23159A0A2300380EA5 /* Resources */,
+				E7F54D24159A0A2300380EA5 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E7F54D2C159A0A2300380EA5 /* PBXTargetDependency */,
+			);
+			name = WakeMeTests;
+			productName = WakeMeTests;
+			productReference = E7F54D26159A0A2300380EA5 /* WakeMeTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E7F54CEE159A0A2200380EA5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = WakeMe;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = E7F54CF1159A0A2200380EA5 /* Build configuration list for PBXProject "WakeMe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E7F54CEC159A0A2200380EA5;
+			productRefGroup = E7F54CF8159A0A2200380EA5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E7F54CF6159A0A2200380EA5 /* WakeMe */,
+				E7F54D25159A0A2300380EA5 /* WakeMeTests */,
+				E77C3CC3159E8B02000B9B3A /* WakeMeFrankified */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E77C3CCD159E8B02000B9B3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E77C3CCE159E8B02000B9B3A /* InfoPlist.strings in Resources */,
+				E77C3CCF159E8B02000B9B3A /* MainStoryboard_iPhone.storyboard in Resources */,
+				E77C3CD0159E8B02000B9B3A /* MainStoryboard_iPad.storyboard in Resources */,
+				E77C3CD1159E8B02000B9B3A /* first.png in Resources */,
+				E77C3CD2159E8B02000B9B3A /* first@2x.png in Resources */,
+				E77C3CD3159E8B02000B9B3A /* second.png in Resources */,
+				E77C3CD4159E8B02000B9B3A /* second@2x.png in Resources */,
+				E7BC6C0F159E8DE300AFF601 /* my_first.feature in Resources */,
+				E7BC6C10159E8DE300AFF601 /* launch_steps.rb in Resources */,
+				E7BC6C11159E8DE300AFF601 /* env.rb in Resources */,
+				E7BC6C12159E8DE300AFF601 /* frank_static_resources.bundle in Resources */,
+				E7BC6C13159E8DE300AFF601 /* frankify.xcconfig in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7F54CF5159A0A2200380EA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7F54D06159A0A2200380EA5 /* InfoPlist.strings in Resources */,
+				E7F54D0F159A0A2200380EA5 /* MainStoryboard_iPhone.storyboard in Resources */,
+				E7F54D12159A0A2200380EA5 /* MainStoryboard_iPad.storyboard in Resources */,
+				E7F54D17159A0A2200380EA5 /* first.png in Resources */,
+				E7F54D19159A0A2200380EA5 /* first@2x.png in Resources */,
+				E7F54D1E159A0A2200380EA5 /* second.png in Resources */,
+				E7F54D20159A0A2200380EA5 /* second@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7F54D23159A0A2300380EA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7F54D32159A0A2300380EA5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E7F54D24159A0A2300380EA5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E77C3CC4159E8B02000B9B3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E77C3CC5159E8B02000B9B3A /* main.m in Sources */,
+				E77C3CC6159E8B02000B9B3A /* WakeMeAppDelegate.m in Sources */,
+				E77C3CC7159E8B02000B9B3A /* WakeMeFirstViewController.m in Sources */,
+				E77C3CC8159E8B02000B9B3A /* WakeMeSecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7F54CF3159A0A2200380EA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7F54D08159A0A2200380EA5 /* main.m in Sources */,
+				E7F54D0C159A0A2200380EA5 /* WakeMeAppDelegate.m in Sources */,
+				E7F54D15159A0A2200380EA5 /* WakeMeFirstViewController.m in Sources */,
+				E7F54D1C159A0A2200380EA5 /* WakeMeSecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7F54D21159A0A2300380EA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7F54D35159A0A2300380EA5 /* WakeMeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E7F54D2C159A0A2300380EA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E7F54CF6159A0A2200380EA5 /* WakeMe */;
+			targetProxy = E7F54D2B159A0A2300380EA5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E7F54D04159A0A2200380EA5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7F54D05159A0A2200380EA5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E7F54D0D159A0A2200380EA5 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7F54D0E159A0A2200380EA5 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		E7F54D10159A0A2200380EA5 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7F54D11159A0A2200380EA5 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		E7F54D30159A0A2300380EA5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7F54D31159A0A2300380EA5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E77C3CD6159E8B02000B9B3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WakeMe/WakeMe-Prefix.pch";
+				INFOPLIST_FILE = "WakeMeFrankified-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frank\"",
+					"$(DEVELOPER_DIR)/usr/lib",
+				);
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+					"--coverage",
+				);
+				PRODUCT_NAME = WakeMeFrankified;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E77C3CD7159E8B02000B9B3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WakeMe/WakeMe-Prefix.pch";
+				INFOPLIST_FILE = "WakeMeFrankified-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frank\"",
+					"$(DEVELOPER_DIR)/usr/lib",
+				);
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+					"--coverage",
+				);
+				PRODUCT_NAME = WakeMeFrankified;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E7F54D36159A0A2300380EA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E7F54D37159A0A2300380EA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E7F54D39159A0A2300380EA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WakeMe/WakeMe-Prefix.pch";
+				INFOPLIST_FILE = "WakeMe/WakeMe-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E7F54D3A159A0A2300380EA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WakeMe/WakeMe-Prefix.pch";
+				INFOPLIST_FILE = "WakeMe/WakeMe-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E7F54D3C159A0A2300380EA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WakeMe.app/WakeMe";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WakeMe/WakeMe-Prefix.pch";
+				INFOPLIST_FILE = "WakeMeTests/WakeMeTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		E7F54D3D159A0A2300380EA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WakeMe.app/WakeMe";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WakeMe/WakeMe-Prefix.pch";
+				INFOPLIST_FILE = "WakeMeTests/WakeMeTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E77C3CD5159E8B02000B9B3A /* Build configuration list for PBXNativeTarget "WakeMeFrankified" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E77C3CD6159E8B02000B9B3A /* Debug */,
+				E77C3CD7159E8B02000B9B3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7F54CF1159A0A2200380EA5 /* Build configuration list for PBXProject "WakeMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7F54D36159A0A2300380EA5 /* Debug */,
+				E7F54D37159A0A2300380EA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7F54D38159A0A2300380EA5 /* Build configuration list for PBXNativeTarget "WakeMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7F54D39159A0A2300380EA5 /* Debug */,
+				E7F54D3A159A0A2300380EA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7F54D3B159A0A2300380EA5 /* Build configuration list for PBXNativeTarget "WakeMeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7F54D3C159A0A2300380EA5 /* Debug */,
+				E7F54D3D159A0A2300380EA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E7F54CEE159A0A2200380EA5 /* Project object */;
+}
