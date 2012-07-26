@@ -29,10 +29,10 @@ Before do
     f <<ACCESIBILITY_CONTENT
   end
 
-#  ENV['SDKROOT']               = "#{SDK_DIR}"
+  ENV['SDKROOT']               = "#{SDK_DIR}"
 #  ENV['DYLD_ROOT_PATH']        = "#{SDK_DIR}"
-#  ENV['IPHONE_SIMULATOR_ROOT'] = "#{SDK_DIR}"
-#  ENV['TEMP_FILES_DIR']        = "#{APP_DIR}"
+  ENV['IPHONE_SIMULATOR_ROOT'] = "#{SDK_DIR}"
+  ENV['TEMP_FILES_DIR']        = "#{APP_DIR}"
 #  ENV['CFFIXED_USER_HOME']     = "#{pwd}/#{USER_DIR}"
 end
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E77052CC15C1796300AE7B20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D07159A0A2200380EA5 /* main.m */; };
 		E77C3CC5159E8B02000B9B3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D07159A0A2200380EA5 /* main.m */; };
 		E77C3CC6159E8B02000B9B3A /* WakeMeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D0B159A0A2200380EA5 /* WakeMeAppDelegate.m */; };
 		E77C3CC7159E8B02000B9B3A /* WakeMeFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D14159A0A2200380EA5 /* WakeMeFirstViewController.m */; };
@@ -25,7 +26,6 @@
 		E7BC6C10159E8DE300AFF601 /* launch_steps.rb in Resources */ = {isa = PBXBuildFile; fileRef = E7BC6C08159E8DE300AFF601 /* launch_steps.rb */; };
 		E7BC6C11159E8DE300AFF601 /* env.rb in Resources */ = {isa = PBXBuildFile; fileRef = E7BC6C0A159E8DE300AFF601 /* env.rb */; };
 		E7BC6C12159E8DE300AFF601 /* frank_static_resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E7BC6C0B159E8DE300AFF601 /* frank_static_resources.bundle */; };
-		E7BC6C13159E8DE300AFF601 /* frankify.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E7BC6C0C159E8DE300AFF601 /* frankify.xcconfig */; };
 		E7BC6C14159E8DE300AFF601 /* libFrank.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BC6C0D159E8DE300AFF601 /* libFrank.a */; };
 		E7BC6C15159E8DE300AFF601 /* libShelley.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BC6C0E159E8DE300AFF601 /* libShelley.a */; };
 		E7BC6C18159E8DFD00AFF601 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BC6C17159E8DFD00AFF601 /* CFNetwork.framework */; };
@@ -362,7 +362,6 @@
 				E7BC6C10159E8DE300AFF601 /* launch_steps.rb in Resources */,
 				E7BC6C11159E8DE300AFF601 /* env.rb in Resources */,
 				E7BC6C12159E8DE300AFF601 /* frank_static_resources.bundle in Resources */,
-				E7BC6C13159E8DE300AFF601 /* frankify.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7F54D35159A0A2300380EA5 /* WakeMeTests.m in Sources */,
+				E77052CC15C1796300AE7B20 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,12 +494,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frank\"",
-					"$(DEVELOPER_DIR)/usr/lib",
 				);
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
-					"--coverage",
 				);
 				PRODUCT_NAME = WakeMeFrankified;
 				WRAPPER_EXTENSION = app;
@@ -517,12 +515,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frank\"",
-					"$(DEVELOPER_DIR)/usr/lib",
 				);
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
-					"--coverage",
 				);
 				PRODUCT_NAME = WakeMeFrankified;
 				WRAPPER_EXTENSION = app;

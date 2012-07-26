@@ -14,7 +14,7 @@ elsif environment == 'jenkins'
 end
 
 #### Common ####
-SDK_DIR = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/"
+SDK_DIR = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk"
 APP_BINARY = "#{APP_BUNDLE_PATH}/WakeMeFrankified"
 USER_DIR = "iPhone Simulator/User"
 PREF_DIR = "#{USER_DIR}/Library/Preferences"
