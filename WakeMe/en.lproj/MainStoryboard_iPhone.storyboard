@@ -1,11 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ZfS-1l-35L">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Zth-mr-M66">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xDt-g9-lpP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="ZfS-1l-35L" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="kNZ-Hl-77p">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="62D-xu-xd7" kind="relationship" relationship="rootViewController" id="CFh-9T-45E"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="210" y="-60"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="unx-27-YkR">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M6x-Pu-EFj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="62D-xu-xd7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7zT-ip-N5G">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HQU-r8-zvZ"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="683" y="-60"/>
+        </scene>
+    </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
