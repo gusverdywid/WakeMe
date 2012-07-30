@@ -21,11 +21,11 @@
             </objects>
             <point key="canvasLocation" x="210" y="-60"/>
         </scene>
-        <!--Table View Controller - Alarms-->
+        <!--Alarms List View Controller - Alarms-->
         <scene sceneID="LoJ-m1-xup">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mfe-Sq-D6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="8Dp-LY-VKz" sceneMemberID="viewController">
+                <tableViewController id="8Dp-LY-VKz" customClass="WMAlarmsListViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0tv-Co-mEb">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,6 +72,11 @@
             <point key="canvasLocation" x="1170" y="-60"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="WMAlarmsListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WMAlarmsListViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
