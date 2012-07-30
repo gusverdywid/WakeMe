@@ -10,18 +10,12 @@
 		E77052CC15C1796300AE7B20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D07159A0A2200380EA5 /* main.m */; };
 		E77C3CC5159E8B02000B9B3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D07159A0A2200380EA5 /* main.m */; };
 		E77C3CC6159E8B02000B9B3A /* WakeMeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D0B159A0A2200380EA5 /* WakeMeAppDelegate.m */; };
-		E77C3CC7159E8B02000B9B3A /* WakeMeFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D14159A0A2200380EA5 /* WakeMeFirstViewController.m */; };
-		E77C3CC8159E8B02000B9B3A /* WakeMeSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D1B159A0A2200380EA5 /* WakeMeSecondViewController.m */; };
 		E77C3CCA159E8B02000B9B3A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F54CFB159A0A2200380EA5 /* UIKit.framework */; };
 		E77C3CCB159E8B02000B9B3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F54CFD159A0A2200380EA5 /* Foundation.framework */; };
 		E77C3CCC159E8B02000B9B3A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F54CFF159A0A2200380EA5 /* CoreGraphics.framework */; };
 		E77C3CCE159E8B02000B9B3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D04159A0A2200380EA5 /* InfoPlist.strings */; };
 		E77C3CCF159E8B02000B9B3A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D0D159A0A2200380EA5 /* MainStoryboard_iPhone.storyboard */; };
 		E77C3CD0159E8B02000B9B3A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D10159A0A2200380EA5 /* MainStoryboard_iPad.storyboard */; };
-		E77C3CD1159E8B02000B9B3A /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D16159A0A2200380EA5 /* first.png */; };
-		E77C3CD2159E8B02000B9B3A /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D18159A0A2200380EA5 /* first@2x.png */; };
-		E77C3CD3159E8B02000B9B3A /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D1D159A0A2200380EA5 /* second.png */; };
-		E77C3CD4159E8B02000B9B3A /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D1F159A0A2200380EA5 /* second@2x.png */; };
 		E7A0705615C2CECA00F4D91A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7A0705415C2CECA00F4D91A /* Model.xcdatamodeld */; };
 		E7BC6C0F159E8DE300AFF601 /* my_first.feature in Resources */ = {isa = PBXBuildFile; fileRef = E7BC6C06159E8DE300AFF601 /* my_first.feature */; };
 		E7BC6C10159E8DE300AFF601 /* launch_steps.rb in Resources */ = {isa = PBXBuildFile; fileRef = E7BC6C08159E8DE300AFF601 /* launch_steps.rb */; };
@@ -38,12 +32,6 @@
 		E7F54D0C159A0A2200380EA5 /* WakeMeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D0B159A0A2200380EA5 /* WakeMeAppDelegate.m */; };
 		E7F54D0F159A0A2200380EA5 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D0D159A0A2200380EA5 /* MainStoryboard_iPhone.storyboard */; };
 		E7F54D12159A0A2200380EA5 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D10159A0A2200380EA5 /* MainStoryboard_iPad.storyboard */; };
-		E7F54D15159A0A2200380EA5 /* WakeMeFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D14159A0A2200380EA5 /* WakeMeFirstViewController.m */; };
-		E7F54D17159A0A2200380EA5 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D16159A0A2200380EA5 /* first.png */; };
-		E7F54D19159A0A2200380EA5 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D18159A0A2200380EA5 /* first@2x.png */; };
-		E7F54D1C159A0A2200380EA5 /* WakeMeSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D1B159A0A2200380EA5 /* WakeMeSecondViewController.m */; };
-		E7F54D1E159A0A2200380EA5 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D1D159A0A2200380EA5 /* second.png */; };
-		E7F54D20159A0A2200380EA5 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D1F159A0A2200380EA5 /* second@2x.png */; };
 		E7F54D28159A0A2300380EA5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F54D27159A0A2300380EA5 /* SenTestingKit.framework */; };
 		E7F54D29159A0A2300380EA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F54CFB159A0A2200380EA5 /* UIKit.framework */; };
 		E7F54D2A159A0A2300380EA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F54CFD159A0A2200380EA5 /* Foundation.framework */; };
@@ -87,14 +75,6 @@
 		E7F54D0B159A0A2200380EA5 /* WakeMeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WakeMeAppDelegate.m; sourceTree = "<group>"; };
 		E7F54D0E159A0A2200380EA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		E7F54D11159A0A2200380EA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		E7F54D13159A0A2200380EA5 /* WakeMeFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WakeMeFirstViewController.h; sourceTree = "<group>"; };
-		E7F54D14159A0A2200380EA5 /* WakeMeFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WakeMeFirstViewController.m; sourceTree = "<group>"; };
-		E7F54D16159A0A2200380EA5 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		E7F54D18159A0A2200380EA5 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		E7F54D1A159A0A2200380EA5 /* WakeMeSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WakeMeSecondViewController.h; sourceTree = "<group>"; };
-		E7F54D1B159A0A2200380EA5 /* WakeMeSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WakeMeSecondViewController.m; sourceTree = "<group>"; };
-		E7F54D1D159A0A2200380EA5 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		E7F54D1F159A0A2200380EA5 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		E7F54D26159A0A2300380EA5 /* WakeMeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WakeMeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F54D27159A0A2300380EA5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		E7F54D2F159A0A2300380EA5 /* WakeMeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WakeMeTests-Info.plist"; sourceTree = "<group>"; };
@@ -222,14 +202,6 @@
 				E7F54D0B159A0A2200380EA5 /* WakeMeAppDelegate.m */,
 				E7F54D0D159A0A2200380EA5 /* MainStoryboard_iPhone.storyboard */,
 				E7F54D10159A0A2200380EA5 /* MainStoryboard_iPad.storyboard */,
-				E7F54D13159A0A2200380EA5 /* WakeMeFirstViewController.h */,
-				E7F54D14159A0A2200380EA5 /* WakeMeFirstViewController.m */,
-				E7F54D16159A0A2200380EA5 /* first.png */,
-				E7F54D18159A0A2200380EA5 /* first@2x.png */,
-				E7F54D1A159A0A2200380EA5 /* WakeMeSecondViewController.h */,
-				E7F54D1B159A0A2200380EA5 /* WakeMeSecondViewController.m */,
-				E7F54D1D159A0A2200380EA5 /* second.png */,
-				E7F54D1F159A0A2200380EA5 /* second@2x.png */,
 				E7F54D02159A0A2200380EA5 /* Supporting Files */,
 			);
 			path = WakeMe;
@@ -357,10 +329,6 @@
 				E77C3CCE159E8B02000B9B3A /* InfoPlist.strings in Resources */,
 				E77C3CCF159E8B02000B9B3A /* MainStoryboard_iPhone.storyboard in Resources */,
 				E77C3CD0159E8B02000B9B3A /* MainStoryboard_iPad.storyboard in Resources */,
-				E77C3CD1159E8B02000B9B3A /* first.png in Resources */,
-				E77C3CD2159E8B02000B9B3A /* first@2x.png in Resources */,
-				E77C3CD3159E8B02000B9B3A /* second.png in Resources */,
-				E77C3CD4159E8B02000B9B3A /* second@2x.png in Resources */,
 				E7BC6C0F159E8DE300AFF601 /* my_first.feature in Resources */,
 				E7BC6C10159E8DE300AFF601 /* launch_steps.rb in Resources */,
 				E7BC6C11159E8DE300AFF601 /* env.rb in Resources */,
@@ -375,10 +343,6 @@
 				E7F54D06159A0A2200380EA5 /* InfoPlist.strings in Resources */,
 				E7F54D0F159A0A2200380EA5 /* MainStoryboard_iPhone.storyboard in Resources */,
 				E7F54D12159A0A2200380EA5 /* MainStoryboard_iPad.storyboard in Resources */,
-				E7F54D17159A0A2200380EA5 /* first.png in Resources */,
-				E7F54D19159A0A2200380EA5 /* first@2x.png in Resources */,
-				E7F54D1E159A0A2200380EA5 /* second.png in Resources */,
-				E7F54D20159A0A2200380EA5 /* second@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,8 +379,6 @@
 			files = (
 				E77C3CC5159E8B02000B9B3A /* main.m in Sources */,
 				E77C3CC6159E8B02000B9B3A /* WakeMeAppDelegate.m in Sources */,
-				E77C3CC7159E8B02000B9B3A /* WakeMeFirstViewController.m in Sources */,
-				E77C3CC8159E8B02000B9B3A /* WakeMeSecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,8 +388,6 @@
 			files = (
 				E7F54D08159A0A2200380EA5 /* main.m in Sources */,
 				E7F54D0C159A0A2200380EA5 /* WakeMeAppDelegate.m in Sources */,
-				E7F54D15159A0A2200380EA5 /* WakeMeFirstViewController.m in Sources */,
-				E7F54D1C159A0A2200380EA5 /* WakeMeSecondViewController.m in Sources */,
 				E7A0705615C2CECA00F4D91A /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
