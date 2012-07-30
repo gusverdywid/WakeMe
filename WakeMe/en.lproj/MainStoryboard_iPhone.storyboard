@@ -21,7 +21,7 @@
             </objects>
             <point key="canvasLocation" x="210" y="-60"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Table View Controller - Alarms-->
         <scene sceneID="LoJ-m1-xup">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mfe-Sq-D6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -46,10 +46,30 @@
                             <outlet property="delegate" destination="8Dp-LY-VKz" id="qsG-op-Sdv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="9G6-dl-oiJ"/>
+                    <navigationItem key="navigationItem" title="Alarms" id="9G6-dl-oiJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rnw-cI-2IA">
+                            <connections>
+                                <segue destination="CCY-qV-h3H" kind="modal" id="NAo-uM-xT0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="719" y="-60"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jJa-XC-P01">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bYO-Hc-AnI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="CCY-qV-h3H" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WBa-Q7-eBj">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1170" y="-60"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
