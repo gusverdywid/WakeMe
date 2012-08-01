@@ -71,7 +71,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="2X5-Ys-Dmw"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="rnw-cI-2IA">
                             <connections>
-                                <segue destination="r2J-Hq-KD4" kind="modal" id="oMe-9H-h5N"/>
+                                <segue destination="r2J-Hq-KD4" kind="push" id="YJB-RQ-nZ8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -85,7 +85,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y97-U1-Occ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="r2J-Hq-KD4" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="L9N-Lr-Dat">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <datePicker key="tableFooterView" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" id="kjy-nN-eA6">
@@ -207,6 +207,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <outlet property="delegate" destination="r2J-Hq-KD4" id="FcF-jT-Yr8"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="sz0-dt-Zgm"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1114" y="-60"/>
