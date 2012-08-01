@@ -207,7 +207,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <outlet property="delegate" destination="r2J-Hq-KD4" id="FcF-jT-Yr8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="sz0-dt-Zgm"/>
+                    <navigationItem key="navigationItem" id="sz0-dt-Zgm">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="CCP-mh-8FG"/>
+                    </navigationItem>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1114" y="-60"/>
