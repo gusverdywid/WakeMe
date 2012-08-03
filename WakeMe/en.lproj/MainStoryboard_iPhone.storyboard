@@ -79,11 +79,11 @@
             </objects>
             <point key="canvasLocation" x="647" y="-60"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Alarm Add View Controller-->
         <scene sceneID="ACB-Wn-ZxN">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y97-U1-Occ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="r2J-Hq-KD4" sceneMemberID="viewController">
+                <tableViewController id="r2J-Hq-KD4" customClass="WMAlarmAddViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="L9N-Lr-Dat">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -230,6 +230,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </scene>
     </scenes>
     <classes>
+        <class className="WMAlarmAddViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WMAlarmAddViewController.h"/>
+        </class>
         <class className="WMAlarmsListViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WMAlarmsListViewController.h"/>
         </class>
