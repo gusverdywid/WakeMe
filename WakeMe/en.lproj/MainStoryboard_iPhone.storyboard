@@ -224,6 +224,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <navigationItem key="navigationItem" id="sz0-dt-Zgm">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="CCP-mh-8FG"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="alarmChallengeCell" destination="HxQ-3o-y9t" id="EWk-23-eon"/>
+                        <outlet property="alarmNameCell" destination="rT2-Dt-G6N" id="ZiP-54-rvn"/>
+                        <outlet property="alarmSnoozeCell" destination="mPB-Rx-9NI" id="7n4-Xp-OkK"/>
+                        <outlet property="alarmSoundCell" destination="Mba-0g-R3O" id="Hd3-2u-knA"/>
+                    </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1114" y="-60"/>
@@ -232,6 +238,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     <classes>
         <class className="WMAlarmAddViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WMAlarmAddViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="alarmChallengeCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="alarmNameCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="alarmSnoozeCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="alarmSoundCell" candidateClass="UITableViewCell"/>
+            </relationships>
         </class>
         <class className="WMAlarmsListViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WMAlarmsListViewController.h"/>

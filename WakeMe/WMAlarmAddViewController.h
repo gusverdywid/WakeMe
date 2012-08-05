@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WMAlarmAddViewController : UITableViewController
+@interface WMAlarmAddViewController : UITableViewController {
+  UITableViewCell *alarmNameCell;
+  UITableViewCell *alarmSnoozeCell;
+  UITableViewCell *alarmChallengeCell;
+  UITableViewCell *alarmSoundCell;
+}
+
+@property (nonatomic, retain) IBOutlet UITableViewCell *alarmNameCell;
+@property (nonatomic, retain) IBOutlet UITableViewCell *alarmSnoozeCell;
+@property (nonatomic, retain) IBOutlet UITableViewCell *alarmChallengeCell;
+@property (nonatomic, retain) IBOutlet UITableViewCell *alarmSoundCell;
 
 @end

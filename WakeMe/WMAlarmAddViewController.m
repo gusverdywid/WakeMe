@@ -14,6 +14,11 @@
 
 @implementation WMAlarmAddViewController
 
+@synthesize alarmNameCell = _alarmNameCell;
+@synthesize alarmSnoozeCell = _alarmSnoozeCell;
+@synthesize alarmSoundCell = _alarmSoundCell;
+@synthesize alarmChallengeCell = _alarmChallengeCell;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -73,11 +78,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
+  if ([indexPath section] == 0 && [indexPath row] == 0) {
+    return [self alarmNameCell];
+  } else if ([indexPath section] == 1) {
+    if ([indexPath row] == 0) return [self alarmSnoozeCell];
+    else if ([indexPath row] == 1) return [self alarmChallengeCell];
+    else if ([indexPath row] == 2) return [self alarmSoundCell];
+  }
     
-    return cell;
+  return [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
 }
 
 /*
