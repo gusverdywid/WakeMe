@@ -79,7 +79,7 @@
             </objects>
             <point key="canvasLocation" x="647" y="-60"/>
         </scene>
-        <!--Alarm Add View Controller-->
+        <!--Alarm Add View Controller - New Alarm-->
         <scene sceneID="ACB-Wn-ZxN">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y97-U1-Occ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -224,7 +224,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <outlet property="delegate" destination="r2J-Hq-KD4" id="FcF-jT-Yr8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="sz0-dt-Zgm">
+                    <navigationItem key="navigationItem" title="New Alarm" id="sz0-dt-Zgm">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="RHO-53-yAZ"/>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="CCP-mh-8FG"/>
                     </navigationItem>
                     <connections>
