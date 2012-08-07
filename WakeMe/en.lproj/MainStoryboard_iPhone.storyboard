@@ -69,7 +69,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Alarms" id="9G6-dl-oiJ">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="2X5-Ys-Dmw"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rnw-cI-2IA"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rnw-cI-2IA">
+                            <connections>
+                                <segue destination="AGv-ad-bvY" kind="modal" id="Hhe-3P-WK6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
             </objects>
