@@ -5,9 +5,10 @@
         <attribute name="challenge" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="snoozable" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="sound" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Alarm" positionX="-63" positionY="-27" width="128" height="120"/>
+        <element name="Alarm" positionX="-63" positionY="-27" width="128" height="135"/>
     </elements>
 </model>
