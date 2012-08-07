@@ -292,7 +292,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="1658" y="-378"/>
         </scene>
-        <!--Sounds List View Controller-->
+        <!--Sounds List View Controller - Sounds-->
         <scene sceneID="iCF-Rr-EAZ">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8B-VZ-dpK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -317,7 +317,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <outlet property="delegate" destination="dpf-O7-AZ4" id="kyh-UR-rp5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="hU4-vs-nJy"/>
+                    <navigationItem key="navigationItem" title="Sounds" id="hU4-vs-nJy"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1658" y="226"/>
