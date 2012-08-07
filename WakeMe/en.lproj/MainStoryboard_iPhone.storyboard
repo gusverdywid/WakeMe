@@ -92,7 +92,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
-                                <navigationItem title="Title" id="win-sg-S6e"/>
+                                <navigationItem title="New Alarm" id="win-sg-S6e"/>
                             </items>
                         </navigationBar>
                         <datePicker key="tableFooterView" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" id="kjy-nN-eA6">
