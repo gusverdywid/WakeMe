@@ -5,7 +5,7 @@
         <attribute name="challenge" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="snoozable" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="sound" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sound" attributeType="String" syncable="YES"/>
         <attribute name="time" attributeType="Date" defaultDateTimeInterval="365997600" defaultValueString="&quot;today&quot;" indexed="YES" syncable="YES"/>
     </entity>
     <elements>
