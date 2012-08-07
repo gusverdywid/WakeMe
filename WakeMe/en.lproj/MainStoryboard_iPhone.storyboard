@@ -317,7 +317,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <outlet property="delegate" destination="dpf-O7-AZ4" id="kyh-UR-rp5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Sounds" id="hU4-vs-nJy"/>
+                    <navigationItem key="navigationItem" title="Sounds" id="hU4-vs-nJy">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="Vyb-AU-LN3"/>
+                    </navigationItem>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1658" y="226"/>
