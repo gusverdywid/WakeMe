@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E702666815CFBA4D00E1A887 /* WMChallengesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E702666715CFBA4D00E1A887 /* WMChallengesListViewController.m */; };
+		E702666C15D0E81B00E1A887 /* WMSoundsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E702666B15D0E81B00E1A887 /* WMSoundsListViewController.m */; };
 		E70332A715C6C6360039DEB2 /* WMAlarmsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E70332A615C6C6360039DEB2 /* WMAlarmsListViewController.m */; };
 		E70332A815C6C6360039DEB2 /* WMAlarmsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E70332A615C6C6360039DEB2 /* WMAlarmsListViewController.m */; };
 		E70332A915C6C6360039DEB2 /* WMAlarmsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E70332A615C6C6360039DEB2 /* WMAlarmsListViewController.m */; };
@@ -57,6 +58,8 @@
 /* Begin PBXFileReference section */
 		E702666615CFBA4D00E1A887 /* WMChallengesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMChallengesListViewController.h; sourceTree = "<group>"; };
 		E702666715CFBA4D00E1A887 /* WMChallengesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMChallengesListViewController.m; sourceTree = "<group>"; };
+		E702666A15D0E81B00E1A887 /* WMSoundsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMSoundsListViewController.h; sourceTree = "<group>"; };
+		E702666B15D0E81B00E1A887 /* WMSoundsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMSoundsListViewController.m; sourceTree = "<group>"; };
 		E70332A515C6C6360039DEB2 /* WMAlarmsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMAlarmsListViewController.h; sourceTree = "<group>"; };
 		E70332A615C6C6360039DEB2 /* WMAlarmsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAlarmsListViewController.m; sourceTree = "<group>"; };
 		E73998DB15CB82D900123C5D /* WMAlarmAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMAlarmAddViewController.h; sourceTree = "<group>"; };
@@ -220,6 +223,8 @@
 				E73998DC15CB82D900123C5D /* WMAlarmAddViewController.m */,
 				E702666615CFBA4D00E1A887 /* WMChallengesListViewController.h */,
 				E702666715CFBA4D00E1A887 /* WMChallengesListViewController.m */,
+				E702666A15D0E81B00E1A887 /* WMSoundsListViewController.h */,
+				E702666B15D0E81B00E1A887 /* WMSoundsListViewController.m */,
 			);
 			path = WakeMe;
 			sourceTree = "<group>";
@@ -410,6 +415,7 @@
 				E70332A715C6C6360039DEB2 /* WMAlarmsListViewController.m in Sources */,
 				E73998DD15CB82D900123C5D /* WMAlarmAddViewController.m in Sources */,
 				E702666815CFBA4D00E1A887 /* WMChallengesListViewController.m in Sources */,
+				E702666C15D0E81B00E1A887 /* WMSoundsListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

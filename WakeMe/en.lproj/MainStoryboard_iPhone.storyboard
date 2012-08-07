@@ -215,6 +215,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="dpf-O7-AZ4" kind="push" id="hQf-6P-pkp"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -287,15 +290,15 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </navigationItem>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1646" y="-234"/>
+            <point key="canvasLocation" x="1658" y="-378"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Sounds List View Controller-->
         <scene sceneID="iCF-Rr-EAZ">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8B-VZ-dpK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="dpf-O7-AZ4" sceneMemberID="viewController">
+                <tableViewController id="dpf-O7-AZ4" customClass="WMSoundsListViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="cRj-Wc-OxY">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -314,9 +317,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <outlet property="delegate" destination="dpf-O7-AZ4" id="kyh-UR-rp5"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="hU4-vs-nJy"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1646" y="362"/>
+            <point key="canvasLocation" x="1658" y="226"/>
         </scene>
     </scenes>
     <classes>
@@ -334,6 +338,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </class>
         <class className="WMChallengesListViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WMChallengesListViewController.h"/>
+        </class>
+        <class className="WMSoundsListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WMSoundsListViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
