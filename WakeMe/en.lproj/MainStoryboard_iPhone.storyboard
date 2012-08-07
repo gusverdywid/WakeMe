@@ -244,6 +244,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </tableView>
                     <navigationItem key="navigationItem" title="New Alarm" id="sz0-dt-Zgm">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="RHO-53-yAZ"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="UaN-nO-1Ca"/>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="CCP-mh-8FG"/>
                     </navigationItem>
                     <connections>
