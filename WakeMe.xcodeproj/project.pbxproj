@@ -25,6 +25,7 @@
 		E77C3CCF159E8B02000B9B3A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D0D159A0A2200380EA5 /* MainStoryboard_iPhone.storyboard */; };
 		E77C3CD0159E8B02000B9B3A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D10159A0A2200380EA5 /* MainStoryboard_iPad.storyboard */; };
 		E7A0705615C2CECA00F4D91A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7A0705415C2CECA00F4D91A /* Model.xcdatamodeld */; };
+		E7B35CE815D7E206009D16CF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B35CE715D7E206009D16CF /* CoreData.framework */; };
 		E7BC6C0F159E8DE300AFF601 /* my_first.feature in Resources */ = {isa = PBXBuildFile; fileRef = E7BC6C06159E8DE300AFF601 /* my_first.feature */; };
 		E7BC6C10159E8DE300AFF601 /* launch_steps.rb in Resources */ = {isa = PBXBuildFile; fileRef = E7BC6C08159E8DE300AFF601 /* launch_steps.rb */; };
 		E7BC6C11159E8DE300AFF601 /* env.rb in Resources */ = {isa = PBXBuildFile; fileRef = E7BC6C0A159E8DE300AFF601 /* env.rb */; };
@@ -71,6 +72,7 @@
 		E77C3CD8159E8B02000B9B3A /* WakeMeFrankified.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WakeMeFrankified.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E77C3CDA159E8B03000B9B3A /* WakeMeFrankified-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WakeMeFrankified-Info.plist"; path = "/Users/verdywid/Dropbox/Projects/WakeMe/WakeMeFrankified-Info.plist"; sourceTree = "<absolute>"; };
 		E7A0705515C2CECA00F4D91A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		E7B35CE715D7E206009D16CF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E7BC6C06159E8DE300AFF601 /* my_first.feature */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = my_first.feature; sourceTree = "<group>"; };
 		E7BC6C08159E8DE300AFF601 /* launch_steps.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = launch_steps.rb; sourceTree = "<group>"; };
 		E7BC6C0A159E8DE300AFF601 /* env.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = env.rb; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7B35CE815D7E206009D16CF /* CoreData.framework in Frameworks */,
 				E7F54CFC159A0A2200380EA5 /* UIKit.framework in Frameworks */,
 				E7F54CFE159A0A2200380EA5 /* Foundation.framework in Frameworks */,
 				E7F54D00159A0A2200380EA5 /* CoreGraphics.framework in Frameworks */,
@@ -179,6 +182,7 @@
 		E7F54CEC159A0A2200380EA5 = {
 			isa = PBXGroup;
 			children = (
+				E7B35CE715D7E206009D16CF /* CoreData.framework */,
 				E7A0705415C2CECA00F4D91A /* Model.xcdatamodeld */,
 				E7BC6C1B159EB58900AFF601 /* Security.framework */,
 				E7BC6C19159EB51300AFF601 /* CoreFoundation.framework */,
