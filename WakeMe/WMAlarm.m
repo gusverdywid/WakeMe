@@ -18,4 +18,22 @@
 @dynamic sound;
 @dynamic time;
 
+-(NSString *) description {
+  return [NSString stringWithFormat:@"\
+          Name:\t%@\n\
+          Active:\t%@\n\
+          Snooze:\t%@\n\
+          Time:\t%@\n\
+          Challenge:\t%@\n\
+          Sound:\t%@\n",
+          self.name,
+          ([self.active intValue] ? @"Yes":@"No"),
+          ([self.snoozable intValue] ? @"Yes" : @"No"),
+          self.time,
+          self.challenge,
+          self.sound
+          ];
+          
+}
+
 @end
