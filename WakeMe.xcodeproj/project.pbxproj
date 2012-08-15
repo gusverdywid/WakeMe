@@ -141,6 +141,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E7A5511915DB83010014BC0D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		E7BC6C04159E8DE300AFF601 /* Frank */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +227,7 @@
 		E7F54D01159A0A2200380EA5 /* WakeMe */ = {
 			isa = PBXGroup;
 			children = (
+				E7A5511915DB83010014BC0D /* Models */,
 				E7F54D0A159A0A2200380EA5 /* WakeMeAppDelegate.h */,
 				E7F54D0B159A0A2200380EA5 /* WakeMeAppDelegate.m */,
 				E7F54D0D159A0A2200380EA5 /* MainStoryboard_iPhone.storyboard */,
