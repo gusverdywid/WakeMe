@@ -89,7 +89,7 @@
   if (__managedObjectModel != nil) {
     return __managedObjectModel;
   }
-  NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"WakeMe" withExtension:@"momd"];
+  NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"WakeMeModel" withExtension:@"momd"];
   __managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
   return __managedObjectModel;
 }
