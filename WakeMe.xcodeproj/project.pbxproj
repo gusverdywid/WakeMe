@@ -24,7 +24,7 @@
 		E77C3CCE159E8B02000B9B3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D04159A0A2200380EA5 /* InfoPlist.strings */; };
 		E77C3CCF159E8B02000B9B3A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D0D159A0A2200380EA5 /* MainStoryboard_iPhone.storyboard */; };
 		E77C3CD0159E8B02000B9B3A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D10159A0A2200380EA5 /* MainStoryboard_iPad.storyboard */; };
-		E7A0705615C2CECA00F4D91A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7A0705415C2CECA00F4D91A /* Model.xcdatamodeld */; };
+		E7A0705615C2CECA00F4D91A /* WakeMeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7A0705415C2CECA00F4D91A /* WakeMeModel.xcdatamodeld */; };
 		E7B35CE815D7E206009D16CF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B35CE715D7E206009D16CF /* CoreData.framework */; };
 		E7BC6C0F159E8DE300AFF601 /* my_first.feature in Resources */ = {isa = PBXBuildFile; fileRef = E7BC6C06159E8DE300AFF601 /* my_first.feature */; };
 		E7BC6C10159E8DE300AFF601 /* launch_steps.rb in Resources */ = {isa = PBXBuildFile; fileRef = E7BC6C08159E8DE300AFF601 /* launch_steps.rb */; };
@@ -71,7 +71,7 @@
 		E73998DC15CB82D900123C5D /* WMAlarmAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAlarmAddViewController.m; sourceTree = "<group>"; };
 		E77C3CD8159E8B02000B9B3A /* WakeMeFrankified.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WakeMeFrankified.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E77C3CDA159E8B03000B9B3A /* WakeMeFrankified-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WakeMeFrankified-Info.plist"; path = "/Users/verdywid/Dropbox/Projects/WakeMe/WakeMeFrankified-Info.plist"; sourceTree = "<absolute>"; };
-		E7A0705515C2CECA00F4D91A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		E7A0705515C2CECA00F4D91A /* WakeMeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WakeMeModel.xcdatamodel; sourceTree = "<group>"; };
 		E7B35CE715D7E206009D16CF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E7BC6C06159E8DE300AFF601 /* my_first.feature */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = my_first.feature; sourceTree = "<group>"; };
 		E7BC6C08159E8DE300AFF601 /* launch_steps.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = launch_steps.rb; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 		E7A5511915DB83010014BC0D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E7A0705415C2CECA00F4D91A /* Model.xcdatamodeld */,
+				E7A0705415C2CECA00F4D91A /* WakeMeModel.xcdatamodeld */,
 				E7168EE715D3D0B9004DFF83 /* WMAlarm.h */,
 				E7168EE815D3D0B9004DFF83 /* WMAlarm.m */,
 			);
@@ -429,7 +429,7 @@
 			files = (
 				E7F54D08159A0A2200380EA5 /* main.m in Sources */,
 				E7F54D0C159A0A2200380EA5 /* WakeMeAppDelegate.m in Sources */,
-				E7A0705615C2CECA00F4D91A /* Model.xcdatamodeld in Sources */,
+				E7A0705615C2CECA00F4D91A /* WakeMeModel.xcdatamodeld in Sources */,
 				E70332A715C6C6360039DEB2 /* WMAlarmsListViewController.m in Sources */,
 				E73998DD15CB82D900123C5D /* WMAlarmAddViewController.m in Sources */,
 				E702666815CFBA4D00E1A887 /* WMChallengesListViewController.m in Sources */,
@@ -688,14 +688,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		E7A0705415C2CECA00F4D91A /* Model.xcdatamodeld */ = {
+		E7A0705415C2CECA00F4D91A /* WakeMeModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				E7A0705515C2CECA00F4D91A /* Model.xcdatamodel */,
+				E7A0705515C2CECA00F4D91A /* WakeMeModel.xcdatamodel */,
 			);
-			currentVersion = E7A0705515C2CECA00F4D91A /* Model.xcdatamodel */;
-			name = Model.xcdatamodeld;
-			path = ../Model.xcdatamodeld;
+			currentVersion = E7A0705515C2CECA00F4D91A /* WakeMeModel.xcdatamodel */;
+			name = WakeMeModel.xcdatamodeld;
+			path = ../WakeMeModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
