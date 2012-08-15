@@ -144,6 +144,7 @@
 		E7A5511915DB83010014BC0D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E7A0705415C2CECA00F4D91A /* Model.xcdatamodeld */,
 				E7168EE715D3D0B9004DFF83 /* WMAlarm.h */,
 				E7168EE815D3D0B9004DFF83 /* WMAlarm.m */,
 			);
@@ -192,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				E7B35CE715D7E206009D16CF /* CoreData.framework */,
-				E7A0705415C2CECA00F4D91A /* Model.xcdatamodeld */,
 				E7BC6C1B159EB58900AFF601 /* Security.framework */,
 				E7BC6C19159EB51300AFF601 /* CoreFoundation.framework */,
 				E7BC6C17159E8DFD00AFF601 /* CFNetwork.framework */,
@@ -694,7 +694,8 @@
 				E7A0705515C2CECA00F4D91A /* Model.xcdatamodel */,
 			);
 			currentVersion = E7A0705515C2CECA00F4D91A /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
+			name = Model.xcdatamodeld;
+			path = ../Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
