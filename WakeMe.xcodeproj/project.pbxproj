@@ -144,6 +144,8 @@
 		E7A5511915DB83010014BC0D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E7168EE715D3D0B9004DFF83 /* WMAlarm.h */,
+				E7168EE815D3D0B9004DFF83 /* WMAlarm.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -241,8 +243,6 @@
 				E702666715CFBA4D00E1A887 /* WMChallengesListViewController.m */,
 				E702666A15D0E81B00E1A887 /* WMSoundsListViewController.h */,
 				E702666B15D0E81B00E1A887 /* WMSoundsListViewController.m */,
-				E7168EE715D3D0B9004DFF83 /* WMAlarm.h */,
-				E7168EE815D3D0B9004DFF83 /* WMAlarm.m */,
 			);
 			path = WakeMe;
 			sourceTree = "<group>";
