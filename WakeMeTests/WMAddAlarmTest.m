@@ -6,11 +6,11 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "WakeMeTests.h"
+#import "WMAddAlarmTest.h"
 #import "WakeMeAppDelegate.h"
 #import "WMAlarm.h"
 
-@implementation WakeMeTests
+@implementation WMAddAlarmTest
 
 - (void) setUp {
   [super setUp];

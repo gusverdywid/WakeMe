@@ -47,7 +47,7 @@
 		E7F54D29159A0A2300380EA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F54CFB159A0A2200380EA5 /* UIKit.framework */; };
 		E7F54D2A159A0A2300380EA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F54CFD159A0A2200380EA5 /* Foundation.framework */; };
 		E7F54D32159A0A2300380EA5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D30159A0A2300380EA5 /* InfoPlist.strings */; };
-		E7F54D35159A0A2300380EA5 /* WakeMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D34159A0A2300380EA5 /* WakeMeTests.m */; };
+		E7F54D35159A0A2300380EA5 /* WMAddAlarmTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D34159A0A2300380EA5 /* WMAddAlarmTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,8 +103,8 @@
 		E7F54D27159A0A2300380EA5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		E7F54D2F159A0A2300380EA5 /* WakeMeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WakeMeTests-Info.plist"; sourceTree = "<group>"; };
 		E7F54D31159A0A2300380EA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E7F54D33159A0A2300380EA5 /* WakeMeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WakeMeTests.h; sourceTree = "<group>"; };
-		E7F54D34159A0A2300380EA5 /* WakeMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WakeMeTests.m; sourceTree = "<group>"; };
+		E7F54D33159A0A2300380EA5 /* WMAddAlarmTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WMAddAlarmTest.h; sourceTree = "<group>"; };
+		E7F54D34159A0A2300380EA5 /* WMAddAlarmTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WMAddAlarmTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,8 +268,8 @@
 		E7F54D2D159A0A2300380EA5 /* WakeMeTests */ = {
 			isa = PBXGroup;
 			children = (
-				E7F54D33159A0A2300380EA5 /* WakeMeTests.h */,
-				E7F54D34159A0A2300380EA5 /* WakeMeTests.m */,
+				E7F54D33159A0A2300380EA5 /* WMAddAlarmTest.h */,
+				E7F54D34159A0A2300380EA5 /* WMAddAlarmTest.m */,
 				E7F54D2E159A0A2300380EA5 /* Supporting Files */,
 			);
 			path = WakeMeTests;
@@ -450,7 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7F54D35159A0A2300380EA5 /* WakeMeTests.m in Sources */,
+				E7F54D35159A0A2300380EA5 /* WMAddAlarmTest.m in Sources */,
 				E77052CC15C1796300AE7B20 /* main.m in Sources */,
 				E70332A815C6C6360039DEB2 /* WMAlarmsListViewController.m in Sources */,
 				E7168EEA15D3D0B9004DFF83 /* WMAlarm.m in Sources */,
