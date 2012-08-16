@@ -8,6 +8,9 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface WakeMeTests : SenTestCase
+@interface WakeMeTests : SenTestCase {
+  NSPersistentStoreCoordinator *coordinator;
+  NSManagedObjectContext *context;
+}
 
 @end
