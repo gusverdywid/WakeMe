@@ -24,6 +24,7 @@
 		E77C3CCE159E8B02000B9B3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D04159A0A2200380EA5 /* InfoPlist.strings */; };
 		E77C3CCF159E8B02000B9B3A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D0D159A0A2200380EA5 /* MainStoryboard_iPhone.storyboard */; };
 		E77C3CD0159E8B02000B9B3A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F54D10159A0A2200380EA5 /* MainStoryboard_iPad.storyboard */; };
+		E786EB2F15DD0DCF0005AE96 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B35CE715D7E206009D16CF /* CoreData.framework */; };
 		E7A0705615C2CECA00F4D91A /* WakeMeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7A0705415C2CECA00F4D91A /* WakeMeModel.xcdatamodeld */; };
 		E7A5511D15DB845B0014BC0D /* WMAlarm+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A5511C15DB845B0014BC0D /* WMAlarm+Helper.m */; };
 		E7B35CE815D7E206009D16CF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B35CE715D7E206009D16CF /* CoreData.framework */; };
@@ -135,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E786EB2F15DD0DCF0005AE96 /* CoreData.framework in Frameworks */,
 				E7F54D28159A0A2300380EA5 /* SenTestingKit.framework in Frameworks */,
 				E7F54D29159A0A2300380EA5 /* UIKit.framework in Frameworks */,
 				E7F54D2A159A0A2300380EA5 /* Foundation.framework in Frameworks */,
