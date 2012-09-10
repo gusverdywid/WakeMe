@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WMSoundsListViewController : UITableViewController
+@interface WMSoundsListViewController : UITableViewController {
+  NSArray *_soundNames;
+}
+
+@property(nonatomic, readonly) NSArray *soundNames;
 
 @end

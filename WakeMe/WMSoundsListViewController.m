@@ -14,6 +14,8 @@
 
 @implementation WMSoundsListViewController
 
+@synthesize soundNames = _soundNames;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -32,6 +34,19 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+  
+  /**
+   * Load all the names of the sounds
+   */
+  NSString *bundleRoot = [[NSBundle mainBundle] bundlePath];
+  NSFileManager *fm = [NSFileManager defaultManager];
+  NSArray *filenames = [fm contentsOfDirectoryAtPath:bundleRoot error:nil];
+  NSPredicate *filter = [NSPredicate predicateWithFormat:@"SELF ENDSWITH '.caf'"];
+  _soundNames = [filenames filteredArrayUsingPredicate:filter];
+  
+  for (NSString *soundName in _soundNames) {
+    NSLog(@"%@\n", soundName);
+  }
 }
 
 - (void)viewDidUnload
