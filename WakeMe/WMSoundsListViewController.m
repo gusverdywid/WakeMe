@@ -74,7 +74,13 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
-    
+  switch (indexPath.section) {
+    case 0:
+      cell.textLabel.text = [_soundNames objectAtIndex:indexPath.row];
+      break;
+    default:
+      break;
+  }
     return cell;
 }
 
