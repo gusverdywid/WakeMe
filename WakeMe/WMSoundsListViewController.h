@@ -12,9 +12,13 @@
 @interface WMSoundsListViewController : UITableViewController {
   NSArray *_soundNames;
   NSInteger _selRow;
+  
+  AVAudioPlayer *_audioPlayer;
 }
 
 @property(nonatomic, readonly) NSArray *soundNames;
 @property(nonatomic, readonly) NSInteger selRow;
+
+@property(nonatomic, retain) AVAudioPlayer *audioPlayer;
 
 @end
