@@ -14,6 +14,7 @@
 		E70332A915C6C6360039DEB2 /* WMAlarmsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E70332A615C6C6360039DEB2 /* WMAlarmsListViewController.m */; };
 		E7168EE915D3D0B9004DFF83 /* WMAlarm.m in Sources */ = {isa = PBXBuildFile; fileRef = E7168EE815D3D0B9004DFF83 /* WMAlarm.m */; };
 		E7168EEA15D3D0B9004DFF83 /* WMAlarm.m in Sources */ = {isa = PBXBuildFile; fileRef = E7168EE815D3D0B9004DFF83 /* WMAlarm.m */; };
+		E737457315FEE889002C52EB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E737457215FEE889002C52EB /* AVFoundation.framework */; };
 		E73998DD15CB82D900123C5D /* WMAlarmAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E73998DC15CB82D900123C5D /* WMAlarmAddViewController.m */; };
 		E748DFD615FDC9DE00E06680 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E748DFD515FDC9DE00E06680 /* AudioToolbox.framework */; };
 		E766EAA015FEDD2700DA28BC /* Alarm2.caf in Resources */ = {isa = PBXBuildFile; fileRef = E766EA9F15FEDD2700DA28BC /* Alarm2.caf */; };
@@ -72,6 +73,7 @@
 		E70332A615C6C6360039DEB2 /* WMAlarmsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAlarmsListViewController.m; sourceTree = "<group>"; };
 		E7168EE715D3D0B9004DFF83 /* WMAlarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMAlarm.h; sourceTree = "<group>"; };
 		E7168EE815D3D0B9004DFF83 /* WMAlarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAlarm.m; sourceTree = "<group>"; };
+		E737457215FEE889002C52EB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E73998DB15CB82D900123C5D /* WMAlarmAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMAlarmAddViewController.h; sourceTree = "<group>"; };
 		E73998DC15CB82D900123C5D /* WMAlarmAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAlarmAddViewController.m; sourceTree = "<group>"; };
 		E748DFD515FDC9DE00E06680 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -131,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E737457315FEE889002C52EB /* AVFoundation.framework in Frameworks */,
 				E748DFD615FDC9DE00E06680 /* AudioToolbox.framework in Frameworks */,
 				E7B35CE815D7E206009D16CF /* CoreData.framework in Frameworks */,
 				E7F54CFC159A0A2200380EA5 /* UIKit.framework in Frameworks */,
@@ -215,6 +218,7 @@
 		E7F54CEC159A0A2200380EA5 = {
 			isa = PBXGroup;
 			children = (
+				E737457215FEE889002C52EB /* AVFoundation.framework */,
 				E748DFD515FDC9DE00E06680 /* AudioToolbox.framework */,
 				E7B35CE715D7E206009D16CF /* CoreData.framework */,
 				E7BC6C1B159EB58900AFF601 /* Security.framework */,
