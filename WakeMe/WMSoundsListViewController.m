@@ -75,12 +75,8 @@
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   
     // Configure the cell...
-  switch (indexPath.section) {
-    case 0:
-      cell.textLabel.text = [_soundNames objectAtIndex:indexPath.row];
-      break;
-    default:
-      break;
+  if (indexPath.section == 0) {
+    cell.textLabel.text = [_soundNames objectAtIndex:indexPath.row];
   }
   return cell;
 }
@@ -134,6 +130,8 @@
    // Pass the selected object to the new view controller.
    [self.navigationController pushViewController:detailViewController animated:YES];
    */
+  
+  if (indexPath.section == 0) _selRow = indexPath.row;
 }
 
 @end
