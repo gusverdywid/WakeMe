@@ -21,6 +21,4 @@
 @property(nonatomic, readonly) NSArray *soundNames;
 @property(nonatomic, readonly) NSInteger selRow;
 
-@property(nonatomic, retain) AVAudioPlayer *audioPlayer;
-
 @end
