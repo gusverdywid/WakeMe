@@ -15,6 +15,7 @@
 @implementation WMSoundsListViewController
 
 @synthesize soundNames = _soundNames;
+@synthesize selRow = _selRow;
 
 - (id)initWithStyle:(UITableViewStyle)style {
   self = [super initWithStyle:style];
