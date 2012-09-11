@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
+#define AUDIO_TYPE @".caf"
+
 @interface WMSoundsListViewController : UITableViewController {
   NSArray *_soundNames;
   NSInteger _selRow;
