@@ -41,7 +41,7 @@
   NSString *bundleRoot = [[NSBundle mainBundle] bundlePath];
   NSFileManager *fm = [NSFileManager defaultManager];
   NSArray *filenames = [fm contentsOfDirectoryAtPath:bundleRoot error:nil];
-  NSPredicate *filter = [NSPredicate predicateWithFormat:@"SELF ENDSWITH %@", @".caf"];
+  NSPredicate *filter = [NSPredicate predicateWithFormat:@"SELF ENDSWITH %@", AUDIO_TYPE];
   NSArray *filteredFilenames = [filenames filteredArrayUsingPredicate:filter];
   NSMutableArray *formattedFilenames = [[NSMutableArray alloc] init];
   for (NSString *filteredFilename in filteredFilenames) {
