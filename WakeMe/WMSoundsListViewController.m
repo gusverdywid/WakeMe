@@ -45,7 +45,9 @@
   NSArray *filteredFilenames = [filenames filteredArrayUsingPredicate:filter];
   NSMutableArray *formattedFilenames = [[NSMutableArray alloc] init];
   for (NSString *filteredFilename in filteredFilenames) {
-    [formattedFilenames addObject:[filteredFilename substringToIndex:[filteredFilename length]-4]];
+    [formattedFilenames addObject:
+     [filteredFilename substringToIndex:[filteredFilename length]-[AUDIO_TYPE length]]
+     ];
   }
   _soundNames = [NSArray arrayWithArray:formattedFilenames];
   
