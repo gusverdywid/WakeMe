@@ -46,6 +46,8 @@
   for (NSString *soundName in _soundNames) {
     NSLog(@"%@\n", soundName);
   }
+  
+  _selRow = -1;
 }
 
 - (void)viewDidUnload {
@@ -77,7 +79,10 @@
     // Configure the cell...
   if (indexPath.section == 0) {
     cell.textLabel.text = [_soundNames objectAtIndex:indexPath.row];
+    if (indexPath.row == _selRow) cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    else cell.accessoryType = UITableViewCellAccessoryNone;
   }
+  if (indexPath.section != 0) cell.accessoryType = UITableViewCellAccessoryNone;
   return cell;
 }
 
@@ -132,6 +137,7 @@
    */
   
   if (indexPath.section == 0) _selRow = indexPath.row;
+  [super.tableView reloadData];
 }
 
 @end

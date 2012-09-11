@@ -16,6 +16,7 @@
 		E7168EEA15D3D0B9004DFF83 /* WMAlarm.m in Sources */ = {isa = PBXBuildFile; fileRef = E7168EE815D3D0B9004DFF83 /* WMAlarm.m */; };
 		E73998DD15CB82D900123C5D /* WMAlarmAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E73998DC15CB82D900123C5D /* WMAlarmAddViewController.m */; };
 		E748DFD615FDC9DE00E06680 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E748DFD515FDC9DE00E06680 /* AudioToolbox.framework */; };
+		E766EAA015FEDD2700DA28BC /* Alarm2.caf in Resources */ = {isa = PBXBuildFile; fileRef = E766EA9F15FEDD2700DA28BC /* Alarm2.caf */; };
 		E77052CC15C1796300AE7B20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D07159A0A2200380EA5 /* main.m */; };
 		E77C3CC5159E8B02000B9B3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D07159A0A2200380EA5 /* main.m */; };
 		E77C3CC6159E8B02000B9B3A /* WakeMeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D0B159A0A2200380EA5 /* WakeMeAppDelegate.m */; };
@@ -74,6 +75,7 @@
 		E73998DB15CB82D900123C5D /* WMAlarmAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMAlarmAddViewController.h; sourceTree = "<group>"; };
 		E73998DC15CB82D900123C5D /* WMAlarmAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAlarmAddViewController.m; sourceTree = "<group>"; };
 		E748DFD515FDC9DE00E06680 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E766EA9F15FEDD2700DA28BC /* Alarm2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Alarm2.caf; sourceTree = "<group>"; };
 		E77C3CD8159E8B02000B9B3A /* WakeMeFrankified.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WakeMeFrankified.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E77C3CDA159E8B03000B9B3A /* WakeMeFrankified-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WakeMeFrankified-Info.plist"; path = "/Users/verdywid/Dropbox/Projects/WakeMe/WakeMeFrankified-Info.plist"; sourceTree = "<absolute>"; };
 		E7A0705515C2CECA00F4D91A /* WakeMeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WakeMeModel.xcdatamodel; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		E7F543B915FE160800D8A10C /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				E766EA9F15FEDD2700DA28BC /* Alarm2.caf */,
 				E7F543BB15FE16D900D8A10C /* Alarm1.caf */,
 			);
 			name = Sounds;
@@ -406,6 +409,7 @@
 				E7F54D0F159A0A2200380EA5 /* MainStoryboard_iPhone.storyboard in Resources */,
 				E7F54D12159A0A2200380EA5 /* MainStoryboard_iPad.storyboard in Resources */,
 				E7F543BC15FE16D900D8A10C /* Alarm1.caf in Resources */,
+				E766EAA015FEDD2700DA28BC /* Alarm2.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
