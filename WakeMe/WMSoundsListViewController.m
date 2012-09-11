@@ -7,6 +7,7 @@
   //
 
 #import "WMSoundsListViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface WMSoundsListViewController ()
 
@@ -139,6 +140,28 @@
   
   if (indexPath.section == 0) _selRow = indexPath.row;
   [super.tableView reloadData];
+  [self playAudio];
+}
+
+#pragma mark - Custom methods
+
+- (void)playAudio {
+  NSError *playbackError;
+  NSString *audioPath = [[NSBundle mainBundle] 
+                         pathForResource:[_soundNames objectAtIndex:_selRow] 
+                         ofType:@"caf"];
+  NSURL *audioUrl = [NSURL fileURLWithPath:audioPath];
+  
+  _audioPlayer = [[AVAudioPlayer alloc] 
+                  initWithContentsOfURL:audioUrl 
+                  error:&playbackError];
+  if (_audioPlayer != nil) {
+    [_audioPlayer setNumberOfLoops:4];
+    [_audioPlayer prepareToPlay];
+    [_audioPlayer play];
+  } else {
+    NSLog(@"%@", playbackError);
+  }
 }
 
 @end
