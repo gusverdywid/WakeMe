@@ -143,9 +143,11 @@
    [self.navigationController pushViewController:detailViewController animated:YES];
    */
   
-  if (indexPath.section == 0) _selRow = indexPath.row;
-  [super.tableView reloadData];
-  [self playAudio];
+  if (indexPath.section == 0 && (indexPath.row != _selRow || ![_audioPlayer isPlaying])) {
+    _selRow = indexPath.row;
+    [super.tableView reloadData];
+    [self playAudio];
+  }
 }
 
 #pragma mark - Custom methods
