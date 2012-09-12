@@ -335,7 +335,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Sounds" id="hU4-vs-nJy">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Vyb-AU-LN3"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Vyb-AU-LN3">
+                            <connections>
+                                <action selector="doneSelectSound:" destination="dpf-O7-AZ4" id="Wlg-4h-dVI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
             </objects>
@@ -360,6 +364,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </class>
         <class className="WMSoundsListViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WMSoundsListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneSelectSound:"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
