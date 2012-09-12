@@ -21,4 +21,6 @@
 @property(nonatomic, readonly) NSArray *soundNames;
 @property(nonatomic, readonly) NSInteger selRow;
 
+- (IBAction)doneSelectSound:(id)sender;
+
 @end

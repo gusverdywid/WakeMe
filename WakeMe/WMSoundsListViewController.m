@@ -150,6 +150,12 @@
   }
 }
 
+#pragma mark - IBAction
+
+- (IBAction)doneSelectSound:(id)sender {
+  
+}
+
 #pragma mark - Custom methods
 
 - (void)playAudio {
