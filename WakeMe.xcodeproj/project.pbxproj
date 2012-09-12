@@ -38,7 +38,7 @@
 		E7BC6C14159E8DE300AFF601 /* libFrank.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BC6C0D159E8DE300AFF601 /* libFrank.a */; };
 		E7BC6C15159E8DE300AFF601 /* libShelley.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BC6C0E159E8DE300AFF601 /* libShelley.a */; };
 		E7BC6C18159E8DFD00AFF601 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BC6C17159E8DFD00AFF601 /* CFNetwork.framework */; };
-		E7F543BC15FE16D900D8A10C /* Alarm1.caf in Resources */ = {isa = PBXBuildFile; fileRef = E7F543BB15FE16D900D8A10C /* Alarm1.caf */; };
+		E7C289861600B26500C93F9C /* Alarm1.caf in Resources */ = {isa = PBXBuildFile; fileRef = E7C289851600B26500C93F9C /* Alarm1.caf */; };
 		E7F54CFC159A0A2200380EA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F54CFB159A0A2200380EA5 /* UIKit.framework */; };
 		E7F54CFE159A0A2200380EA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F54CFD159A0A2200380EA5 /* Foundation.framework */; };
 		E7F54D00159A0A2200380EA5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F54CFF159A0A2200380EA5 /* CoreGraphics.framework */; };
@@ -94,7 +94,7 @@
 		E7BC6C17159E8DFD00AFF601 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		E7BC6C19159EB51300AFF601 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		E7BC6C1B159EB58900AFF601 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		E7F543BB15FE16D900D8A10C /* Alarm1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Alarm1.caf; sourceTree = "<group>"; };
+		E7C289851600B26500C93F9C /* Alarm1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Alarm1.caf; sourceTree = "<group>"; };
 		E7F54CF7159A0A2200380EA5 /* WakeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WakeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F54CFB159A0A2200380EA5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E7F54CFD159A0A2200380EA5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -209,8 +209,8 @@
 		E7F543B915FE160800D8A10C /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				E7C289851600B26500C93F9C /* Alarm1.caf */,
 				E766EA9F15FEDD2700DA28BC /* Alarm2.caf */,
-				E7F543BB15FE16D900D8A10C /* Alarm1.caf */,
 			);
 			name = Sounds;
 			sourceTree = "<group>";
@@ -412,8 +412,8 @@
 				E7F54D06159A0A2200380EA5 /* InfoPlist.strings in Resources */,
 				E7F54D0F159A0A2200380EA5 /* MainStoryboard_iPhone.storyboard in Resources */,
 				E7F54D12159A0A2200380EA5 /* MainStoryboard_iPad.storyboard in Resources */,
-				E7F543BC15FE16D900D8A10C /* Alarm1.caf in Resources */,
 				E766EAA015FEDD2700DA28BC /* Alarm2.caf in Resources */,
+				E7C289861600B26500C93F9C /* Alarm1.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
