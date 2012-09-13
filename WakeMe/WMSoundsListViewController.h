@@ -11,6 +11,14 @@
 
 #define AUDIO_TYPE @".caf"
 
+@class WMSoundsListViewController;
+
+@protocol WMSoundsListViewControllerDelegate <NSObject>
+- (void)soundSelectionDidCancel:(WMSoundsListViewController *)controller;
+- (void)soundSelectionDidFinish:(WMSoundsListViewController *)controller;
+@end
+
+
 @interface WMSoundsListViewController : UITableViewController {
   NSArray *_soundNames;
   NSInteger _selRow;
@@ -25,7 +33,4 @@
 
 @end
 
-@protocol WMSoundsListViewControllerDelegate <NSObject>
-- (void)soundSelectionDidCancel:(WMSoundsListViewController *)controller;
-- (void)soundSelectionDidFinish:(WMSoundsListViewController *)controller;
 @end
