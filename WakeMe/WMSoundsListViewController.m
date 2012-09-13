@@ -154,7 +154,7 @@
 
 - (IBAction)doneSelectSound:(id)sender {
   [_audioPlayer stop];
-    // TODO: get back to previous page
+  [self.soundSelectionDelegate soundSelectionDidFinish:self];
 }
 
 #pragma mark - Custom methods
