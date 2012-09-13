@@ -24,3 +24,8 @@
 - (IBAction)doneSelectSound:(id)sender;
 
 @end
+
+@protocol WMSoundsListViewControllerDelegate <NSObject>
+
+
+@end

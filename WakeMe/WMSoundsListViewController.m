@@ -153,7 +153,8 @@
 #pragma mark - IBAction
 
 - (IBAction)doneSelectSound:(id)sender {
-  
+  [_audioPlayer stop];
+    // TODO: get back to previous page
 }
 
 #pragma mark - Custom methods
