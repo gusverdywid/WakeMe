@@ -29,7 +29,8 @@
 @property(nonatomic, readonly) NSArray *soundNames;
 @property(nonatomic, readonly) NSInteger selRow;
 
-@property(nonatomic, weak) id<WMSoundsListViewControllerDelegate> delegate;
+@property(nonatomic, weak)
+  id<WMSoundsListViewControllerDelegate> soundSelectionDelegate;
 
 - (IBAction)doneSelectSound:(id)sender;
 
