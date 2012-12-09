@@ -163,6 +163,8 @@
     [_soundSelectionDelegate soundSelectionDidFinish:selectedSound];
   }
   
+  // Pop itself
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Custom methods
