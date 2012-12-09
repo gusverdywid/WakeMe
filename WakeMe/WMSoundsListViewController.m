@@ -156,10 +156,12 @@
 - (IBAction)doneSelectSound:(id)sender {
   [_audioPlayer stop];
   
-  // Getting the name of the selected sound
-  NSString *selectedSound = [_soundNames objectAtIndex:_selRow];
-  [_soundSelectionDelegate soundSelectionDidFinish:selectedSound];
-  
+  // In case user didn't select any sound
+  if (_selRow >= 0) {
+    // Getting the name of the selected sound
+    NSString *selectedSound = [_soundNames objectAtIndex:_selRow];
+    [_soundSelectionDelegate soundSelectionDidFinish:selectedSound];
+  }
   
 }
 
