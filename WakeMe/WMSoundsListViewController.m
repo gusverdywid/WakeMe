@@ -17,7 +17,7 @@
 
 @synthesize soundNames = _soundNames;
 @synthesize selRow = _selRow;
-@synthesize soundSelectionDelegate;
+@synthesize soundSelectionDelegate = _soundSelectionDelegate;
 
 - (id)initWithStyle:(UITableViewStyle)style {
   self = [super initWithStyle:style];
@@ -158,7 +158,9 @@
   
   // Getting the name of the selected sound
   NSString *selectedSound = [_soundNames objectAtIndex:_selRow];
-  [self.soundSelectionDelegate soundSelectionDidFinish:selectedSound];
+  [_soundSelectionDelegate soundSelectionDidFinish:selectedSound];
+  
+  
 }
 
 #pragma mark - Custom methods

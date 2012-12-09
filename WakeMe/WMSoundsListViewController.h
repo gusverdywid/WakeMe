@@ -23,8 +23,10 @@
 @interface WMSoundsListViewController : UITableViewController {
   NSArray *_soundNames;
   NSInteger _selRow;
-  
+
   AVAudioPlayer *_audioPlayer;
+  
+  __weak id<WMSoundsListViewControllerDelegate> _soundSelectionDelegate;
 }
 
 @property(nonatomic, readonly) NSArray *soundNames;
