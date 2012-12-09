@@ -17,6 +17,7 @@
 
 @synthesize soundNames = _soundNames;
 @synthesize selRow = _selRow;
+@synthesize soundSelectionDelegate;
 
 - (id)initWithStyle:(UITableViewStyle)style {
   self = [super initWithStyle:style];
