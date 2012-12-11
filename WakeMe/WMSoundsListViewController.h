@@ -15,7 +15,7 @@
 
 @protocol WMSoundsListViewControllerDelegate <NSObject>
  @required
-  - (void)soundSelectionDidFinish:(NSString *)selectedSound;
+  - (void)soundSelectionSelectSound:(NSString *)selectedSound;
   - (void)soundSelectionStopSound;
 @end
 
