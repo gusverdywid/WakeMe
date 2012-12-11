@@ -36,6 +36,5 @@
   id<WMSoundsListViewControllerDelegate> soundSelectionDelegate;
 
 - (IBAction)doneSelectSound:(id)sender;
-- (IBAction)cancelSelectSound:(id)sender;
 
 @end
