@@ -144,17 +144,15 @@
    [self.navigationController pushViewController:detailViewController animated:YES];
    */
   
-  if (indexPath.section == 0 && (indexPath.row != _selRow || ![_audioPlayer isPlaying])) {
+  if (indexPath.section == 0 && indexPath.row != _selRow) {
     _selRow = indexPath.row;
     [super.tableView reloadData];
-    [self playAudio];
   }
 }
 
 #pragma mark - IBAction
 
 - (IBAction)doneSelectSound:(id)sender {
-  [_audioPlayer stop];
   
   // In case user didn't select any sound
   if (_selRow >= 0) {
@@ -165,27 +163,6 @@
   
   // Pop itself
   [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-#pragma mark - Custom methods
-
-- (void)playAudio {
-  NSError *playbackError;
-  NSString *audioPath = [[NSBundle mainBundle] 
-                         pathForResource:[_soundNames objectAtIndex:_selRow] 
-                         ofType:@"caf"];
-  NSURL *audioUrl = [NSURL fileURLWithPath:audioPath];
-  
-  _audioPlayer = [[AVAudioPlayer alloc] 
-                  initWithContentsOfURL:audioUrl 
-                  error:&playbackError];
-  if (_audioPlayer != nil) {
-    [_audioPlayer setNumberOfLoops:4];
-    [_audioPlayer prepareToPlay];
-    [_audioPlayer play];
-  } else {
-    NSLog(@"%@", playbackError);
-  }
 }
 
 @end
