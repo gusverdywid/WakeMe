@@ -155,7 +155,32 @@
   
 }
 
+#pragma mark - Private methods
+
+/**
+ * Setup and prepare the audio player for playback for
+ * the supplied audio file's path
+ */
+- (BOOL)setupAudioPlayerWithAudioPath:(NSString *)audioPath {
   
+  if (_audioPlayer != nil && _audioPlayer.playing) {
+    [_audioPlayer stop];
+  }
+  
+  NSError *playbackError;
+  
+  NSURL *audioUrl = [NSURL fileURLWithPath:audioPath];
+  _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioUrl
+                                               error:&playbackError];
+  
+  if (_audioPlayer != nil && !playbackError) {
+    [_audioPlayer prepareToPlay];
+    [_audioPlayer setNumberOfLoops:4];
+  } else {
+    NSLog(@"%@", playbackError);
+  }
+  
+  return (_audioPlayer != nil && !playbackError);
 }
 
 @end
