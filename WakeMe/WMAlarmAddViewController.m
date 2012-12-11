@@ -170,6 +170,7 @@
 
 - (void)soundSelectionSelectSound:(NSString *)selectedSound {
   _selectedSound = selectedSound;
+  _soundLabel.text = _selectedSound;
 }
 
 - (void)soundSelectionStopSound {
