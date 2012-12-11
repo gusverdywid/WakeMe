@@ -169,7 +169,7 @@
 }
 
 - (void)soundSelectionSelectSound:(NSString *)selectedSound {
-  
+  _selectedSound = selectedSound;
 }
 
 - (void)soundSelectionStopSound {
