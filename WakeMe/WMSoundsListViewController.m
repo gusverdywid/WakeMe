@@ -175,10 +175,10 @@
     // Getting the name of the selected sound
     NSString *selectedSound = [_soundNames objectAtIndex:_selRow];
     [_soundSelectionDelegate soundSelectionSelectSound:selectedSound];
-  }
   
-  // Pop itself
-  [self.navigationController popViewControllerAnimated:YES];
+    // Pop itself
+    [self.navigationController popViewControllerAnimated:YES];
+  }
 }
 
 @end
