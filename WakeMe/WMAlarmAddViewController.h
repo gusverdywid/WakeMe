@@ -15,6 +15,8 @@
   UITableViewCell *_alarmSoundCell;
   
   NSString *_selectedSound;
+  
+  AVAudioPlayer *_audioPlayer;
 }
 
 @property (nonatomic, retain) IBOutlet UITableViewCell *alarmNameCell;
