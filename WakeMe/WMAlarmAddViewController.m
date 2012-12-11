@@ -170,6 +170,11 @@
   
 }
 
+- (void)soundSelectionStopSound {
+  if (_audioPlayer != nil && [_audioPlayer isPlaying])
+    [_audioPlayer stop];
+}
+
 #pragma mark - Private methods
 
 /**
