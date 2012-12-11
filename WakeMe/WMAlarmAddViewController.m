@@ -146,7 +146,11 @@
 
 #pragma mark - Sound selection delegate
 
-- (void)soundSelectionPlay:(NSURL *)audioPath {
+- (void)soundSelectionPlaySound:(NSString *)audioPath {
+  if ([self setupAudioPlayerWithAudioPath:audioPath])
+    [_audioPlayer play];
+}
+
   
 }
 
