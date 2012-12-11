@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
+#import "WMSoundsListViewController.h"
+
 @interface WMAlarmAddViewController : UITableViewController {
   UITableViewCell *_alarmNameCell;
   UITableViewCell *_alarmSnoozeCell;
