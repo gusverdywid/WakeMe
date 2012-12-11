@@ -27,6 +27,4 @@
 @property (nonatomic, retain) IBOutlet UITableViewCell *alarmChallengeCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell *alarmSoundCell;
 
-@property (nonatomic, readonly) NSString *selectedSound;
-
 @end
