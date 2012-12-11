@@ -11,7 +11,7 @@
 
 #import "WMSoundsListViewController.h"
 
-@interface WMAlarmAddViewController : UITableViewController {
+@interface WMAlarmAddViewController : UITableViewController<WMSoundsListViewControllerDelegate> {
   UITableViewCell *_alarmNameCell;
   UITableViewCell *_alarmSnoozeCell;
   UITableViewCell *_alarmChallengeCell;
