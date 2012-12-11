@@ -20,6 +20,8 @@
 @synthesize alarmSoundCell = _alarmSoundCell;
 @synthesize alarmChallengeCell = _alarmChallengeCell;
 
+@synthesize soundLabel = _soundLabel;
+
 
 - (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];

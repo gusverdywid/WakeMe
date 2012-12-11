@@ -17,6 +17,8 @@
   UITableViewCell *_alarmChallengeCell;
   UITableViewCell *_alarmSoundCell;
   
+  UILabel *_soundLabel;
+  
   NSString *_selectedSound;
   
   AVAudioPlayer *_audioPlayer;
@@ -26,5 +28,7 @@
 @property (nonatomic, retain) IBOutlet UITableViewCell *alarmSnoozeCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell *alarmChallengeCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell *alarmSoundCell;
+
+@property (nonatomic, retain) IBOutlet UILabel *soundLabel;
 
 @end
