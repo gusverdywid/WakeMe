@@ -231,7 +231,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="dpf-O7-AZ4" kind="push" id="hQf-6P-pkp"/>
+                                            <segue destination="dpf-O7-AZ4" kind="push" identifier="selectSound" id="hQf-6P-pkp"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
