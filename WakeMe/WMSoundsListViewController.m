@@ -69,6 +69,11 @@
   return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+  [_soundSelectionDelegate soundSelectionStopSound];
+  [super viewWillDisappear:animated];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
