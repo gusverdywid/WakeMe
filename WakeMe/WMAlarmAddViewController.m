@@ -137,4 +137,15 @@
      */
 }
 
+
+#pragma mark - Sound selection delegate
+
+- (void)soundSelectionPlay:(NSURL *)audioPath {
+  
+}
+
+- (void)soundSelectionDidFinish:(NSString *)selectedSound {
+  
+}
+
 @end
