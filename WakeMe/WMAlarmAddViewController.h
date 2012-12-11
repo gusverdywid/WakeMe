@@ -13,11 +13,15 @@
   UITableViewCell *_alarmSnoozeCell;
   UITableViewCell *_alarmChallengeCell;
   UITableViewCell *_alarmSoundCell;
+  
+  NSString *_selectedSound;
 }
 
 @property (nonatomic, retain) IBOutlet UITableViewCell *alarmNameCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell *alarmSnoozeCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell *alarmChallengeCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell *alarmSoundCell;
+
+@property (nonatomic, readonly) NSString *selectedSound;
 
 @end
