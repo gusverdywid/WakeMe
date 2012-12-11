@@ -56,6 +56,7 @@
     NSLog(@"%@\n", soundName);
   }
   
+  // Initialize to -1 (no sound selected)
   _selRow = -1;
 }
 
