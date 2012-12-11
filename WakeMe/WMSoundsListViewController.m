@@ -151,7 +151,15 @@
   
   if (indexPath.section == 0 && indexPath.row != _selRow) {
     _selRow = indexPath.row;
+    
     [super.tableView reloadData];
+    
+    // Getting the name of the selected sound
+    NSString *selectedSound = [_soundNames objectAtIndex:_selRow];
+    NSString *audioPath = [[NSBundle mainBundle] pathForResource:selectedSound 
+                                                          ofType:@"caf"];
+    // Tell the delegate to play the sound
+    [_soundSelectionDelegate soundSelectionPlaySound:audioPath];
   }
 }
 
