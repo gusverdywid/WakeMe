@@ -37,6 +37,21 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+  
+  
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){    
+        // HACK (to deal with initialization delay):
+        // Initial setup of audio player
+        // Pass the Silent.caf (blank audio file) just to help the with the
+        // setup (acts as dummy)
+        NSString *audioPath = [[NSBundle mainBundle] pathForResource:@"Silent" 
+                                                              ofType:@"caf"];
+        // Play and stop the player straight away
+        if ([self setupAudioPlayerWithAudioPath:audioPath]) {
+          [_audioPlayer play];
+          [_audioPlayer stop];
+        }
+    });
 }
 
 - (void)viewDidUnload {
