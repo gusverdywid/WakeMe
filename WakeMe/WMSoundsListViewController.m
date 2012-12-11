@@ -163,7 +163,7 @@
   if (_selRow >= 0) {
     // Getting the name of the selected sound
     NSString *selectedSound = [_soundNames objectAtIndex:_selRow];
-    [_soundSelectionDelegate soundSelectionDidFinish:selectedSound];
+    [_soundSelectionDelegate soundSelectionSelectSound:selectedSound];
   }
   
   // Pop itself

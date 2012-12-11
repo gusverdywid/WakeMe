@@ -151,10 +151,10 @@
     [_audioPlayer play];
 }
 
+- (void)soundSelectionSelectSound:(NSString *)selectedSound {
   
 }
 
-- (void)soundSelectionDidFinish:(NSString *)selectedSound {
   
 }
 
