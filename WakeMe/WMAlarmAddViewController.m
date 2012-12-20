@@ -68,7 +68,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([[segue identifier] isEqualToString:@"selectSound"]) {
-    [[segue destinationViewController] setSoundSelectionDelegate:self];
+    WMSoundsListViewController *soundSelection = 
+      (WMSoundsListViewController *) [segue destinationViewController];
+    
+    [soundSelection setSoundSelectionDelegate:self];
   }
 }
 
