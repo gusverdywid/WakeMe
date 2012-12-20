@@ -19,6 +19,7 @@
 @synthesize selRow = _selRow;
 @synthesize soundSelectionDelegate = _soundSelectionDelegate;
 
+
 - (id)initWithStyle:(UITableViewStyle)style {
   self = [super initWithStyle:style];
   if (self) {
@@ -51,10 +52,6 @@
      ];
   }
   _soundNames = [NSArray arrayWithArray:formattedFilenames];
-  
-  for (NSString *soundName in _soundNames) {
-    NSLog(@"%@\n", soundName);
-  }
   
   // Initialize to -1 (no sound selected)
   _selRow = -1;
