@@ -28,6 +28,12 @@
   return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+  if ((self = [super initWithCoder:aDecoder])) {
+    [self initialize];
+  }
+  return self;
+}
 
 - (void)initialize {
   /**
