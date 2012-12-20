@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WMChallengesListViewController : UITableViewController
+@interface WMChallengesListViewController : UITableViewController {
+  
+}
 
 @end
