@@ -187,4 +187,21 @@
   }
 }
 
+#pragma mark - Custom public method
+
+- (void)selectSoundWithName:(NSString *)selSoundName {
+  NSUInteger soundIndex = 0;
+  for (NSString *soundName in _soundNames) {
+    if ([soundName isEqualToString:selSoundName]) {
+      _selRow = soundIndex;
+      NSIndexPath *selectedIndex = [NSIndexPath indexPathForRow:_selRow inSection:0];
+      [self.tableView selectRowAtIndexPath:selectedIndex
+                                  animated:NO
+                            scrollPosition:UITableViewScrollPositionTop];
+      break;
+    }
+    soundIndex++;
+  }
+}
+
 @end

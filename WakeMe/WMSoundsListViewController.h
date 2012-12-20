@@ -34,6 +34,8 @@
 @property(nonatomic, weak)
   id<WMSoundsListViewControllerDelegate> soundSelectionDelegate;
 
+- (void)selectSoundWithName:(NSString *)selSoundName;
+
 - (IBAction)doneSelectSound:(id)sender;
 
 @end
