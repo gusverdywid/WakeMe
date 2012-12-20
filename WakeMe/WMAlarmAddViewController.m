@@ -72,6 +72,9 @@
       (WMSoundsListViewController *) [segue destinationViewController];
     
     [soundSelection setSoundSelectionDelegate:self];
+    
+    if ([_selectedSound length] != 0)
+      [soundSelection selectSoundWithName:_selectedSound];
   }
 }
 
