@@ -16,6 +16,7 @@
 
 
 @synthesize challengeNames = _challengeNames;
+@synthesize selRow = _selRow;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
