@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface WMChallengesListViewController : UITableViewController {
-  
+  NSArray *_challengeNames;
 }
+
+@property(nonatomic, readonly) NSArray *challengeNames;
 
 @end

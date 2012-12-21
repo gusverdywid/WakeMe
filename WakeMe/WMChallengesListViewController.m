@@ -14,6 +14,10 @@
 
 @implementation WMChallengesListViewController
 
+
+@synthesize challengeNames = _challengeNames;
+
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
