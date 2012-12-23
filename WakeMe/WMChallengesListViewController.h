@@ -27,6 +27,8 @@
 
 @property(nonatomic, weak) id<WMChallengeSelectionViewControllerDelegate> challengeSelectionDelegate;
 
+- (void)selectChallengeWithName:(NSString *)challengeName;
+
 - (IBAction)finishSelectingChallenge:(id)sender;
 
 @end

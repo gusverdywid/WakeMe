@@ -168,6 +168,29 @@
   }
 }
 
+
+#pragma mark - Custom public method
+
+/**
+ * Used for selecting the row of selected challenge
+ */
+- (void)selectChallengeWithName:(NSString *)challengeName {
+  NSUInteger challengeIndex = 0;
+  for (NSString *name in _challengeNames) {
+    if ([name isEqualToString:challengeName]) {
+      _selRow = challengeIndex;
+      NSIndexPath *selectedIndex = [NSIndexPath indexPathForRow:_selRow
+                                                      inSection:0];
+      [self.tableView selectRowAtIndexPath:selectedIndex
+                                  animated:NO
+                            scrollPosition:UITableViewScrollPositionTop];
+      break;
+    }
+    challengeIndex++;
+  }
+}
+
+
 #pragma mark - IBAction
 
 - (IBAction)finishSelectingChallenge:(id)sender {
