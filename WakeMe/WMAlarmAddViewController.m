@@ -189,7 +189,8 @@
 #pragma mark - Challenge selection delegate
 
 - (void)challengeSelectionSelectChallengeWithName:(NSString *)selectedChallenge {
-  
+  _selectedChallenge = selectedChallenge;
+  _challengeLabel.text = _selectedChallenge;
 }
 
 
