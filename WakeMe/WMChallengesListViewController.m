@@ -34,6 +34,14 @@
  * complete the initialization process.
  */
 - (void)initialize {
+  
+  /**
+   * Read the challenge names from plist file
+   */
+  NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ChallengesList"
+                                                       ofType:@"plist"];
+  _challengeNames = [[NSArray alloc] initWithContentsOfFile:filePath];
+  
 }
 
 - (void)viewDidLoad
