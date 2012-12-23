@@ -82,6 +82,11 @@
     WMChallengesListViewController *challengeSelection = 
       (WMChallengesListViewController *) [segue destinationViewController];
     [challengeSelection setChallengeSelectionDelegate:self];
+    
+    // If challenge is already selected, tell challenge selection to mark down
+    // the row
+    if ([_selectedChallenge length] != 0)
+      [challengeSelection selectChallengeWithName:_selectedChallenge];
   }
 }
 
