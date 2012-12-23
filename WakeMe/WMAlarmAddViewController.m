@@ -20,6 +20,7 @@
 @synthesize alarmSoundCell = _alarmSoundCell;
 @synthesize alarmChallengeCell = _alarmChallengeCell;
 
+@synthesize challengeLabel = _challengeLabel;
 @synthesize soundLabel = _soundLabel;
 
 
@@ -75,6 +76,17 @@
     
     if ([_selectedSound length] != 0)
       [soundSelection selectSoundWithName:_selectedSound];
+  } else if ([[segue identifier] isEqualToString:@"selectChallenge"]) {
+    
+    // Set the challenge selection delegate
+    WMChallengesListViewController *challengeSelection = 
+      (WMChallengesListViewController *) [segue destinationViewController];
+    [challengeSelection setChallengeSelectionDelegate:self];
+    
+    // If challenge is already selected, tell challenge selection to mark down
+    // the row
+    if ([_selectedChallenge length] != 0)
+      [challengeSelection selectChallengeWithName:_selectedChallenge];
   }
 }
 
@@ -183,6 +195,15 @@
   if (_audioPlayer != nil && [_audioPlayer isPlaying])
     [_audioPlayer stop];
 }
+
+
+#pragma mark - Challenge selection delegate
+
+- (void)challengeSelectionSelectChallengeWithName:(NSString *)selectedChallenge {
+  _selectedChallenge = selectedChallenge;
+  _challengeLabel.text = _selectedChallenge;
+}
+
 
 #pragma mark - Private methods
 

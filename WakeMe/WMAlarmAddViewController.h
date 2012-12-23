@@ -10,15 +10,18 @@
 #import <AVFoundation/AVFoundation.h>
 
 #import "WMSoundsListViewController.h"
+#import "WMChallengesListViewController.h"
 
-@interface WMAlarmAddViewController : UITableViewController<WMSoundsListViewControllerDelegate> {
+@interface WMAlarmAddViewController : UITableViewController<WMSoundsListViewControllerDelegate, WMChallengeSelectionViewControllerDelegate> {
   UITableViewCell *_alarmNameCell;
   UITableViewCell *_alarmSnoozeCell;
   UITableViewCell *_alarmChallengeCell;
   UITableViewCell *_alarmSoundCell;
   
+  UILabel *_challengeLabel;
   UILabel *_soundLabel;
   
+  NSString *_selectedChallenge;
   NSString *_selectedSound;
   
   AVAudioPlayer *_audioPlayer;
@@ -29,6 +32,7 @@
 @property (nonatomic, retain) IBOutlet UITableViewCell *alarmChallengeCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell *alarmSoundCell;
 
+@property (nonatomic, retain) IBOutlet UILabel *challengeLabel;
 @property (nonatomic, retain) IBOutlet UILabel *soundLabel;
 
 @end

@@ -8,6 +8,27 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WMChallengesListViewController : UITableViewController
+@protocol WMChallengeSelectionViewControllerDelegate <NSObject>
+@required
+// Will be used to pass the name of selected challenge
+- (void)challengeSelectionSelectChallengeWithName:(NSString *)selectedChallenge;
+@end
+
+
+@interface WMChallengesListViewController : UITableViewController {
+  NSArray *_challengeNames;
+  NSInteger _selRow;
+  
+  __weak id<WMChallengeSelectionViewControllerDelegate> _challengeSelectionDelegate;
+}
+
+@property(nonatomic, readonly) NSArray *challengeNames;
+@property(nonatomic, readonly) NSInteger selRow;
+
+@property(nonatomic, weak) id<WMChallengeSelectionViewControllerDelegate> challengeSelectionDelegate;
+
+- (void)selectChallengeWithName:(NSString *)challengeName;
+
+- (IBAction)finishSelectingChallenge:(id)sender;
 
 @end

@@ -14,13 +14,46 @@
 
 @implementation WMChallengesListViewController
 
+
+@synthesize challengeNames = _challengeNames;
+@synthesize selRow = _selRow;
+@synthesize challengeSelectionDelegate = _challengeSelectionDelegate;
+
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        [self initialize];
     }
     return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+  if ((self = [super initWithCoder:aDecoder])) {
+    [self initialize];
+  }
+  return self;
+}
+
+/**
+ * Common initialization code. Other inits should call this method to
+ * complete the initialization process.
+ */
+- (void)initialize {
+  
+  /**
+   * Read the challenge names from plist file
+   */
+  NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ChallengesList"
+                                                       ofType:@"plist"];
+  _challengeNames = [[NSArray alloc] initWithContentsOfFile:filePath];
+  
+  /**
+   * Init to -1 because 0 is a valid row
+   */
+  _selRow = -1;
+  
 }
 
 - (void)viewDidLoad
@@ -56,8 +89,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return 0;
+  // Return the number of rows in the section.
+  // Only need 1 section (section 0) so any section would have no row
+  if (section == 0)
+    return [_challengeNames count];
+  return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -66,8 +102,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
-    
-    return cell;
+  if (indexPath.section == 0) {
+    cell.textLabel.text = [_challengeNames objectAtIndex:indexPath.row];
+    if (indexPath.row == _selRow) cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    else cell.accessoryType = UITableViewCellAccessoryNone;
+  }
+  return cell;
 }
 
 /*
@@ -120,6 +160,50 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+  
+  if (indexPath.section == 0 && indexPath.row != _selRow) {
+    _selRow = indexPath.row;
+    
+    [super.tableView reloadData];
+  }
+}
+
+
+#pragma mark - Custom public method
+
+/**
+ * Used for selecting the row of selected challenge
+ */
+- (void)selectChallengeWithName:(NSString *)challengeName {
+  NSUInteger challengeIndex = 0;
+  for (NSString *name in _challengeNames) {
+    if ([name isEqualToString:challengeName]) {
+      _selRow = challengeIndex;
+      NSIndexPath *selectedIndex = [NSIndexPath indexPathForRow:_selRow
+                                                      inSection:0];
+      [self.tableView selectRowAtIndexPath:selectedIndex
+                                  animated:NO
+                            scrollPosition:UITableViewScrollPositionTop];
+      break;
+    }
+    challengeIndex++;
+  }
+}
+
+
+#pragma mark - IBAction
+
+- (IBAction)finishSelectingChallenge:(id)sender {
+  
+  // In case user didn't select any challenge
+  if (_selRow >= 0) {
+    // Getting the name of the selected challenge
+    NSString *selectedChallenge = [_challengeNames objectAtIndex:_selRow];
+    [_challengeSelectionDelegate challengeSelectionSelectChallengeWithName:selectedChallenge];
+    
+    // Pop itself
+    [self.navigationController popViewControllerAnimated:YES];
+  }
 }
 
 @end
