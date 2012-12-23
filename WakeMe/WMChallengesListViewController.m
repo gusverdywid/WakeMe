@@ -83,8 +83,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return 0;
+  // Return the number of rows in the section.
+  // Only need 1 section (section 0) so any section would have no row
+  if (section == 0)
+    return [_challengeNames count];
+  return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
