@@ -172,6 +172,15 @@
 
 - (IBAction)finishSelectingChallenge:(id)sender {
   
+  // In case user didn't select any challenge
+  if (_selRow >= 0) {
+    // Getting the name of the selected challenge
+    NSString *selectedChallenge = [_challengeNames objectAtIndex:_selRow];
+    [_challengeSelectionDelegate challengeSelectionSelectChallengeWithName:selectedChallenge];
+    
+    // Pop itself
+    [self.navigationController popViewControllerAnimated:YES];
+  }
 }
 
 @end
