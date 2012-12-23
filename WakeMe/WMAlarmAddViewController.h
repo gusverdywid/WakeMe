@@ -20,6 +20,7 @@
   UILabel *_soundLabel;
   
   NSString *_selectedSound;
+  NSString *_selectedChallenge;
   
   AVAudioPlayer *_audioPlayer;
 }
