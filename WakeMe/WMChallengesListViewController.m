@@ -170,5 +170,8 @@
 
 #pragma mark - IBAction
 
+- (IBAction)finishSelectingChallenge:(id)sender {
+  
+}
 
 @end
