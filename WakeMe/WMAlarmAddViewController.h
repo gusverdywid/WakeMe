@@ -10,8 +10,9 @@
 #import <AVFoundation/AVFoundation.h>
 
 #import "WMSoundsListViewController.h"
+#import "WMChallengesListViewController.h"
 
-@interface WMAlarmAddViewController : UITableViewController<WMSoundsListViewControllerDelegate> {
+@interface WMAlarmAddViewController : UITableViewController<WMSoundsListViewControllerDelegate, WMChallengeSelectionViewControllerDelegate> {
   UITableViewCell *_alarmNameCell;
   UITableViewCell *_alarmSnoozeCell;
   UITableViewCell *_alarmChallengeCell;

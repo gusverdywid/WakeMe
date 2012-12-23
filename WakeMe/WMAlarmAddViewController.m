@@ -185,6 +185,14 @@
     [_audioPlayer stop];
 }
 
+
+#pragma mark - Challenge selection delegate
+
+- (void)challengeSelectionSelectChallengeWithName:(NSString *)selectedChallenge {
+  
+}
+
+
 #pragma mark - Private methods
 
 /**
