@@ -23,13 +23,14 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        [self initialize];
     }
     return self;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
   if ((self = [super initWithCoder:aDecoder])) {
+    [self initialize];
   }
   return self;
 }
