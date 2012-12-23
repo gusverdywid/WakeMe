@@ -76,6 +76,12 @@
     
     if ([_selectedSound length] != 0)
       [soundSelection selectSoundWithName:_selectedSound];
+  } else if ([[segue identifier] isEqualToString:@"selectChallenge"]) {
+    
+    // Set the challenge selection delegate
+    WMChallengesListViewController *challengeSelection = 
+      (WMChallengesListViewController *) [segue destinationViewController];
+    [challengeSelection setChallengeSelectionDelegate:self];
   }
 }
 
