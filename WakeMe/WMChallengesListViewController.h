@@ -10,6 +10,8 @@
 
 @protocol WMChallengeSelectionViewControllerDelegate <NSObject>
 @required
+// Will be used to pass the name of selected challenge
+- (void)challengeSelectionSelectChallengeWithName:(NSString *)selectedChallenge;
 @end
 
 
