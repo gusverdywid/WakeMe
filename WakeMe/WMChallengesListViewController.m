@@ -48,6 +48,11 @@
                                                        ofType:@"plist"];
   _challengeNames = [[NSArray alloc] initWithContentsOfFile:filePath];
   
+  /**
+   * Init to -1 because 0 is a valid row
+   */
+  _selRow = -1;
+  
 }
 
 - (void)viewDidLoad
