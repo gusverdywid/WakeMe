@@ -286,7 +286,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </tableView>
                     <navigationItem key="navigationItem" title="Challenges" id="LSb-GW-MW6">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="ZmB-G1-9Mq"/>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="JsB-1r-jqe"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="JsB-1r-jqe">
+                            <connections>
+                                <action selector="finishSelectingChallenge:" destination="VYI-UX-CbV" id="c8S-fp-Swq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
             </objects>
@@ -345,6 +349,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </class>
         <class className="WMChallengesListViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WMChallengesListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="finishSelectingChallenge:"/>
+            </relationships>
         </class>
         <class className="WMSoundsListViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WMSoundsListViewController.h"/>
