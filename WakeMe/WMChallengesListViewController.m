@@ -28,6 +28,11 @@
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+  if ((self = [super initWithCoder:aDecoder])) {
+  }
+  return self;
+}
 
 /**
  * Common initialization code. Other inits should call this method to
