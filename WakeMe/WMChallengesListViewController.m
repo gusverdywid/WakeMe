@@ -28,6 +28,14 @@
     return self;
 }
 
+
+/**
+ * Common initialization code. Other inits should call this method to
+ * complete the initialization process.
+ */
+- (void)initialize {
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
