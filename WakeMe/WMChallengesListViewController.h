@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol WMChallengeSelectionViewControllerDelegate <NSObject>
+@required
+@end
+
+
 @interface WMChallengesListViewController : UITableViewController {
   NSArray *_challengeNames;
   NSInteger _selRow;
