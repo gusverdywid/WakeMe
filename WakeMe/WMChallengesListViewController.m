@@ -101,8 +101,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
-    
-    return cell;
+  if (indexPath.section == 0) {
+    cell.textLabel.text = [_challengeNames objectAtIndex:indexPath.row];
+    if (indexPath.row == _selRow) cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    else cell.accessoryType = UITableViewCellAccessoryNone;
+  }
+  return cell;
 }
 
 /*
