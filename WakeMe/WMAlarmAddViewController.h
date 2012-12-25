@@ -35,4 +35,6 @@
 @property (nonatomic, retain) IBOutlet UILabel *challengeLabel;
 @property (nonatomic, retain) IBOutlet UILabel *soundLabel;
 
+- (IBAction)cancelAlarmAddition:(id)sender;
+
 @end
