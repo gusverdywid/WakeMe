@@ -248,7 +248,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <action selector="cancelAlarmAddition:" destination="r2J-Hq-KD4" id="1ta-th-3qt"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="CCP-mh-8FG"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="CCP-mh-8FG">
+                            <connections>
+                                <action selector="saveNewAlarm:" destination="r2J-Hq-KD4" id="7Qa-JG-NBY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="alarmChallengeCell" destination="HxQ-3o-y9t" id="EWk-23-eon"/>
