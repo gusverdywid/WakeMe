@@ -20,6 +20,7 @@
 @synthesize alarmSoundCell = _alarmSoundCell;
 @synthesize alarmChallengeCell = _alarmChallengeCell;
 
+@synthesize nameTextField = _nameTextField;
 @synthesize challengeLabel = _challengeLabel;
 @synthesize soundLabel = _soundLabel;
 
