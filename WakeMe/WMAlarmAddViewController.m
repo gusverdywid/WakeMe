@@ -21,6 +21,7 @@
 @synthesize alarmChallengeCell = _alarmChallengeCell;
 
 @synthesize nameTextField = _nameTextField;
+@synthesize snoozeSwitch = _snoozeSwitch;
 @synthesize challengeLabel = _challengeLabel;
 @synthesize soundLabel = _soundLabel;
 

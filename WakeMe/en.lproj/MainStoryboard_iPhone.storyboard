@@ -261,6 +261,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="alarmSoundCell" destination="Mba-0g-R3O" id="Hd3-2u-knA"/>
                         <outlet property="challengeLabel" destination="OUm-nU-lfO" id="DYm-Xb-N5K"/>
                         <outlet property="nameTextField" destination="Q33-u6-RYH" id="eyq-LH-7RJ"/>
+                        <outlet property="snoozeSwitch" destination="55Z-lD-QQb" id="Y9u-4e-FHm"/>
                         <outlet property="soundLabel" destination="pUG-t7-xLL" id="A1e-dg-jXo"/>
                     </connections>
                 </tableViewController>
@@ -354,6 +355,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="alarmSoundCell" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="challengeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="snoozeSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="soundLabel" candidateClass="UILabel"/>
             </relationships>
         </class>

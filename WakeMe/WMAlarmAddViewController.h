@@ -19,6 +19,7 @@
   UITableViewCell *_alarmSoundCell;
   
   UITextField *_nameTextField;
+  UISwitch *_snoozeSwitch;
   UILabel *_challengeLabel;
   UILabel *_soundLabel;
   
@@ -34,6 +35,7 @@
 @property (nonatomic, retain) IBOutlet UITableViewCell *alarmSoundCell;
 
 @property(nonatomic, retain) IBOutlet UITextField *nameTextField;
+@property(nonatomic, retain) IBOutlet UISwitch *snoozeSwitch;
 @property (nonatomic, retain) IBOutlet UILabel *challengeLabel;
 @property (nonatomic, retain) IBOutlet UILabel *soundLabel;
 
