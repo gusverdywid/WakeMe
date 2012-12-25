@@ -263,6 +263,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="nameTextField" destination="Q33-u6-RYH" id="eyq-LH-7RJ"/>
                         <outlet property="snoozeSwitch" destination="55Z-lD-QQb" id="Y9u-4e-FHm"/>
                         <outlet property="soundLabel" destination="pUG-t7-xLL" id="A1e-dg-jXo"/>
+                        <outlet property="timePicker" destination="kjy-nN-eA6" id="Ktk-Yf-Xv3"/>
                     </connections>
                 </tableViewController>
             </objects>
@@ -357,6 +358,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="snoozeSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="soundLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timePicker" candidateClass="UIDatePicker"/>
             </relationships>
         </class>
         <class className="WMAlarmsListViewController" superclassName="UITableViewController">

@@ -22,6 +22,7 @@
   UISwitch *_snoozeSwitch;
   UILabel *_challengeLabel;
   UILabel *_soundLabel;
+  UIDatePicker *_timePicker;
   
   NSString *_selectedChallenge;
   NSString *_selectedSound;
@@ -38,6 +39,7 @@
 @property(nonatomic, retain) IBOutlet UISwitch *snoozeSwitch;
 @property (nonatomic, retain) IBOutlet UILabel *challengeLabel;
 @property (nonatomic, retain) IBOutlet UILabel *soundLabel;
+@property(nonatomic, retain) IBOutlet UIDatePicker *timePicker;
 
 - (IBAction)saveNewAlarm:(id)sender;
 - (IBAction)cancelAlarmAddition:(id)sender;

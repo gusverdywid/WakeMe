@@ -24,6 +24,7 @@
 @synthesize snoozeSwitch = _snoozeSwitch;
 @synthesize challengeLabel = _challengeLabel;
 @synthesize soundLabel = _soundLabel;
+@synthesize timePicker = _timePicker;
 
 
 - (id)initWithStyle:(UITableViewStyle)style {
