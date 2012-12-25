@@ -207,6 +207,9 @@
 
 #pragma mark - IBAction
 
+- (IBAction)cancelAlarmAddition:(id)sender {
+  [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 #pragma mark - Private methods
