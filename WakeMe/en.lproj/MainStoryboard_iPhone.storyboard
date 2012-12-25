@@ -243,7 +243,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="New Alarm" id="sz0-dt-Zgm">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="UaN-nO-1Ca"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="UaN-nO-1Ca">
+                            <connections>
+                                <action selector="cancelAlarmAddition:" destination="r2J-Hq-KD4" id="1ta-th-3qt"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="CCP-mh-8FG"/>
                     </navigationItem>
                     <connections>
