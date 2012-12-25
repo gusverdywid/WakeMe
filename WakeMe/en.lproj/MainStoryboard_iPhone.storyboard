@@ -342,6 +342,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WMAlarmAddViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cancelAlarmAddition:"/>
+                <relationship kind="action" name="saveNewAlarm:"/>
                 <relationship kind="outlet" name="alarmChallengeCell" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="alarmNameCell" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="alarmSnoozeCell" candidateClass="UITableViewCell"/>
