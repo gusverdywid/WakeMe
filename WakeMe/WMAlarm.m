@@ -2,7 +2,7 @@
 //  WMAlarm.m
 //  WakeMe
 //
-//  Created by Agustinus Verdy Widyawiradi on 8/9/12.
+//  Created by Agustinus Verdy Widyawiradi on 12/25/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 

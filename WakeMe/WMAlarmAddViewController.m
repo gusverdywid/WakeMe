@@ -8,6 +8,10 @@
 
 #import "WMAlarmAddViewController.h"
 
+#import "WakeMeAppDelegate.h"
+#import "WMAlarm.h"
+
+
 @interface WMAlarmAddViewController ()
 
 @end
@@ -20,8 +24,11 @@
 @synthesize alarmSoundCell = _alarmSoundCell;
 @synthesize alarmChallengeCell = _alarmChallengeCell;
 
+@synthesize nameTextField = _nameTextField;
+@synthesize snoozeSwitch = _snoozeSwitch;
 @synthesize challengeLabel = _challengeLabel;
 @synthesize soundLabel = _soundLabel;
+@synthesize timePicker = _timePicker;
 
 
 - (id)initWithStyle:(UITableViewStyle)style {
@@ -202,6 +209,41 @@
 - (void)challengeSelectionSelectChallengeWithName:(NSString *)selectedChallenge {
   _selectedChallenge = selectedChallenge;
   _challengeLabel.text = _selectedChallenge;
+}
+
+
+#pragma mark - IBAction
+
+/**
+ * Handle saving new alarm into core data and dismissing the view
+ */
+- (IBAction)saveNewAlarm:(id)sender {
+  WakeMeAppDelegate *app = [[UIApplication sharedApplication] delegate];
+  NSManagedObjectContext *context = app.managedObjectContext;
+  WMAlarm *newAlarm = [NSEntityDescription insertNewObjectForEntityForName:@"Alarm" 
+                                                    inManagedObjectContext:context];
+  newAlarm.name = _nameTextField.text;
+  newAlarm.snoozable = [NSNumber numberWithBool:_snoozeSwitch.on];
+  newAlarm.challenge = _challengeLabel.text;
+  newAlarm.sound = _soundLabel.text;
+  newAlarm.time = _timePicker.date;
+  
+  NSError *error;
+  if (![context save:&error]) {
+    NSLog(@"Could not save the new alarm: %@", [error localizedDescription]);
+    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Core Data Error" 
+                                                         message:@"Could not save the alarm. Please try again" 
+                                                        delegate:nil 
+                                               cancelButtonTitle:@"OK" 
+                                               otherButtonTitles:nil];
+    [errorAlert show];
+  } else {
+    [self dismissViewControllerAnimated:YES completion:nil];
+  }
+}
+
+- (IBAction)cancelAlarmAddition:(id)sender {
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

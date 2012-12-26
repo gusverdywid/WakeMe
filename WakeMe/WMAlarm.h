@@ -2,7 +2,7 @@
 //  WMAlarm.h
 //  WakeMe
 //
-//  Created by Agustinus Verdy Widyawiradi on 8/9/12.
+//  Created by Agustinus Verdy Widyawiradi on 12/25/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
@@ -13,7 +13,7 @@
 @interface WMAlarm : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * active;
-@property (nonatomic, retain) NSNumber * challenge;
+@property (nonatomic, retain) NSString * challenge;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * snoozable;
 @property (nonatomic, retain) NSString * sound;
