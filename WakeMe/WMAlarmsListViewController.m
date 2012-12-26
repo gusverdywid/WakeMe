@@ -42,8 +42,16 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
   
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  
   /**
-   * Load all alarms from core data
+   * Load all alarms from core data.
+   * ViewDidLoad is not always called when view changes,
+   * only when it gets loaded into memory.
+   * So it being done here to reload the alarms everytime view changes
    */
   WakeMeAppDelegate *app = [[UIApplication sharedApplication] delegate];
   NSManagedObjectContext *context = app.managedObjectContext;
@@ -62,7 +70,6 @@
                                                otherButtonTitles:nil];
     [errorAlert show];
   }
-  
 }
 
 - (void)viewDidUnload
