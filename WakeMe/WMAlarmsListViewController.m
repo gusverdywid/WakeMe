@@ -8,6 +8,8 @@
 
 #import "WMAlarmsListViewController.h"
 
+#import "WakeMeAppDelegate.h"
+#import "WMAlarm.h"
 
 
 @interface WMAlarmsListViewController ()
