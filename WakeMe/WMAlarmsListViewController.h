@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface WMAlarmsListViewController : UITableViewController {
-  
+  NSArray *_alarms;
 }
+
+@property (nonatomic, retain) NSArray *alarms;
 
 @end

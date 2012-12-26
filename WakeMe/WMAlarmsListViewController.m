@@ -14,6 +14,10 @@
 
 @implementation WMAlarmsListViewController
 
+
+@synthesize alarms = _alarms;
+
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
