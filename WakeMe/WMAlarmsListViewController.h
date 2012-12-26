@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WMAlarmsListViewController : UITableViewController
+@interface WMAlarmsListViewController : UITableViewController {
+  
+}
 
 @end
