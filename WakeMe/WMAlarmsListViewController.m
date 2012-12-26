@@ -70,6 +70,7 @@
                                                otherButtonTitles:nil];
     [errorAlert show];
   }
+  [self.tableView reloadData];
 }
 
 - (void)viewDidUnload
