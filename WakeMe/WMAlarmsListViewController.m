@@ -96,6 +96,25 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
+  
+  /**
+   * Set all views state of table cell
+   * Tag: 1 - Time label
+   *      2 - Alarm name label
+   *      3 - Active/Inactive label
+   */
+  WMAlarm *alarm = [_alarms objectAtIndex:indexPath.row];
+  // Set time label
+  UILabel *timeLabel = (UILabel *) [cell viewWithTag:1];
+  NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+  formatter.dateFormat = @"hh:mm a";
+  timeLabel.text = [formatter stringFromDate:alarm.time];
+  // Set alarm name
+  UILabel *nameLabel = (UILabel *) [cell viewWithTag:2];
+  nameLabel.text = alarm.name;
+  // Set alarm switch
+  UISwitch *activeSwitch = (UISwitch *) [cell viewWithTag:3];
+  activeSwitch.on = [alarm.active boolValue];
     
     return cell;
 }
