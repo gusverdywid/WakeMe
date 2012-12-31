@@ -42,34 +42,21 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
   
+  self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   
+  // Reset editing mode, especially after returning from new alarm screen
+  [self setEditing:NO animated:NO];
+  
   /**
-   * Load all alarms from core data.
    * ViewDidLoad is not always called when view changes,
    * only when it gets loaded into memory.
    * So it being done here to reload the alarms everytime view changes
    */
-  WakeMeAppDelegate *app = [[UIApplication sharedApplication] delegate];
-  NSManagedObjectContext *context = app.managedObjectContext;
-  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-  NSEntityDescription *entity = [NSEntityDescription entityForName:@"Alarm" inManagedObjectContext:context];
-  fetchRequest.entity = entity;
-  NSError *error;
-  _alarms = [context executeFetchRequest:fetchRequest error:&error];
-  // Show alert box in case any error occured
-  if (error) {
-    NSLog(@"Could not load the alarms: %@", [error localizedDescription]);
-    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Core Data Error" 
-                                                         message:@"Could not load alarms." 
-                                                        delegate:nil 
-                                               cancelButtonTitle:@"OK" 
-                                               otherButtonTitles:nil];
-    [errorAlert show];
-  }
+  [self reloadAlarms];
   [self.tableView reloadData];
 }
 
@@ -122,9 +109,18 @@
   nameLabel.text = alarm.name;
   // Set alarm switch
   UISwitch *activeSwitch = (UISwitch *) [cell viewWithTag:3];
-  activeSwitch.on = [alarm.active boolValue];
+  activeSwitch.on = [alarm.active boolValue];    
+  if (self.editing)
+    activeSwitch.hidden = YES;
+  else
+    activeSwitch.hidden = NO;
     
     return cell;
+}
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+  [super setEditing:editing animated:animated];
+  [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 /*
@@ -136,19 +132,38 @@
 }
 */
 
-/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+      /**
+       * Delete the alarm associated with the selected row
+       */
+      WakeMeAppDelegate *app = (WakeMeAppDelegate *) [[UIApplication sharedApplication] delegate];
+      NSManagedObjectContext *context = app.managedObjectContext;
+      WMAlarm *alarm = (WMAlarm *) [_alarms objectAtIndex:indexPath.row];
+      // Delete alarm from database
+      [context deleteObject:alarm];
+      // Reload array of alarms
+      [self reloadAlarms];
+      NSError *error;
+      [context save:&error];
+      // Show alert box in case any error occured
+      if (error) {
+        NSLog(@"Could not delete the alarm: %@", [error localizedDescription]);
+        UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Core Data Error" 
+                                                             message:@"Could not delete alarm." 
+                                                            delegate:nil 
+                                                   cancelButtonTitle:@"OK" 
+                                                   otherButtonTitles:nil];
+        [errorAlert show];
+      } else {        
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] 
+                         withRowAnimation:UITableViewRowAnimationFade];
+      }
+    }  
 }
-*/
 
 /*
 // Override to support rearranging the table view.
@@ -177,6 +192,32 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+
+#pragma mark - Private methods
+
+- (void)reloadAlarms {
+  /**
+   * Load all alarms from core data.
+   */
+  WakeMeAppDelegate *app = [[UIApplication sharedApplication] delegate];
+  NSManagedObjectContext *context = app.managedObjectContext;
+  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+  NSEntityDescription *entity = [NSEntityDescription entityForName:@"Alarm" inManagedObjectContext:context];
+  fetchRequest.entity = entity;
+  NSError *error;
+  _alarms = [context executeFetchRequest:fetchRequest error:&error];
+  // Show alert box in case any error occured
+  if (error) {
+    NSLog(@"Could not load the alarms: %@", [error localizedDescription]);
+    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Core Data Error" 
+                                                         message:@"Could not load alarms." 
+                                                        delegate:nil 
+                                               cancelButtonTitle:@"OK" 
+                                               otherButtonTitles:nil];
+    [errorAlert show];
+  }
 }
 
 @end
