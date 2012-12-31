@@ -8,11 +8,20 @@
 
 #import "WMAlarmsListViewController.h"
 
+#import "WakeMeAppDelegate.h"
+#import "WMAlarm.h"
+
+
 @interface WMAlarmsListViewController ()
 
 @end
 
+
 @implementation WMAlarmsListViewController
+
+
+@synthesize alarms = _alarms;
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,6 +41,36 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+  
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  
+  /**
+   * Load all alarms from core data.
+   * ViewDidLoad is not always called when view changes,
+   * only when it gets loaded into memory.
+   * So it being done here to reload the alarms everytime view changes
+   */
+  WakeMeAppDelegate *app = [[UIApplication sharedApplication] delegate];
+  NSManagedObjectContext *context = app.managedObjectContext;
+  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+  NSEntityDescription *entity = [NSEntityDescription entityForName:@"Alarm" inManagedObjectContext:context];
+  fetchRequest.entity = entity;
+  NSError *error;
+  _alarms = [context executeFetchRequest:fetchRequest error:&error];
+  // Show alert box in case any error occured
+  if (error) {
+    NSLog(@"Could not load the alarms: %@", [error localizedDescription]);
+    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Core Data Error" 
+                                                         message:@"Could not load alarms." 
+                                                        delegate:nil 
+                                               cancelButtonTitle:@"OK" 
+                                               otherButtonTitles:nil];
+    [errorAlert show];
+  }
+  [self.tableView reloadData];
 }
 
 - (void)viewDidUnload
@@ -55,7 +94,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+  // Return rows as many as number of alarms
+  return _alarms.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -64,6 +104,25 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
+  
+  /**
+   * Set all views state of table cell
+   * Tag: 1 - Time label
+   *      2 - Alarm name label
+   *      3 - Active/Inactive label
+   */
+  WMAlarm *alarm = [_alarms objectAtIndex:indexPath.row];
+  // Set time label
+  UILabel *timeLabel = (UILabel *) [cell viewWithTag:1];
+  NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+  formatter.dateFormat = @"hh:mm a";
+  timeLabel.text = [formatter stringFromDate:alarm.time];
+  // Set alarm name
+  UILabel *nameLabel = (UILabel *) [cell viewWithTag:2];
+  nameLabel.text = alarm.name;
+  // Set alarm switch
+  UISwitch *activeSwitch = (UISwitch *) [cell viewWithTag:3];
+  activeSwitch.on = [alarm.active boolValue];
     
     return cell;
 }
