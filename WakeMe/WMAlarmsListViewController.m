@@ -129,19 +129,38 @@
 }
 */
 
-/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+      /**
+       * Delete the alarm associated with the selected row
+       */
+      WakeMeAppDelegate *app = (WakeMeAppDelegate *) [[UIApplication sharedApplication] delegate];
+      NSManagedObjectContext *context = app.managedObjectContext;
+      WMAlarm *alarm = (WMAlarm *) [_alarms objectAtIndex:indexPath.row];
+      // Delete alarm from database
+      [context deleteObject:alarm];
+      // Reload array of alarms
+      [self reloadAlarms];
+      NSError *error;
+      [context save:&error];
+      // Show alert box in case any error occured
+      if (error) {
+        NSLog(@"Could not delete the alarm: %@", [error localizedDescription]);
+        UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Core Data Error" 
+                                                             message:@"Could not delete alarm." 
+                                                            delegate:nil 
+                                                   cancelButtonTitle:@"OK" 
+                                                   otherButtonTitles:nil];
+        [errorAlert show];
+      } else {        
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] 
+                         withRowAnimation:UITableViewRowAnimationFade];
+      }
+    }  
 }
-*/
 
 /*
 // Override to support rearranging the table view.
