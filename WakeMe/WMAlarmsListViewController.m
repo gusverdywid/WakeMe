@@ -126,6 +126,8 @@
   activeSwitch.on = [alarm.active boolValue];    
   if (self.editing)
     activeSwitch.hidden = YES;
+  else
+    activeSwitch.hidden = NO;
     
     return cell;
 }
