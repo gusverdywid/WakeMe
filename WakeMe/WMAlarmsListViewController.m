@@ -49,28 +49,11 @@
   [super viewWillAppear:animated];
   
   /**
-   * Load all alarms from core data.
    * ViewDidLoad is not always called when view changes,
    * only when it gets loaded into memory.
    * So it being done here to reload the alarms everytime view changes
    */
-  WakeMeAppDelegate *app = [[UIApplication sharedApplication] delegate];
-  NSManagedObjectContext *context = app.managedObjectContext;
-  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-  NSEntityDescription *entity = [NSEntityDescription entityForName:@"Alarm" inManagedObjectContext:context];
-  fetchRequest.entity = entity;
-  NSError *error;
-  _alarms = [context executeFetchRequest:fetchRequest error:&error];
-  // Show alert box in case any error occured
-  if (error) {
-    NSLog(@"Could not load the alarms: %@", [error localizedDescription]);
-    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Core Data Error" 
-                                                         message:@"Could not load alarms." 
-                                                        delegate:nil 
-                                               cancelButtonTitle:@"OK" 
-                                               otherButtonTitles:nil];
-    [errorAlert show];
-  }
+  [self reloadAlarms];
   [self.tableView reloadData];
 }
 
@@ -192,5 +175,27 @@
 
 #pragma mark - Private methods
 
+- (void)reloadAlarms {
+  /**
+   * Load all alarms from core data.
+   */
+  WakeMeAppDelegate *app = [[UIApplication sharedApplication] delegate];
+  NSManagedObjectContext *context = app.managedObjectContext;
+  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+  NSEntityDescription *entity = [NSEntityDescription entityForName:@"Alarm" inManagedObjectContext:context];
+  fetchRequest.entity = entity;
+  NSError *error;
+  _alarms = [context executeFetchRequest:fetchRequest error:&error];
+  // Show alert box in case any error occured
+  if (error) {
+    NSLog(@"Could not load the alarms: %@", [error localizedDescription]);
+    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Core Data Error" 
+                                                         message:@"Could not load alarms." 
+                                                        delegate:nil 
+                                               cancelButtonTitle:@"OK" 
+                                               otherButtonTitles:nil];
+    [errorAlert show];
+  }
+}
 
 @end
