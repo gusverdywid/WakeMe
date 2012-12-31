@@ -123,13 +123,16 @@
   nameLabel.text = alarm.name;
   // Set alarm switch
   UISwitch *activeSwitch = (UISwitch *) [cell viewWithTag:3];
-  activeSwitch.on = [alarm.active boolValue];
+  activeSwitch.on = [alarm.active boolValue];    
+  if (self.editing)
+    activeSwitch.hidden = YES;
     
     return cell;
 }
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
   [super setEditing:editing animated:animated];
+  [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 /*
