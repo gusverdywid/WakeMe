@@ -48,6 +48,9 @@
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   
+  // Reset editing mode, especially after returning from new alarm screen
+  [self setEditing:NO animated:NO];
+  
   /**
    * ViewDidLoad is not always called when view changes,
    * only when it gets loaded into memory.
