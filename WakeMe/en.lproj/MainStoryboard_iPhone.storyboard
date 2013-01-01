@@ -26,7 +26,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mfe-Sq-D6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="8Dp-LY-VKz" customClass="WMAlarmsListViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="47" sectionHeaderHeight="22" sectionFooterHeight="22" id="0tv-Co-mEb">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelectionDuringEditing="YES" rowHeight="47" sectionHeaderHeight="22" sectionFooterHeight="22" id="0tv-Co-mEb">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
