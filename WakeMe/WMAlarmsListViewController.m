@@ -195,6 +195,19 @@
 }
 
 
+#pragma mark - IBAction
+
+/**
+ * Show new alarm page
+ */
+- (IBAction)showAlarmCreationView:(id)sender {
+  UIStoryboard *alarmDetailStoryboard = [UIStoryboard  storyboardWithName:@"WMAlarmDetailStoryboard_iPhone" 
+                                                                   bundle:nil];
+  UIViewController *alarmDetailViewController = [alarmDetailStoryboard instantiateInitialViewController];
+  alarmDetailViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+  [self presentModalViewController:alarmDetailViewController animated:YES];
+}
+
 #pragma mark - Private methods
 
 - (void)reloadAlarms {

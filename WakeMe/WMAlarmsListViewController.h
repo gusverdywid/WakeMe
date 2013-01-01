@@ -14,4 +14,6 @@
 
 @property (nonatomic, retain) NSArray *alarms;
 
+- (IBAction)showAlarmCreationView:(id)sender;
+
 @end
