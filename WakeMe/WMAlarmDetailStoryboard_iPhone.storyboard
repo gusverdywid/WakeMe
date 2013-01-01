@@ -21,11 +21,11 @@
             </objects>
             <point key="canvasLocation" x="1086" y="-60"/>
         </scene>
-        <!--Alarm Add View Controller - New Alarm-->
+        <!--Alarm Detail View Controller-->
         <scene sceneID="mWX-uM-ODu">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qK9-HP-ixd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="EX2-ey-ePk" customClass="WMAlarmAddViewController" sceneMemberID="viewController">
+                <tableViewController id="EX2-ey-ePk" customClass="WMAlarmDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="5Tf-c6-Ude">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -169,28 +169,28 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <outlet property="delegate" destination="EX2-ey-ePk" id="iL4-6M-Rxk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="New Alarm" id="3T5-SP-HnL">
+                    <navigationItem key="navigationItem" id="3T5-SP-HnL">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="437-XK-gIE">
                             <connections>
-                                <action selector="cancelAlarmAddition:" destination="EX2-ey-ePk" id="GuL-NB-QW3"/>
+                                <action selector="cancelAlarm:" destination="EX2-ey-ePk" id="fEY-3F-Xst"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="fOs-uF-owS">
                             <connections>
-                                <action selector="saveNewAlarm:" destination="EX2-ey-ePk" id="3qH-QA-OYg"/>
+                                <action selector="saveAlarm:" destination="EX2-ey-ePk" id="GFe-In-Jq3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="alarmChallengeCell" destination="3GP-YG-qHi" id="eRN-Uo-TgQ"/>
-                        <outlet property="alarmNameCell" destination="TBl-bv-QLl" id="QIC-2h-cWe"/>
-                        <outlet property="alarmSnoozeCell" destination="Vcg-N6-ksH" id="rMW-fe-W0q"/>
-                        <outlet property="alarmSoundCell" destination="bWy-6d-VVE" id="aLX-Mv-LR8"/>
-                        <outlet property="challengeLabel" destination="Zr4-dD-H5O" id="95I-AL-lrP"/>
-                        <outlet property="nameTextField" destination="ydQ-a6-Njk" id="Syc-Qf-O24"/>
-                        <outlet property="snoozeSwitch" destination="TKW-GW-lXz" id="Nho-cZ-9Sf"/>
-                        <outlet property="soundLabel" destination="ZqV-Mi-yNM" id="fOl-rh-xLP"/>
-                        <outlet property="timePicker" destination="ueR-k1-Yn8" id="v9w-fn-BD9"/>
+                        <outlet property="alarmChallengeCell" destination="3GP-YG-qHi" id="bAv-tC-Fm5"/>
+                        <outlet property="alarmNameCell" destination="TBl-bv-QLl" id="H7U-3U-0Sy"/>
+                        <outlet property="alarmSnoozeCell" destination="Vcg-N6-ksH" id="IDN-lO-kPn"/>
+                        <outlet property="alarmSoundCell" destination="bWy-6d-VVE" id="EMT-MF-0aY"/>
+                        <outlet property="challengeLabel" destination="Zr4-dD-H5O" id="MCi-Vt-bIa"/>
+                        <outlet property="nameTextField" destination="ydQ-a6-Njk" id="0Dy-RZ-OxE"/>
+                        <outlet property="snoozeSwitch" destination="TKW-GW-lXz" id="rAA-R8-vxO"/>
+                        <outlet property="soundLabel" destination="ZqV-Mi-yNM" id="glR-4a-MJC"/>
+                        <outlet property="timePicker" destination="ueR-k1-Yn8" id="asb-LL-lgn"/>
                     </connections>
                 </tableViewController>
             </objects>
@@ -272,11 +272,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </scene>
     </scenes>
     <classes>
-        <class className="WMAlarmAddViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WMAlarmAddViewController.h"/>
+        <class className="WMAlarmDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WMAlarmDetailViewController.h"/>
             <relationships>
-                <relationship kind="action" name="cancelAlarmAddition:"/>
-                <relationship kind="action" name="saveNewAlarm:"/>
+                <relationship kind="action" name="cancelAlarm:"/>
+                <relationship kind="action" name="saveAlarm:"/>
                 <relationship kind="outlet" name="alarmChallengeCell" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="alarmNameCell" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="alarmSnoozeCell" candidateClass="UITableViewCell"/>

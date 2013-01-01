@@ -10,7 +10,7 @@
 
 #import "WakeMeAppDelegate.h"
 #import "WMAlarm.h"
-
+#import "WMAlarmDetailViewController.h"
 
 @interface WMAlarmsListViewController ()
 
@@ -192,6 +192,17 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+  
+  if (self.editing) {
+    UIStoryboard *alarmDetailStoryboard = [UIStoryboard storyboardWithName:@"WMAlarmDetailStoryboard_iPhone"
+                                                                    bundle:nil];
+    UINavigationController *alarmDetailNavigationController = (UINavigationController *) [alarmDetailStoryboard instantiateInitialViewController];
+    WMAlarmDetailViewController *alarmDetailViewController = (WMAlarmDetailViewController *) alarmDetailNavigationController.topViewController;
+    // Set the alarm
+    alarmDetailViewController.alarm = [_alarms objectAtIndex:indexPath.row];
+    alarmDetailNavigationController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentModalViewController:alarmDetailNavigationController animated:YES];
+  }
 }
 
 
@@ -201,11 +212,11 @@
  * Show new alarm page
  */
 - (IBAction)showAlarmCreationView:(id)sender {
-  UIStoryboard *alarmDetailStoryboard = [UIStoryboard  storyboardWithName:@"WMAlarmDetailStoryboard_iPhone" 
+  UIStoryboard *alarmDetailStoryboard = [UIStoryboard storyboardWithName:@"WMAlarmDetailStoryboard_iPhone" 
                                                                    bundle:nil];
-  UIViewController *alarmDetailViewController = [alarmDetailStoryboard instantiateInitialViewController];
-  alarmDetailViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-  [self presentModalViewController:alarmDetailViewController animated:YES];
+  UIViewController *alarmDetailNavigationController = [alarmDetailStoryboard instantiateInitialViewController];
+  alarmDetailNavigationController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+  [self presentModalViewController:alarmDetailNavigationController animated:YES];
 }
 
 #pragma mark - Private methods
