@@ -159,6 +159,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E77109301692B1D200022F8A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		E7A5511915DB83010014BC0D /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +268,7 @@
 		E7F54D01159A0A2200380EA5 /* WakeMe */ = {
 			isa = PBXGroup;
 			children = (
+				E77109301692B1D200022F8A /* Views */,
 				E7A5511915DB83010014BC0D /* Models */,
 				E7F54D0A159A0A2200380EA5 /* WakeMeAppDelegate.h */,
 				E7F54D0B159A0A2200380EA5 /* WakeMeAppDelegate.m */,
