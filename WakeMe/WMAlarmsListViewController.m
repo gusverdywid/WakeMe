@@ -10,7 +10,7 @@
 
 #import "WakeMeAppDelegate.h"
 #import "WMAlarm.h"
-
+#import "WMAlarmDetailViewController.h"
 
 @interface WMAlarmsListViewController ()
 
@@ -109,7 +109,8 @@
   nameLabel.text = alarm.name;
   // Set alarm switch
   UISwitch *activeSwitch = (UISwitch *) [cell viewWithTag:3];
-  activeSwitch.on = [alarm.active boolValue];    
+  activeSwitch.on = [alarm.active boolValue];  
+  activeSwitch.tag = indexPath.row;
   if (self.editing)
     activeSwitch.hidden = YES;
   else
@@ -192,8 +193,56 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+  
+  if (self.editing) {
+    UIStoryboard *alarmDetailStoryboard = [UIStoryboard storyboardWithName:@"WMAlarmDetailStoryboard_iPhone"
+                                                                    bundle:nil];
+    UINavigationController *alarmDetailNavigationController = (UINavigationController *) [alarmDetailStoryboard instantiateInitialViewController];
+    WMAlarmDetailViewController *alarmDetailViewController = (WMAlarmDetailViewController *) alarmDetailNavigationController.topViewController;
+    // Set the alarm
+    alarmDetailViewController.alarm = [_alarms objectAtIndex:indexPath.row];
+    alarmDetailNavigationController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentModalViewController:alarmDetailNavigationController animated:YES];
+  }
 }
 
+
+#pragma mark - IBAction
+
+/**
+ * Show new alarm page
+ */
+- (IBAction)showAlarmCreationView:(id)sender {
+  UIStoryboard *alarmDetailStoryboard = [UIStoryboard storyboardWithName:@"WMAlarmDetailStoryboard_iPhone" 
+                                                                   bundle:nil];
+  UIViewController *alarmDetailNavigationController = [alarmDetailStoryboard instantiateInitialViewController];
+  alarmDetailNavigationController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+  [self presentModalViewController:alarmDetailNavigationController animated:YES];
+}
+
+/**
+ * Used to handle alarm activation/disactivation
+ */
+- (IBAction)switchAlarmStatus:(id)sender {
+  UISwitch *activeSwitch = (UISwitch *)sender;
+  WMAlarm *alarm = (WMAlarm *)[_alarms objectAtIndex:activeSwitch.tag];
+  alarm.active = [NSNumber numberWithBool:activeSwitch.on];
+  
+  WakeMeAppDelegate *app = [[UIApplication sharedApplication] delegate];
+  NSManagedObjectContext *context = app.managedObjectContext;
+  NSError *error;
+  if (![context save:&error]) {
+    NSLog(@"Could not save the alarm: %@", [error localizedDescription]);
+    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Core Data Error" 
+                                                         message:@"Could not save the alarm. Please try again" 
+                                                        delegate:nil 
+                                               cancelButtonTitle:@"OK" 
+                                               otherButtonTitles:nil];
+    [errorAlert show];
+  } else {
+    [self dismissViewControllerAnimated:YES completion:nil];
+  }
+}
 
 #pragma mark - Private methods
 

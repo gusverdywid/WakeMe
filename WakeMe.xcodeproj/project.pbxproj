@@ -13,11 +13,12 @@
 		E70332A815C6C6360039DEB2 /* WMAlarmsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E70332A615C6C6360039DEB2 /* WMAlarmsListViewController.m */; };
 		E70332A915C6C6360039DEB2 /* WMAlarmsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E70332A615C6C6360039DEB2 /* WMAlarmsListViewController.m */; };
 		E737457315FEE889002C52EB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E737457215FEE889002C52EB /* AVFoundation.framework */; };
-		E73998DD15CB82D900123C5D /* WMAlarmAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E73998DC15CB82D900123C5D /* WMAlarmAddViewController.m */; };
 		E74774D6167747E0006E0C02 /* Silent.caf in Resources */ = {isa = PBXBuildFile; fileRef = E74774D5167747E0006E0C02 /* Silent.caf */; };
 		E748DFD615FDC9DE00E06680 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E748DFD515FDC9DE00E06680 /* AudioToolbox.framework */; };
 		E766EAA015FEDD2700DA28BC /* Alarm2.caf in Resources */ = {isa = PBXBuildFile; fileRef = E766EA9F15FEDD2700DA28BC /* Alarm2.caf */; };
 		E77052CC15C1796300AE7B20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D07159A0A2200380EA5 /* main.m */; };
+		E77109331692B29200022F8A /* WMAlarmDetailStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77109321692B29200022F8A /* WMAlarmDetailStoryboard_iPhone.storyboard */; };
+		E77109361692D58C00022F8A /* WMAlarmDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77109351692D58C00022F8A /* WMAlarmDetailViewController.m */; };
 		E77C3CC5159E8B02000B9B3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D07159A0A2200380EA5 /* main.m */; };
 		E77C3CC6159E8B02000B9B3A /* WakeMeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F54D0B159A0A2200380EA5 /* WakeMeAppDelegate.m */; };
 		E77C3CCA159E8B02000B9B3A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F54CFB159A0A2200380EA5 /* UIKit.framework */; };
@@ -73,11 +74,12 @@
 		E70332A515C6C6360039DEB2 /* WMAlarmsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMAlarmsListViewController.h; sourceTree = "<group>"; };
 		E70332A615C6C6360039DEB2 /* WMAlarmsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAlarmsListViewController.m; sourceTree = "<group>"; };
 		E737457215FEE889002C52EB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		E73998DB15CB82D900123C5D /* WMAlarmAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMAlarmAddViewController.h; sourceTree = "<group>"; };
-		E73998DC15CB82D900123C5D /* WMAlarmAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAlarmAddViewController.m; sourceTree = "<group>"; };
 		E74774D5167747E0006E0C02 /* Silent.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Silent.caf; sourceTree = "<group>"; };
 		E748DFD515FDC9DE00E06680 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E766EA9F15FEDD2700DA28BC /* Alarm2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Alarm2.caf; sourceTree = "<group>"; };
+		E77109321692B29200022F8A /* WMAlarmDetailStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WMAlarmDetailStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		E77109341692D58C00022F8A /* WMAlarmDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMAlarmDetailViewController.h; sourceTree = "<group>"; };
+		E77109351692D58C00022F8A /* WMAlarmDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAlarmDetailViewController.m; sourceTree = "<group>"; };
 		E77C3CD8159E8B02000B9B3A /* WakeMeFrankified.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WakeMeFrankified.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E77C3CDA159E8B03000B9B3A /* WakeMeFrankified-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WakeMeFrankified-Info.plist"; path = "/Users/verdywid/Dropbox/Projects/WakeMe/WakeMeFrankified-Info.plist"; sourceTree = "<absolute>"; };
 		E7A0705515C2CECA00F4D91A /* WakeMeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WakeMeModel.xcdatamodel; sourceTree = "<group>"; };
@@ -159,6 +161,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E77109301692B1D200022F8A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E77109321692B29200022F8A /* WMAlarmDetailStoryboard_iPhone.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		E7A5511915DB83010014BC0D /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +271,7 @@
 		E7F54D01159A0A2200380EA5 /* WakeMe */ = {
 			isa = PBXGroup;
 			children = (
+				E77109301692B1D200022F8A /* Views */,
 				E7A5511915DB83010014BC0D /* Models */,
 				E7F54D0A159A0A2200380EA5 /* WakeMeAppDelegate.h */,
 				E7F54D0B159A0A2200380EA5 /* WakeMeAppDelegate.m */,
@@ -269,12 +280,12 @@
 				E7F54D02159A0A2200380EA5 /* Supporting Files */,
 				E70332A515C6C6360039DEB2 /* WMAlarmsListViewController.h */,
 				E70332A615C6C6360039DEB2 /* WMAlarmsListViewController.m */,
-				E73998DB15CB82D900123C5D /* WMAlarmAddViewController.h */,
-				E73998DC15CB82D900123C5D /* WMAlarmAddViewController.m */,
 				E702666615CFBA4D00E1A887 /* WMChallengesListViewController.h */,
 				E702666715CFBA4D00E1A887 /* WMChallengesListViewController.m */,
 				E702666A15D0E81B00E1A887 /* WMSoundsListViewController.h */,
 				E702666B15D0E81B00E1A887 /* WMSoundsListViewController.m */,
+				E77109341692D58C00022F8A /* WMAlarmDetailViewController.h */,
+				E77109351692D58C00022F8A /* WMAlarmDetailViewController.m */,
 			);
 			path = WakeMe;
 			sourceTree = "<group>";
@@ -422,6 +433,7 @@
 				E7C289861600B26500C93F9C /* Alarm1.caf in Resources */,
 				E74774D6167747E0006E0C02 /* Silent.caf in Resources */,
 				E7D15F95168392FE00F81419 /* ChallengesList.plist in Resources */,
+				E77109331692B29200022F8A /* WMAlarmDetailStoryboard_iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,11 +496,11 @@
 				E7F54D0C159A0A2200380EA5 /* WakeMeAppDelegate.m in Sources */,
 				E7A0705615C2CECA00F4D91A /* WakeMeModel.xcdatamodeld in Sources */,
 				E70332A715C6C6360039DEB2 /* WMAlarmsListViewController.m in Sources */,
-				E73998DD15CB82D900123C5D /* WMAlarmAddViewController.m in Sources */,
 				E702666815CFBA4D00E1A887 /* WMChallengesListViewController.m in Sources */,
 				E702666C15D0E81B00E1A887 /* WMSoundsListViewController.m in Sources */,
 				E7A5511D15DB845B0014BC0D /* WMAlarm+Helper.m in Sources */,
 				E7EB134C1689F8B200A5B8D3 /* WMAlarm.m in Sources */,
+				E77109361692D58C00022F8A /* WMAlarmDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

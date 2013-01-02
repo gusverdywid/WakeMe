@@ -26,12 +26,12 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mfe-Sq-D6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="8Dp-LY-VKz" customClass="WMAlarmsListViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="47" sectionHeaderHeight="22" sectionFooterHeight="22" id="0tv-Co-mEb">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" allowsSelectionDuringEditing="YES" rowHeight="47" sectionHeaderHeight="22" sectionFooterHeight="22" id="0tv-Co-mEb">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AlarmTableCell" rowHeight="47" id="OCT-YG-EJm">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AlarmTableCell" editingAccessoryType="disclosureIndicator" rowHeight="47" id="OCT-YG-EJm">
                                 <rect key="frame" x="0.0" y="22" width="320" height="47"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -56,6 +56,9 @@
                                         <switch opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="j5X-XI-HEM">
                                             <rect key="frame" x="221" y="9" width="79" height="27"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="switchAlarmStatus:" destination="8Dp-LY-VKz" eventType="valueChanged" id="mC2-0e-C0H"/>
+                                            </connections>
                                         </switch>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -70,7 +73,7 @@
                     <navigationItem key="navigationItem" title="Alarms" id="9G6-dl-oiJ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="rnw-cI-2IA">
                             <connections>
-                                <segue destination="AGv-ad-bvY" kind="modal" id="Hhe-3P-WK6"/>
+                                <action selector="showAlarmCreationView:" destination="8Dp-LY-VKz" id="NiG-vp-uWN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -78,301 +81,13 @@
             </objects>
             <point key="canvasLocation" x="647" y="-60"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="f8l-qb-617">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="t2x-kl-fC0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController definesPresentationContext="YES" id="AGv-ad-bvY" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="0z1-rk-kOv">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="r2J-Hq-KD4" kind="relationship" relationship="rootViewController" id="w5c-DE-hua"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="1086" y="-60"/>
-        </scene>
-        <!--Alarm Add View Controller - New Alarm-->
-        <scene sceneID="ACB-Wn-ZxN">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Y97-U1-Occ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="r2J-Hq-KD4" customClass="WMAlarmAddViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="L9N-Lr-Dat">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <datePicker key="tableFooterView" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" id="kjy-nN-eA6">
-                            <rect key="frame" x="0.0" y="256" width="320" height="216"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <date key="date" timeIntervalSinceReferenceDate="365508573.41944098">
-                                <!--2012-08-01 10:09:33 +0000-->
-                            </date>
-                            <locale key="locale" localeIdentifier="en_US"/>
-                            <timeZone key="timeZone" name="America/Los_Angeles">
-                                <data key="data">
-VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
-y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
-5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
-8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
-AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
-DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
-HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
-KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
-OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
-Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
-VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
-Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
-cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
-f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
-AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
-AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
-AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
-</data>
-                            </timeZone>
-                        </datePicker>
-                        <sections>
-                            <tableViewSection headerTitle="Name" id="3ku-G1-ODg">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddAlarmCell" id="rT2-Dt-G6N">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="Q33-u6-RYH">
-                                                    <rect key="frame" x="20" y="6" width="260" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
-                                                </textField>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="63b-cc-CS8">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddAlarmCell" id="mPB-Rx-9NI">
-                                        <rect key="frame" x="0.0" y="112" width="320" height="45"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Snooze" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="4BZ-JC-lxj">
-                                                    <rect key="frame" x="20" y="11" width="58" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="55Z-lD-QQb">
-                                                    <rect key="frame" x="201" y="8" width="79" height="27"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </switch>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddAlarmCell" id="HxQ-3o-y9t">
-                                        <rect key="frame" x="0.0" y="157" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Challenge" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="bo4-kw-flY">
-                                                    <rect key="frame" x="20" y="11" width="77" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" enabled="NO" id="OUm-nU-lfO">
-                                                    <rect key="frame" x="147" y="11" width="113" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <connections>
-                                            <segue destination="VYI-UX-CbV" kind="push" identifier="selectChallenge" id="iNO-5W-GRb"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddAlarmCell" id="Mba-0g-R3O">
-                                        <rect key="frame" x="0.0" y="201" width="320" height="45"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sound" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="t4A-rL-aMc">
-                                                    <rect key="frame" x="20" y="11" width="50" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" enabled="NO" id="pUG-t7-xLL">
-                                                    <rect key="frame" x="147" y="11" width="113" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <connections>
-                                            <segue destination="dpf-O7-AZ4" kind="push" identifier="selectSound" id="hQf-6P-pkp"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="r2J-Hq-KD4" id="x6O-N6-fNL"/>
-                            <outlet property="delegate" destination="r2J-Hq-KD4" id="FcF-jT-Yr8"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="New Alarm" id="sz0-dt-Zgm">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="UaN-nO-1Ca">
-                            <connections>
-                                <action selector="cancelAlarmAddition:" destination="r2J-Hq-KD4" id="1ta-th-3qt"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="CCP-mh-8FG">
-                            <connections>
-                                <action selector="saveNewAlarm:" destination="r2J-Hq-KD4" id="7Qa-JG-NBY"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="alarmChallengeCell" destination="HxQ-3o-y9t" id="EWk-23-eon"/>
-                        <outlet property="alarmNameCell" destination="rT2-Dt-G6N" id="ZiP-54-rvn"/>
-                        <outlet property="alarmSnoozeCell" destination="mPB-Rx-9NI" id="7n4-Xp-OkK"/>
-                        <outlet property="alarmSoundCell" destination="Mba-0g-R3O" id="Hd3-2u-knA"/>
-                        <outlet property="challengeLabel" destination="OUm-nU-lfO" id="DYm-Xb-N5K"/>
-                        <outlet property="nameTextField" destination="Q33-u6-RYH" id="eyq-LH-7RJ"/>
-                        <outlet property="snoozeSwitch" destination="55Z-lD-QQb" id="Y9u-4e-FHm"/>
-                        <outlet property="soundLabel" destination="pUG-t7-xLL" id="A1e-dg-jXo"/>
-                        <outlet property="timePicker" destination="kjy-nN-eA6" id="Ktk-Yf-Xv3"/>
-                    </connections>
-                </tableViewController>
-            </objects>
-            <point key="canvasLocation" x="1566" y="-60"/>
-        </scene>
-        <!--Challenges List View Controller - Challenges-->
-        <scene sceneID="GVW-vC-p8E">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="X04-bb-SpN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="VYI-UX-CbV" customClass="WMChallengesListViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="VWF-4f-D2l">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ChallengesListCell" id="dfc-hZ-eP7">
-                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                        <sections/>
-                        <connections>
-                            <outlet property="dataSource" destination="VYI-UX-CbV" id="8s5-ZW-yxM"/>
-                            <outlet property="delegate" destination="VYI-UX-CbV" id="lgE-Jn-KLb"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Challenges" id="LSb-GW-MW6">
-                        <barButtonItem key="backBarButtonItem" title="Cancel" id="ZmB-G1-9Mq"/>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="JsB-1r-jqe">
-                            <connections>
-                                <action selector="finishSelectingChallenge:" destination="VYI-UX-CbV" id="c8S-fp-Swq"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-            </objects>
-            <point key="canvasLocation" x="2110" y="-380"/>
-        </scene>
-        <!--Sounds List View Controller - Sounds-->
-        <scene sceneID="iCF-Rr-EAZ">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z8B-VZ-dpK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="dpf-O7-AZ4" customClass="WMSoundsListViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="cRj-Wc-OxY">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SoundsListCell" id="gD4-Ka-U46">
-                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="dpf-O7-AZ4" id="wPl-Ac-ty2"/>
-                            <outlet property="delegate" destination="dpf-O7-AZ4" id="kyh-UR-rp5"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Sounds" id="hU4-vs-nJy">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Vyb-AU-LN3">
-                            <connections>
-                                <action selector="doneSelectSound:" destination="dpf-O7-AZ4" id="Wlg-4h-dVI"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-            </objects>
-            <point key="canvasLocation" x="2110" y="202"/>
-        </scene>
     </scenes>
     <classes>
-        <class className="WMAlarmAddViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WMAlarmAddViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelAlarmAddition:"/>
-                <relationship kind="action" name="saveNewAlarm:"/>
-                <relationship kind="outlet" name="alarmChallengeCell" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="alarmNameCell" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="alarmSnoozeCell" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="alarmSoundCell" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="challengeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="snoozeSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="soundLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timePicker" candidateClass="UIDatePicker"/>
-            </relationships>
-        </class>
         <class className="WMAlarmsListViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WMAlarmsListViewController.h"/>
-        </class>
-        <class className="WMChallengesListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WMChallengesListViewController.h"/>
             <relationships>
-                <relationship kind="action" name="finishSelectingChallenge:"/>
-            </relationships>
-        </class>
-        <class className="WMSoundsListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WMSoundsListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneSelectSound:"/>
+                <relationship kind="action" name="showAlarmCreationView:"/>
+                <relationship kind="action" name="switchAlarmStatus:"/>
             </relationships>
         </class>
     </classes>
