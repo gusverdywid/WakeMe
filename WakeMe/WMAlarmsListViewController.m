@@ -220,6 +220,30 @@
   [self presentModalViewController:alarmDetailNavigationController animated:YES];
 }
 
+/**
+ * Used to handle alarm activation/disactivation
+ */
+- (IBAction)switchAlarmStatus:(id)sender {
+  UISwitch *activeSwitch = (UISwitch *)sender;
+  WMAlarm *alarm = (WMAlarm *)[_alarms objectAtIndex:activeSwitch.tag];
+  alarm.active = [NSNumber numberWithBool:activeSwitch.on];
+  
+  WakeMeAppDelegate *app = [[UIApplication sharedApplication] delegate];
+  NSManagedObjectContext *context = app.managedObjectContext;
+  NSError *error;
+  if (![context save:&error]) {
+    NSLog(@"Could not save the alarm: %@", [error localizedDescription]);
+    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Core Data Error" 
+                                                         message:@"Could not save the alarm. Please try again" 
+                                                        delegate:nil 
+                                               cancelButtonTitle:@"OK" 
+                                               otherButtonTitles:nil];
+    [errorAlert show];
+  } else {
+    [self dismissViewControllerAnimated:YES completion:nil];
+  }
+}
+
 #pragma mark - Private methods
 
 - (void)reloadAlarms {

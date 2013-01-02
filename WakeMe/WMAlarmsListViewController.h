@@ -15,5 +15,6 @@
 @property (nonatomic, retain) NSArray *alarms;
 
 - (IBAction)showAlarmCreationView:(id)sender;
+- (IBAction)switchAlarmStatus:(id)sender;
 
 @end
