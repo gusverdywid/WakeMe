@@ -109,7 +109,8 @@
   nameLabel.text = alarm.name;
   // Set alarm switch
   UISwitch *activeSwitch = (UISwitch *) [cell viewWithTag:3];
-  activeSwitch.on = [alarm.active boolValue];    
+  activeSwitch.on = [alarm.active boolValue];  
+  activeSwitch.tag = indexPath.row;
   if (self.editing)
     activeSwitch.hidden = YES;
   else
