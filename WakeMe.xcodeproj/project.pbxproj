@@ -164,6 +164,8 @@
 		E77109301692B1D200022F8A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E7F54D0D159A0A2200380EA5 /* MainStoryboard_iPhone.storyboard */,
+				E7F54D10159A0A2200380EA5 /* MainStoryboard_iPad.storyboard */,
 				E77109321692B29200022F8A /* WMAlarmDetailStoryboard_iPhone.storyboard */,
 			);
 			name = Views;
@@ -275,8 +277,6 @@
 				E7A5511915DB83010014BC0D /* Models */,
 				E7F54D0A159A0A2200380EA5 /* WakeMeAppDelegate.h */,
 				E7F54D0B159A0A2200380EA5 /* WakeMeAppDelegate.m */,
-				E7F54D0D159A0A2200380EA5 /* MainStoryboard_iPhone.storyboard */,
-				E7F54D10159A0A2200380EA5 /* MainStoryboard_iPad.storyboard */,
 				E7F54D02159A0A2200380EA5 /* Supporting Files */,
 				E70332A515C6C6360039DEB2 /* WMAlarmsListViewController.h */,
 				E70332A615C6C6360039DEB2 /* WMAlarmsListViewController.m */,
