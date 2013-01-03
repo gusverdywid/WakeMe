@@ -164,6 +164,14 @@
 		E73EF89816955C7600461733 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E70332A515C6C6360039DEB2 /* WMAlarmsListViewController.h */,
+				E70332A615C6C6360039DEB2 /* WMAlarmsListViewController.m */,
+				E702666615CFBA4D00E1A887 /* WMChallengesListViewController.h */,
+				E702666715CFBA4D00E1A887 /* WMChallengesListViewController.m */,
+				E702666A15D0E81B00E1A887 /* WMSoundsListViewController.h */,
+				E702666B15D0E81B00E1A887 /* WMSoundsListViewController.m */,
+				E77109341692D58C00022F8A /* WMAlarmDetailViewController.h */,
+				E77109351692D58C00022F8A /* WMAlarmDetailViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -286,14 +294,6 @@
 				E7F54D0A159A0A2200380EA5 /* WakeMeAppDelegate.h */,
 				E7F54D0B159A0A2200380EA5 /* WakeMeAppDelegate.m */,
 				E7F54D02159A0A2200380EA5 /* Supporting Files */,
-				E70332A515C6C6360039DEB2 /* WMAlarmsListViewController.h */,
-				E70332A615C6C6360039DEB2 /* WMAlarmsListViewController.m */,
-				E702666615CFBA4D00E1A887 /* WMChallengesListViewController.h */,
-				E702666715CFBA4D00E1A887 /* WMChallengesListViewController.m */,
-				E702666A15D0E81B00E1A887 /* WMSoundsListViewController.h */,
-				E702666B15D0E81B00E1A887 /* WMSoundsListViewController.m */,
-				E77109341692D58C00022F8A /* WMAlarmDetailViewController.h */,
-				E77109351692D58C00022F8A /* WMAlarmDetailViewController.m */,
 			);
 			path = WakeMe;
 			sourceTree = "<group>";
