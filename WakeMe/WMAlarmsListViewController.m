@@ -109,8 +109,7 @@
   nameLabel.text = alarm.name;
   // Set alarm switch
   UISwitch *activeSwitch = (UISwitch *) [cell viewWithTag:3];
-  activeSwitch.on = [alarm.active boolValue];  
-  activeSwitch.tag = indexPath.row;
+  activeSwitch.on = [alarm.active boolValue];
   if (self.editing)
     activeSwitch.hidden = YES;
   else
@@ -121,7 +120,8 @@
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
   [super setEditing:editing animated:animated];
-  [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+  [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] 
+                withRowAnimation:UITableViewRowAnimationFade];
 }
 
 /*
@@ -225,7 +225,9 @@
  */
 - (IBAction)switchAlarmStatus:(id)sender {
   UISwitch *activeSwitch = (UISwitch *)sender;
-  WMAlarm *alarm = (WMAlarm *)[_alarms objectAtIndex:activeSwitch.tag];
+  UITableViewCell *alarmCell = (UITableViewCell *)activeSwitch.superview;
+  NSIndexPath *alarmIndex = [self.tableView indexPathForCell:alarmCell];
+  WMAlarm *alarm = (WMAlarm *)[_alarms objectAtIndex:alarmIndex.row];
   alarm.active = [NSNumber numberWithBool:activeSwitch.on];
   
   WakeMeAppDelegate *app = [[UIApplication sharedApplication] delegate];
