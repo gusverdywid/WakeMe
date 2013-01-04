@@ -264,6 +264,13 @@
                                                otherButtonTitles:nil];
     [errorAlert show];
   } else {
+    WakeMeAppDelegate *app = [[UIApplication sharedApplication] delegate];
+    NSString *alarmID = [[_alarm.objectID URIRepresentation] absoluteString];
+    // Delete notification if any
+    [app deleteNotificationOfAlarm:alarmID];
+    // Create notification for the alarm
+    [app createNotificationForAlarm:_alarm];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
   }
 }
