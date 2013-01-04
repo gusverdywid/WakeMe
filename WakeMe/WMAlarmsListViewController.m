@@ -230,7 +230,16 @@
   WMAlarm *alarm = (WMAlarm *)[_alarms objectAtIndex:alarmIndex.row];
   alarm.active = [NSNumber numberWithBool:activeSwitch.on];
   
+  
   WakeMeAppDelegate *app = [[UIApplication sharedApplication] delegate];
+  
+  if ([alarm.active boolValue]) {
+    [app createNotificationForAlarm:alarm];
+  } else {
+    NSString *alarmID = [[alarm.objectID URIRepresentation] absoluteString];
+    [app deleteNotificationOfAlarm:alarmID];    
+  }
+  
   NSManagedObjectContext *context = app.managedObjectContext;
   NSError *error;
   if (![context save:&error]) {
