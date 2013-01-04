@@ -241,21 +241,18 @@
   /**
    * Set alarm entity and save it into core data
    */
-  // If alarm is not null then it is editing existing alarm else creating new alarm
+  // If alarm is null then it is creating a new alarm else editing existing alarm
+  if (_alarm == nil) {
+    _alarm = [NSEntityDescription insertNewObjectForEntityForName:@"Alarm" 
+                                           inManagedObjectContext:context];
+  }
+  // If alarm is not null then it has been successfully created above
   if (_alarm != nil) {
     _alarm.name = _nameTextField.text;
     _alarm.snoozable = [NSNumber numberWithBool:_snoozeSwitch.on];
     _alarm.challenge = _challengeLabel.text;
     _alarm.sound = _soundLabel.text;
     _alarm.time = _timePicker.date;
-  } else {
-    WMAlarm *newAlarm = [NSEntityDescription insertNewObjectForEntityForName:@"Alarm" 
-                                                      inManagedObjectContext:context];
-    newAlarm.name = _nameTextField.text;
-    newAlarm.snoozable = [NSNumber numberWithBool:_snoozeSwitch.on];
-    newAlarm.challenge = _challengeLabel.text;
-    newAlarm.sound = _soundLabel.text;
-    newAlarm.time = _timePicker.date;
   }
   NSError *error;
   if (![context save:&error]) {
