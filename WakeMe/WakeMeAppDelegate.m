@@ -8,6 +8,8 @@
 
 #import "WakeMeAppDelegate.h"
 
+#import "WMSoundsListViewController.h"
+
 @implementation WakeMeAppDelegate
 
 @synthesize window = _window;
