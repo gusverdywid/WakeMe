@@ -20,4 +20,6 @@
 - (NSURL *)applicationDocumentsDirectory;
 
 - (void)createNotificationForAlarm:(WMAlarm *)alarm;
+- (void)deleteNotificationOfAlarm:(NSString *)alarmID;
+
 @end

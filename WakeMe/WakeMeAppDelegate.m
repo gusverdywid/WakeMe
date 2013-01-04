@@ -167,4 +167,18 @@
   [[UIApplication sharedApplication] scheduleLocalNotification:alarmNotification];
 }
 
+/**
+ * Delete local notification
+ */
+- (void)deleteNotificationOfAlarm:(NSString *)alarmID {
+  NSArray *registeredNotifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
+  for (UILocalNotification *localNotification in registeredNotifications) {
+    NSString *notificationID = [localNotification.userInfo objectForKey:@"ID"];
+    if ([notificationID isEqual:alarmID]) {
+      [[UIApplication sharedApplication] cancelLocalNotification:localNotification];
+      break;
+    }
+  }
+}
+
 @end
