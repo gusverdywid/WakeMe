@@ -150,5 +150,21 @@
 
 #pragma mark - Alarm notification
 
+/**
+ * Create and register local notification
+ */
+- (void)createNotificationForAlarm:(WMAlarm *)alarm {
+  UILocalNotification *alarmNotification = [[UILocalNotification alloc] init];
+  alarmNotification.fireDate = alarm.time;
+  alarmNotification.repeatInterval = NSDayCalendarUnit;
+  alarmNotification.soundName = [NSString stringWithFormat:@"%@%@", alarm.sound, AUDIO_TYPE];
+  alarmNotification.timeZone = [NSTimeZone defaultTimeZone];
+  alarmNotification.alertBody = alarm.name;
+  alarmNotification.alertAction = @"View";
+  NSString *alarmId = [[alarm.objectID URIRepresentation] absoluteString];
+  alarmNotification.userInfo = [NSDictionary dictionaryWithObject:alarmId
+                                                           forKey:@"ID"];
+  [[UIApplication sharedApplication] scheduleLocalNotification:alarmNotification];
+}
 
 @end

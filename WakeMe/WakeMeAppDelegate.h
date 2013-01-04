@@ -19,4 +19,5 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
+- (void)createNotificationForAlarm:(WMAlarm *)alarm;
 @end
