@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AVFoundation/AVFoundation.h>
 
 #import "WMAlarm.h"
 #import "WMSoundsListViewController.h"
@@ -29,8 +28,6 @@
   
   NSString *_selectedChallenge;
   NSString *_selectedSound;
-  
-  AVAudioPlayer *_audioPlayer;
 }
 
 @property (nonatomic, strong) WMAlarm *alarm;

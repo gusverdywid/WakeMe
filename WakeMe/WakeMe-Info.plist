@@ -49,5 +49,7 @@
 	<array>
 		<string>audio</string>
 	</array>
+	<key>UIApplicationExitsOnSuspend</key>
+	<false/>
 </dict>
 </plist>

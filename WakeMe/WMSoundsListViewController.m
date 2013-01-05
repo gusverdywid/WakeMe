@@ -9,6 +9,8 @@
 #import "WMSoundsListViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
+#import "WakeMeAppDelegate.h"
+
 @interface WMSoundsListViewController ()
 
 @end
@@ -43,12 +45,13 @@
   NSString *bundleRoot = [[NSBundle mainBundle] bundlePath];
   NSFileManager *fm = [NSFileManager defaultManager];
   NSArray *filenames = [fm contentsOfDirectoryAtPath:bundleRoot error:nil];
-  NSPredicate *filter = [NSPredicate predicateWithFormat:@"SELF ENDSWITH %@", AUDIO_TYPE];
+  NSString *fileExt = [NSString stringWithFormat:@".%@", AUDIO_TYPE];
+  NSPredicate *filter = [NSPredicate predicateWithFormat:@"SELF ENDSWITH %@", fileExt];
   NSArray *filteredFilenames = [filenames filteredArrayUsingPredicate:filter];
   NSMutableArray *formattedFilenames = [[NSMutableArray alloc] init];
   for (NSString *filteredFilename in filteredFilenames) {
     [formattedFilenames addObject:
-     [filteredFilename substringToIndex:[filteredFilename length]-[AUDIO_TYPE length]]
+     [filteredFilename substringToIndex:[filteredFilename length]-[fileExt length]]
      ];
   }
   _soundNames = [NSArray arrayWithArray:formattedFilenames];
@@ -78,7 +81,12 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-  [_soundSelectionDelegate soundSelectionStopSound];
+  /**
+   * Stop the sound before switching view
+   */
+  WakeMeAppDelegate *app = [[UIApplication sharedApplication] delegate];
+  [app stopAudioPlayer];
+  
   [super viewWillDisappear:animated];
 }
 
@@ -166,9 +174,10 @@
     // Getting the name of the selected sound
     NSString *selectedSound = [_soundNames objectAtIndex:_selRow];
     NSString *audioPath = [[NSBundle mainBundle] pathForResource:selectedSound 
-                                                          ofType:@"caf"];
+                                                          ofType:AUDIO_TYPE];
     // Tell the delegate to play the sound
-    [_soundSelectionDelegate soundSelectionPlaySound:audioPath];
+    WakeMeAppDelegate *app = [[UIApplication sharedApplication] delegate];
+    [app playSoundWithAudioPath:audioPath numberOfLoops:4];
   }
 }
 

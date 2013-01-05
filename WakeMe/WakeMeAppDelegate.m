@@ -20,6 +20,23 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+  
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){    
+    // HACK (to deal with initialization delay):
+    // Initial setup of audio player
+    // Pass the Silent.caf (blank audio file) just to help the with the
+    // setup (acts as dummy)
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [[AVAudioSession sharedInstance] setActive:YES error:nil];
+    NSString *audioPath = [[NSBundle mainBundle] pathForResource:@"Silent" 
+                                                          ofType:AUDIO_TYPE];
+    // Play and stop the player straight away
+    if ([self playSoundWithAudioPath:audioPath numberOfLoops:1]) {
+      [_audioPlayer stop];
+    }
+  });
+  
     return YES;
 }
 							
@@ -145,6 +162,45 @@
 - (NSURL *)applicationDocumentsDirectory
 {
   return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+
+#pragma mark - Audio player management
+
+/**
+ * Setup audio player and play the sound in the specified path as many as the
+ * number of loops
+ * This method will return boolean value YES if the audio is successfully played
+ * and NO otherwise
+ */
+- (BOOL)playSoundWithAudioPath:(NSString *)audioPath numberOfLoops:(NSInteger)loops {
+  if (_audioPlayer != nil && _audioPlayer.playing) {
+    [_audioPlayer stop];
+  }
+  
+  NSError *playbackError;
+  
+  NSURL *audioUrl = [NSURL fileURLWithPath:audioPath];
+  _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioUrl
+                                                        error:&playbackError];
+  
+  BOOL success = NO;
+  if (_audioPlayer != nil && !playbackError) {
+    [_audioPlayer prepareToPlay];
+    [_audioPlayer setNumberOfLoops:loops];
+    success = [_audioPlayer play];
+  } else {
+    NSLog(@"%@", playbackError);
+  }
+  return success;
+}
+
+/**
+ * Tell the audio player to stop playing currently played audio file
+ */
+- (void)stopAudioPlayer {
+  if (_audioPlayer != nil && _audioPlayer.playing)
+    [_audioPlayer stop];
 }
 
 

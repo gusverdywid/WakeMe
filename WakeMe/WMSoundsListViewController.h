@@ -9,15 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-#define AUDIO_TYPE @".caf"
 
 @class WMSoundsListViewController;
 
 @protocol WMSoundsListViewControllerDelegate <NSObject>
  @required
-  - (void)soundSelectionPlaySound:(NSString *)audioPath;
   - (void)soundSelectionSelectSound:(NSString *)selectedSound;
-  - (void)soundSelectionStopSound;
 @end
 
 
