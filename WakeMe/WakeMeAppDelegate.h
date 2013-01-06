@@ -31,7 +31,7 @@
 - (void)stopAudioPlayer;
 
 - (void)createNotificationForAlarm:(WMAlarm *)alarm;
-- (void)deleteNotificationOfAlarm:(NSString *)alarmID;
+- (void)deleteNotificationOfAlarm:(WMAlarm *)alarm;
 
 - (void)createTimerForAlarm:(WMAlarm *)alarm;
 - (void)deleteTimerOfAlarm:(WMAlarm *)alarm;

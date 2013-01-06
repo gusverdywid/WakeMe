@@ -240,9 +240,8 @@
     [errorAlert show];
   } else {
     WakeMeAppDelegate *app = [[UIApplication sharedApplication] delegate];
-    NSString *alarmID = [[_alarm.objectID URIRepresentation] absoluteString];
     // Delete notification if any
-    [app deleteNotificationOfAlarm:alarmID];
+    [app deleteNotificationOfAlarm:_alarm];
     // Create notification for the alarm
     [app createNotificationForAlarm:_alarm];
     // Delete timer if any

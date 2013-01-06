@@ -271,7 +271,8 @@
 /**
  * Delete local notification
  */
-- (void)deleteNotificationOfAlarm:(NSString *)alarmID {
+- (void)deleteNotificationOfAlarm:(WMAlarm *)alarm {
+  NSString *alarmID = [[alarm.objectID URIRepresentation] absoluteString];
   NSArray *registeredNotifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
   UILocalNotification *tempNotification = nil;
   for (UILocalNotification *localNotification in registeredNotifications) {
