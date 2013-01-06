@@ -206,6 +206,9 @@
 
 #pragma mark - Alarm notification
 
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+}
+
 /**
  * Create and register local notification
  */
