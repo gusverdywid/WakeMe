@@ -242,6 +242,21 @@
 
 #pragma mark - Timer
 
+/**
+ * Register an alarm with a timer that will execute
+ * an action for the alarm
+ */
+- (void)registerTimerForAlarm:(WMAlarm *)alarm {
+  NSTimer *newTimer = [[NSTimer alloc] initWithFireDate:alarm.time 
+                                               interval:1 
+                                                 target:self 
+                                               selector:@selector(executeAlarm:) 
+                                               userInfo:alarm 
+                                                repeats:NO];
+  [_timers addObject:newTimer];
+  [[NSRunLoop currentRunLoop] addTimer:newTimer forMode:NSRunLoopCommonModes];
+}
+
       break;
     }
   }
