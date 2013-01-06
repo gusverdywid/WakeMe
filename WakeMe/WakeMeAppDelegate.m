@@ -207,6 +207,46 @@
 #pragma mark - Alarm notification
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+  /**
+   * Getting the alarm associated with the notification
+   */
+  WMAlarm *theAlarm = nil;
+  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+  NSEntityDescription *entity = [NSEntityDescription entityForName:@"Alarm" 
+                                            inManagedObjectContext:self.managedObjectContext];
+  fetchRequest.entity = entity;
+  NSError *error;
+  NSArray *alarms = [self.managedObjectContext executeFetchRequest:fetchRequest 
+                                                             error:&error];
+  // Show alert box in case any error occured
+  if (error) {
+    NSLog(@"Could not load the alarms: %@", [error localizedDescription]);
+    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Core Data Error" 
+                                                         message:@"Could not load alarms." 
+                                                        delegate:nil 
+                                               cancelButtonTitle:@"OK" 
+                                               otherButtonTitles:nil];
+    [errorAlert show];
+  }
+  NSString *notificationID = [notification.userInfo objectForKey:@"ID"];
+  for (WMAlarm *alarm in alarms) {
+    NSString *alarmID = [[alarm.objectID URIRepresentation] absoluteString];
+    if ([alarmID isEqual:notificationID]) {
+      theAlarm = alarm;
+      break;
+    }
+  }
+  // Show error alert if no alarm matching the notification
+  if (!theAlarm) {
+    NSLog(@"Could not find an alarm associated with notification: %@", notification);
+    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"System Error" 
+                                                         message:@"Notification error." 
+                                                        delegate:nil 
+                                               cancelButtonTitle:@"OK" 
+                                               otherButtonTitles:nil];
+    [errorAlert show];
+  }
+  
 }
 
 /**
