@@ -280,6 +280,8 @@
 - (void)processTimer:(NSTimer *)timer {
   WMAlarm *alarm = (WMAlarm *)timer.userInfo;
   [self deleteTimerOfAlarm:alarm];
+  NSString *alarmID = [[alarm.objectID URIRepresentation] absoluteString];
+  [self deleteNotificationOfAlarm:alarmID];
   [self processAlarm:alarm];
 }
 
