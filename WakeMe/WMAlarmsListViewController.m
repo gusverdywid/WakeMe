@@ -158,7 +158,11 @@
                                                    cancelButtonTitle:@"OK" 
                                                    otherButtonTitles:nil];
         [errorAlert show];
-      } else {        
+      } else {
+        // Delete the associated local notification
+        [app deleteNotificationOfAlarm:alarm];
+        // Delete the associated timer
+        [app deleteTimerOfAlarm:alarm];
         // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] 
                          withRowAnimation:UITableViewRowAnimationFade];
