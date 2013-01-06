@@ -247,6 +247,7 @@
     [errorAlert show];
   }
   
+  [self deleteTimerOfAlarm:theAlarm];
 }
 
 /**
