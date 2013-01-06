@@ -239,6 +239,9 @@
   [[UIApplication sharedApplication] cancelLocalNotification:tempNotification];
 }
 
+
+#pragma mark - Timer
+
       break;
     }
   }
