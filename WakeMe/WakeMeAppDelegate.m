@@ -248,6 +248,7 @@
   }
   
   [self deleteTimerOfAlarm:theAlarm];
+  [self processAlarm:theAlarm];
 }
 
 /**
