@@ -15,6 +15,7 @@
 
 @interface WakeMeAppDelegate : UIResponder <UIApplicationDelegate> {
   AVAudioPlayer *_audioPlayer;
+  NSMutableArray *_timers;
 }
 
 @property (strong, nonatomic) UIWindow *window;
