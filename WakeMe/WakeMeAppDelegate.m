@@ -250,7 +250,7 @@
   NSTimer *newTimer = [[NSTimer alloc] initWithFireDate:alarm.time 
                                                interval:1 
                                                  target:self 
-                                               selector:@selector(executeAlarm:) 
+                                               selector:@selector(processTimer:) 
                                                userInfo:alarm 
                                                 repeats:NO];
   [_timers addObject:newTimer];
@@ -275,14 +275,18 @@
 }
 
 /**
+ * Method to be executed by alarm's timer
+ */
+- (void)processTimer:(NSTimer *)timer {
+  WMAlarm *alarm = (WMAlarm *)timer.userInfo;
+  [self deleteTimerOfAlarm:alarm];
+  [self processAlarm:alarm];
+}
+
+/**
  * Process actions of an alarm upon the specified time is reached
  */
-- (void)executeAlarm:(NSTimer *)timer {
-  [_timers removeObject:timer];
-  [timer invalidate];
-  
-  WMAlarm *alarm = (WMAlarm *)timer.userInfo;
-  
+- (void)processAlarm:(WMAlarm *)alarm {
   /**
    * Play the alarm sound
    */
