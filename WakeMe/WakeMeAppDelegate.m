@@ -213,7 +213,7 @@
   UILocalNotification *alarmNotification = [[UILocalNotification alloc] init];
   alarmNotification.fireDate = alarm.time;
   alarmNotification.repeatInterval = NSDayCalendarUnit;
-  alarmNotification.soundName = [NSString stringWithFormat:@"%@%@", alarm.sound, AUDIO_TYPE];
+  alarmNotification.soundName = [NSString stringWithFormat:@"%@.%@", alarm.sound, AUDIO_TYPE];
   alarmNotification.timeZone = [NSTimeZone defaultTimeZone];
   alarmNotification.alertBody = alarm.name;
   alarmNotification.alertAction = @"View";
