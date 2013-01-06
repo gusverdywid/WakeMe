@@ -34,5 +34,6 @@
 - (void)deleteNotificationOfAlarm:(NSString *)alarmID;
 
 - (void)createTimerForAlarm:(WMAlarm *)alarm;
+- (void)deleteTimerOfAlarm:(WMAlarm *)alarm;
 
 @end

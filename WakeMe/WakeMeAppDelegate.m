@@ -257,9 +257,23 @@
   [[NSRunLoop currentRunLoop] addTimer:newTimer forMode:NSRunLoopCommonModes];
 }
 
+/**
+ * Invalidate and delete timer of the associated alarm from array of timers
+ */
+- (void)deleteTimerOfAlarm:(WMAlarm *)alarm {
+  NSTimer *tempTimer = nil;
+  for (NSTimer *timer in _timers) {
+    if ([timer.userInfo isEqual:alarm]) {
+      tempTimer = timer;
       break;
     }
   }
+  if (tempTimer) {
+    [_timers delete:tempTimer];
+    [tempTimer invalidate];
+  }
+}
+
 }
 
 @end
