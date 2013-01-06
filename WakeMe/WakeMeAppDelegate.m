@@ -269,7 +269,7 @@
     }
   }
   if (tempTimer) {
-    [_timers delete:tempTimer];
+    [_timers removeObject:tempTimer];
     [tempTimer invalidate];
   }
 }
