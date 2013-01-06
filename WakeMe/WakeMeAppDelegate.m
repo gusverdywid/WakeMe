@@ -274,6 +274,23 @@
   }
 }
 
+/**
+ * Process actions of an alarm upon the specified time is reached
+ */
+- (void)executeAlarm:(NSTimer *)timer {
+  [_timers removeObject:timer];
+  [timer invalidate];
+  
+  WMAlarm *alarm = (WMAlarm *)timer.userInfo;
+  
+  /**
+   * Play the alarm sound
+   */
+  if (alarm.sound != nil && alarm.sound.length > 0) {
+    NSString *audioPath = [[NSBundle mainBundle] pathForResource:alarm.sound
+                                                          ofType:AUDIO_TYPE];
+    [self playSoundWithAudioPath:audioPath numberOfLoops:0];
+  }
 }
 
 @end
