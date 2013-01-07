@@ -240,8 +240,7 @@
   if ([alarm.active boolValue]) {
     [app createNotificationForAlarm:alarm];
   } else {
-    NSString *alarmID = [[alarm.objectID URIRepresentation] absoluteString];
-    [app deleteNotificationOfAlarm:alarmID];    
+    [app deleteNotificationOfAlarm:alarm];
   }
   
   NSManagedObjectContext *context = app.managedObjectContext;
