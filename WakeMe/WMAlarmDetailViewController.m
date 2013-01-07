@@ -227,7 +227,8 @@
     _alarm.snoozable = [NSNumber numberWithBool:_snoozeSwitch.on];
     _alarm.challenge = _challengeLabel.text;
     _alarm.sound = _soundLabel.text;
-    _alarm.time = _timePicker.date;
+    NSTimeInterval timeInterval = floor([_timePicker.date timeIntervalSinceReferenceDate] / 60) * 60;
+    _alarm.time = [NSDate dateWithTimeIntervalSinceReferenceDate:timeInterval];
   }
   NSError *error;
   if (![context save:&error]) {
