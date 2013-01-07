@@ -229,6 +229,7 @@
     _alarm.sound = _soundLabel.text;
     NSTimeInterval timeInterval = floor([_timePicker.date timeIntervalSinceReferenceDate] / 60) * 60;
     _alarm.time = [NSDate dateWithTimeIntervalSinceReferenceDate:timeInterval];
+    _alarm.active = [NSNumber numberWithBool:YES];
   }
   NSError *error;
   if (![context save:&error]) {
