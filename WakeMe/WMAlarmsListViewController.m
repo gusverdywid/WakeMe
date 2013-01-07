@@ -239,8 +239,10 @@
   
   if ([alarm.active boolValue]) {
     [app createNotificationForAlarm:alarm];
+    [app createTimerForAlarm:alarm];
   } else {
     [app deleteNotificationOfAlarm:alarm];
+    [app deleteTimerOfAlarm:alarm];
   }
   
   NSManagedObjectContext *context = app.managedObjectContext;
