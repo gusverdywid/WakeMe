@@ -341,7 +341,7 @@
   if (alarm.sound != nil && alarm.sound.length > 0) {
     NSString *audioPath = [[NSBundle mainBundle] pathForResource:alarm.sound
                                                           ofType:AUDIO_TYPE];
-    [self playSoundWithAudioPath:audioPath numberOfLoops:0];
+    [self playSoundWithAudioPath:audioPath numberOfLoops:-1];
   }
 }
 
