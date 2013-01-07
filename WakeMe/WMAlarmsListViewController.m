@@ -161,8 +161,6 @@
       } else {
         // Delete the associated local notification
         [app deleteNotificationOfAlarm:alarm];
-        // Delete the associated timer
-        [app deleteTimerOfAlarm:alarm];
         // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] 
                          withRowAnimation:UITableViewRowAnimationFade];
@@ -239,10 +237,8 @@
   
   if ([alarm.active boolValue]) {
     [app createNotificationForAlarm:alarm];
-    [app createTimerForAlarm:alarm];
   } else {
     [app deleteNotificationOfAlarm:alarm];
-    [app deleteTimerOfAlarm:alarm];
   }
   
   NSManagedObjectContext *context = app.managedObjectContext;

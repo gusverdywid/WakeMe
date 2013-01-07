@@ -247,8 +247,15 @@
     [errorAlert show];
   }
   
-  [self deleteTimerOfAlarm:theAlarm];
-  [self processAlarm:theAlarm];
+  /**
+   * Play the alarm sound
+   */
+  if (theAlarm.sound != nil && theAlarm.sound.length > 0) {
+    NSString *audioPath = [[NSBundle mainBundle] pathForResource:theAlarm.sound
+                                                          ofType:AUDIO_TYPE];
+    [self playSoundWithAudioPath:audioPath numberOfLoops:-1];
+  }
+  
 }
 
 /**
@@ -284,65 +291,6 @@
   }
   if (tempNotification)
     [[UIApplication sharedApplication] cancelLocalNotification:tempNotification];
-}
-
-
-#pragma mark - Timer
-
-/**
- * Register an alarm with a timer that will execute
- * an action for the alarm
- */
-- (void)createTimerForAlarm:(WMAlarm *)alarm {
-  NSTimer *newTimer = [[NSTimer alloc] initWithFireDate:alarm.time 
-                                               interval:1 
-                                                 target:self 
-                                               selector:@selector(processTimer:) 
-                                               userInfo:alarm 
-                                                repeats:NO];
-  [_timers addObject:newTimer];
-  [[NSRunLoop currentRunLoop] addTimer:newTimer forMode:NSRunLoopCommonModes];
-}
-
-/**
- * Invalidate and delete timer of the associated alarm from array of timers
- */
-- (void)deleteTimerOfAlarm:(WMAlarm *)alarm {
-  NSTimer *tempTimer = nil;
-  for (NSTimer *timer in _timers) {
-    if ([timer.userInfo isEqual:alarm]) {
-      tempTimer = timer;
-      break;
-    }
-  }
-  if (tempTimer) {
-    [_timers removeObject:tempTimer];
-    [tempTimer invalidate];
-  }
-}
-
-/**
- * Method to be executed by alarm's timer
- */
-- (void)processTimer:(NSTimer *)timer {
-  WMAlarm *alarm = (WMAlarm *)timer.userInfo;
-  [self deleteTimerOfAlarm:alarm];
-  [self deleteNotificationOfAlarm:alarm];
-  [self processAlarm:alarm];
-}
-
-/**
- * Process actions of an alarm upon the specified time is reached
- */
-- (void)processAlarm:(WMAlarm *)alarm {
-  /**
-   * Play the alarm sound
-   */
-  if (alarm.sound != nil && alarm.sound.length > 0) {
-    NSString *audioPath = [[NSBundle mainBundle] pathForResource:alarm.sound
-                                                          ofType:AUDIO_TYPE];
-    [self playSoundWithAudioPath:audioPath numberOfLoops:-1];
-  }
 }
 
 @end

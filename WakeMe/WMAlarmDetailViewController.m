@@ -245,10 +245,6 @@
     [app deleteNotificationOfAlarm:_alarm];
     // Create notification for the alarm
     [app createNotificationForAlarm:_alarm];
-    // Delete timer if any
-    [app deleteTimerOfAlarm:_alarm];
-    // Create timer for the alarm
-    [app createTimerForAlarm:_alarm];
     
     [self dismissViewControllerAnimated:YES completion:nil];
   }

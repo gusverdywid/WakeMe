@@ -33,7 +33,4 @@
 - (void)createNotificationForAlarm:(WMAlarm *)alarm;
 - (void)deleteNotificationOfAlarm:(WMAlarm *)alarm;
 
-- (void)createTimerForAlarm:(WMAlarm *)alarm;
-- (void)deleteTimerOfAlarm:(WMAlarm *)alarm;
-
 @end
