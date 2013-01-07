@@ -282,7 +282,8 @@
       break;
     }
   }
-  [[UIApplication sharedApplication] cancelLocalNotification:tempNotification];
+  if (tempNotification)
+    [[UIApplication sharedApplication] cancelLocalNotification:tempNotification];
 }
 
 
