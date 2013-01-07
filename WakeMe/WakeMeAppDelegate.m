@@ -293,7 +293,7 @@
  * Register an alarm with a timer that will execute
  * an action for the alarm
  */
-- (void)registerTimerForAlarm:(WMAlarm *)alarm {
+- (void)createTimerForAlarm:(WMAlarm *)alarm {
   NSTimer *newTimer = [[NSTimer alloc] initWithFireDate:alarm.time 
                                                interval:1 
                                                  target:self 
