@@ -227,7 +227,25 @@
  */
 - (IBAction)switchAlarmStatus:(id)sender {
   UISwitch *activeSwitch = (UISwitch *)sender;
-  UITableViewCell *alarmCell = (UITableViewCell *)activeSwitch.superview;
+  UITableViewCell *alarmCell = nil;
+  // Sometimes the superview of the switch is UITableViewCellContentView
+  // so need to get its superview, that is the UITableViewCell looked for
+  if ([activeSwitch.superview isKindOfClass:[UITableViewCell class]])
+    alarmCell = (UITableViewCell *)activeSwitch.superview;
+  else if ([activeSwitch.superview.superview isKindOfClass:[UITableViewCell class]])
+    alarmCell = (UITableViewCell *)activeSwitch.superview.superview;
+  else {
+    NSLog(@"Could not get UITableViewCell");
+    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"UITableView Error" 
+                                                         message:@"Could not update the alarm.\nReverting..." 
+                                                        delegate:nil 
+                                               cancelButtonTitle:@"OK" 
+                                               otherButtonTitles:nil];
+    [errorAlert show];
+    // Revert the change
+    [activeSwitch setOn:!activeSwitch.on animated:YES];
+    return;
+  }
   NSIndexPath *alarmIndex = [self.tableView indexPathForCell:alarmCell];
   WMAlarm *alarm = (WMAlarm *)[_alarms objectAtIndex:alarmIndex.row];
   alarm.active = [NSNumber numberWithBool:activeSwitch.on];
