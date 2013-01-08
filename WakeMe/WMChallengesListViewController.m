@@ -158,7 +158,6 @@
   
   if (indexPath.section == 0 && indexPath.row != _selRow) {
     _selRow = indexPath.row;
-    
     [super.tableView reloadData];
   }
 }
