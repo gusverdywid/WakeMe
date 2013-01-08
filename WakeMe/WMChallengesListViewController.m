@@ -52,7 +52,6 @@
    * Init to -1 because 0 is a valid row
    */
   _selRow = -1;
-  
 }
 
 - (void)viewDidLoad {
@@ -186,7 +185,6 @@
 #pragma mark - IBAction
 
 - (IBAction)finishSelectingChallenge:(id)sender {
-  
   // In case user didn't select any challenge
   if (_selRow >= 0) {
     // Getting the name of the selected challenge
