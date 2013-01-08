@@ -262,7 +262,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <navigationItem key="navigationItem" title="Sounds" id="wL0-tv-tCz">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="HwW-Dp-PzK">
                             <connections>
-                                <action selector="doneSelectSound:" destination="yJn-zq-S5d" id="ytw-hg-bBW"/>
+                                <action selector="finishSelectingSound:" destination="yJn-zq-S5d" id="AlP-hH-b14"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -297,7 +297,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="WMSoundsListViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WMSoundsListViewController.h"/>
             <relationships>
-                <relationship kind="action" name="doneSelectSound:"/>
+                <relationship kind="action" name="finishSelectingSound:"/>
             </relationships>
         </class>
     </classes>

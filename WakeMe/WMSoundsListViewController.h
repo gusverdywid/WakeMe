@@ -32,6 +32,6 @@
 
 - (void)selectSoundWithName:(NSString *)selectedSoundName;
 
-- (IBAction)doneSelectSound:(id)sender;
+- (IBAction)finishSelectingSound:(id)sender;
 
 @end
