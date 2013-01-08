@@ -128,9 +128,12 @@
   if ([indexPath section] == 0 && [indexPath row] == 0) {
     return [self alarmNameCell];
   } else if ([indexPath section] == 1) {
-    if ([indexPath row] == 0) return [self alarmSnoozeCell];
-    else if ([indexPath row] == 1) return [self alarmChallengeCell];
-    else if ([indexPath row] == 2) return [self alarmSoundCell];
+    if ([indexPath row] == 0)
+      return [self alarmSnoozeCell];
+    else if ([indexPath row] == 1)
+      return [self alarmChallengeCell];
+    else if ([indexPath row] == 2)
+      return [self alarmSoundCell];
   }
   
   return [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle 

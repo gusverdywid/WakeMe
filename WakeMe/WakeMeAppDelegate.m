@@ -165,9 +165,8 @@
  * and NO otherwise
  */
 - (BOOL)playSoundWithAudioPath:(NSString *)audioPath numberOfLoops:(NSInteger)loops {
-  if (_audioPlayer != nil && _audioPlayer.playing) {
+  if (_audioPlayer != nil && _audioPlayer.playing)
     [_audioPlayer stop];
-  }
   
   NSError *playbackError;
   

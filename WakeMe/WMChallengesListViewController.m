@@ -22,16 +22,14 @@
 
 - (id)initWithStyle:(UITableViewStyle)style {
   self = [super initWithStyle:style];
-  if (self) {
-  }
+  if (self)
     [self initialize];
   return self;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
-  if ((self = [super initWithCoder:aDecoder])) {
+  if ((self = [super initWithCoder:aDecoder]))
     [self initialize];
-  }
   return self;
 }
 

@@ -49,9 +49,8 @@
   NSPredicate *filter = [NSPredicate predicateWithFormat:@"SELF ENDSWITH %@", fileExt];
   NSArray *filteredFilenames = [filenames filteredArrayUsingPredicate:filter];
   NSMutableArray *formattedFilenames = [[NSMutableArray alloc] init];
-  for (NSString *filteredFilename in filteredFilenames) {
+  for (NSString *filteredFilename in filteredFilenames)
     [formattedFilenames addObject:[filteredFilename substringToIndex:[filteredFilename length]-[fileExt length]]];
-  }
   _soundNames = [NSArray arrayWithArray:formattedFilenames];
   
   // Initialize to -1 (no sound selected)

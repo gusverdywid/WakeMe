@@ -244,11 +244,10 @@
   
   WakeMeAppDelegate *app = [[UIApplication sharedApplication] delegate];
   
-  if ([alarm.active boolValue]) {
+  if ([alarm.active boolValue])
     [app createNotificationForAlarm:alarm];
-  } else {
+  else
     [app deleteNotificationOfAlarm:alarm];
-  }
   
   NSManagedObjectContext *context = app.managedObjectContext;
   NSError *error;
