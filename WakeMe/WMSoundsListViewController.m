@@ -196,10 +196,10 @@
 
 #pragma mark - Custom public method
 
-- (void)selectSoundWithName:(NSString *)selSoundName {
+- (void)selectSoundWithName:(NSString *)selectedSoundName {
   NSUInteger soundIndex = 0;
   for (NSString *soundName in _soundNames) {
-    if ([soundName isEqualToString:selSoundName]) {
+    if ([soundName isEqualToString:selectedSoundName]) {
       _selRow = soundIndex;
       NSIndexPath *selectedIndex = [NSIndexPath indexPathForRow:_selRow inSection:0];
       [self.tableView selectRowAtIndexPath:selectedIndex
