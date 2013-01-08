@@ -111,6 +111,12 @@
     return cell;
 }
 
+/**
+ * Override
+ * Called when edit button is pressed
+ * It will change the table to editing mode and reload its section (1st section)
+ * with animation
+ */
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
   [super setEditing:editing animated:animated];
   [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] 
@@ -266,6 +272,9 @@
 
 #pragma mark - Private methods
 
+/**
+ * Fetch alarms from core data and store it in an array
+ */
 - (void)reloadAlarms {
   /**
    * Load all alarms from core data.

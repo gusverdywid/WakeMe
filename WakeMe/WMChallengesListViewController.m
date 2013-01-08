@@ -20,6 +20,9 @@
 @synthesize challengeSelectionDelegate = _challengeSelectionDelegate;
 
 
+/**
+ * Override
+ */
 - (id)initWithStyle:(UITableViewStyle)style {
   self = [super initWithStyle:style];
   if (self)
@@ -27,6 +30,9 @@
   return self;
 }
 
+/**
+ * Override
+ */
 - (id)initWithCoder:(NSCoder *)aDecoder {
   if ((self = [super initWithCoder:aDecoder]))
     [self initialize];
@@ -182,6 +188,9 @@
 
 #pragma mark - IBAction
 
+/**
+ * IBAction if user has finished with challenge selection
+ */
 - (IBAction)finishSelectingChallenge:(id)sender {
   // In case user didn't select any challenge
   if (_selRow >= 0) {

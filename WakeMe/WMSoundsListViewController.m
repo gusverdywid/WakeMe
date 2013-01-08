@@ -23,6 +23,9 @@
 @synthesize soundSelectionDelegate = _soundSelectionDelegate;
 
 
+/**
+ * Override
+ */
 - (id)initWithStyle:(UITableViewStyle)style {
   self = [super initWithStyle:style];
   if (self) {
@@ -31,6 +34,9 @@
   return self;
 }
 
+/**
+ * Override
+ */
 - (id)initWithCoder:(NSCoder *)aDecoder {
   if ((self = [super initWithCoder:aDecoder])) {
     [self initialize];
@@ -38,6 +44,10 @@
   return self;
 }
 
+/**
+ * Common initialization code. Other inits should call this method to
+ * complete the initialization process.
+ */
 - (void)initialize {
   /**
    * Load all the names of the sounds
@@ -181,6 +191,9 @@
 
 #pragma mark - IBAction
 
+/**
+ * IBAction if the user has finished with sound selection
+ */
 - (IBAction)finishSelectingSound:(id)sender {
   // In case user didn't select any sound
   if (_selRow >= 0) {
@@ -194,6 +207,10 @@
 
 #pragma mark - Custom public method
 
+/**
+ * Select the cell with the sound name as passed into 
+ * "selectedSoundName" parameter
+ */
 - (void)selectSoundWithName:(NSString *)selectedSoundName {
   NSUInteger soundIndex = 0;
   for (NSString *soundName in _soundNames) {
