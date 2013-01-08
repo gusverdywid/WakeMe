@@ -259,4 +259,8 @@
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
+#pragma mark - Other private method and custom selector
+
+
 @end
