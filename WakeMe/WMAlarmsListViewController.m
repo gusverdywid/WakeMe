@@ -24,15 +24,15 @@
 
 
 - (id)initWithStyle:(UITableViewStyle)style {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+  self = [super initWithStyle:style];
+  if (self) {
+      // Custom initialization
+  }
+  return self;
 }
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+  [super viewDidLoad];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -59,19 +59,19 @@
 }
 
 - (void)viewDidUnload {
-    [super viewDidUnload];
+  [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+  return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+  return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -80,8 +80,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"AlarmTableCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+  static NSString *CellIdentifier = @"AlarmTableCell";
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
   
@@ -128,36 +128,36 @@
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-      /**
-       * Delete the alarm associated with the selected row
-       */
-      WakeMeAppDelegate *app = (WakeMeAppDelegate *) [[UIApplication sharedApplication] delegate];
-      NSManagedObjectContext *context = app.managedObjectContext;
-      WMAlarm *alarm = (WMAlarm *) [_alarms objectAtIndex:indexPath.row];
-      // Delete alarm from database
-      [context deleteObject:alarm];
-      // Reload array of alarms
-      [self reloadAlarms];
-      NSError *error;
-      [context save:&error];
-      // Show alert box in case any error occured
-      if (error) {
-        NSLog(@"Could not delete the alarm: %@", [error localizedDescription]);
-        UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Core Data Error" 
-                                                             message:@"Could not delete alarm." 
-                                                            delegate:nil 
-                                                   cancelButtonTitle:@"OK" 
-                                                   otherButtonTitles:nil];
-        [errorAlert show];
-      } else {
-        // Delete the associated local notification
-        [app deleteNotificationOfAlarm:alarm];
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] 
-                         withRowAnimation:UITableViewRowAnimationFade];
-      }
-    }  
+  if (editingStyle == UITableViewCellEditingStyleDelete) {
+    /**
+     * Delete the alarm associated with the selected row
+     */
+    WakeMeAppDelegate *app = (WakeMeAppDelegate *) [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = app.managedObjectContext;
+    WMAlarm *alarm = (WMAlarm *) [_alarms objectAtIndex:indexPath.row];
+    // Delete alarm from database
+    [context deleteObject:alarm];
+    // Reload array of alarms
+    [self reloadAlarms];
+    NSError *error;
+    [context save:&error];
+    // Show alert box in case any error occured
+    if (error) {
+      NSLog(@"Could not delete the alarm: %@", [error localizedDescription]);
+      UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Core Data Error" 
+                                                           message:@"Could not delete alarm." 
+                                                          delegate:nil 
+                                                 cancelButtonTitle:@"OK" 
+                                                 otherButtonTitles:nil];
+      [errorAlert show];
+    } else {
+      // Delete the associated local notification
+      [app deleteNotificationOfAlarm:alarm];
+      // Delete the row from the data source
+      [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] 
+                       withRowAnimation:UITableViewRowAnimationFade];
+    }
+  }  
 }
 
 /*
@@ -207,7 +207,7 @@
  */
 - (IBAction)showAlarmCreationView:(id)sender {
   UIStoryboard *alarmDetailStoryboard = [UIStoryboard storyboardWithName:@"WMAlarmDetailStoryboard_iPhone" 
-                                                                   bundle:nil];
+                                                                  bundle:nil];
   UIViewController *alarmDetailNavigationController = [alarmDetailStoryboard instantiateInitialViewController];
   alarmDetailNavigationController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
   [self presentModalViewController:alarmDetailNavigationController animated:YES];
@@ -274,7 +274,8 @@
   WakeMeAppDelegate *app = [[UIApplication sharedApplication] delegate];
   NSManagedObjectContext *context = app.managedObjectContext;
   NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-  NSEntityDescription *entity = [NSEntityDescription entityForName:@"Alarm" inManagedObjectContext:context];
+  NSEntityDescription *entity = [NSEntityDescription entityForName:@"Alarm" 
+                                            inManagedObjectContext:context];
   fetchRequest.entity = entity;
   NSError *error;
   _alarms = [context executeFetchRequest:fetchRequest error:&error];

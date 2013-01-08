@@ -18,25 +18,25 @@
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+  // Override point for customization after application launch.
   
   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {    
-    // HACK (to deal with initialization delay):
-    // Initial setup of audio player
-    // Pass the Silent.caf (blank audio file) just to help the with the
-    // setup (acts as dummy)
-    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
-    [[AVAudioSession sharedInstance] setActive:YES error:nil];
-    NSString *audioPath = [[NSBundle mainBundle] pathForResource:@"Silent" 
-                                                          ofType:AUDIO_TYPE];
-    // Play and stop the player straight away
-    if ([self playSoundWithAudioPath:audioPath numberOfLoops:1]) {
-      [_audioPlayer stop];
-    }
+      // HACK (to deal with initialization delay):
+      // Initial setup of audio player
+      // Pass the Silent.caf (blank audio file) just to help the with the
+      // setup (acts as dummy)
+      [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+      [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+      [[AVAudioSession sharedInstance] setActive:YES error:nil];
+      NSString *audioPath = [[NSBundle mainBundle] pathForResource:@"Silent" 
+                                                            ofType:AUDIO_TYPE];
+      // Play and stop the player straight away
+      if ([self playSoundWithAudioPath:audioPath numberOfLoops:1]) {
+        [_audioPlayer stop];
+      }
   });
   
-    return YES;
+  return YES;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application {

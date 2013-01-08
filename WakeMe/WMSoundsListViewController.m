@@ -50,9 +50,7 @@
   NSArray *filteredFilenames = [filenames filteredArrayUsingPredicate:filter];
   NSMutableArray *formattedFilenames = [[NSMutableArray alloc] init];
   for (NSString *filteredFilename in filteredFilenames) {
-    [formattedFilenames addObject:
-     [filteredFilename substringToIndex:[filteredFilename length]-[fileExt length]]
-     ];
+    [formattedFilenames addObject:[filteredFilename substringToIndex:[filteredFilename length]-[fileExt length]]];
   }
   _soundNames = [NSArray arrayWithArray:formattedFilenames];
   
@@ -93,12 +91,12 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
+  // Return the number of sections.
   return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
+  // Return the number of rows in the section.
   return _soundNames.count;
 }
 
@@ -106,7 +104,7 @@
   static NSString *CellIdentifier = @"SoundsListCell";
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   
-    // Configure the cell...
+  // Configure the cell...
   if (indexPath.section == 0) {
     cell.textLabel.text = [_soundNames objectAtIndex:indexPath.row];
     if (indexPath.row == _selRow) cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -158,7 +156,7 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
+  // Navigation logic may go here. Create and push another view controller.
   /*
    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
    // ...

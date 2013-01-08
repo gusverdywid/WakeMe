@@ -79,7 +79,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([[segue identifier] isEqualToString:@"selectSound"]) {
     WMSoundsListViewController *soundSelection = 
-    (WMSoundsListViewController *) [segue destinationViewController];
+        (WMSoundsListViewController *) [segue destinationViewController];
     
     [soundSelection setSoundSelectionDelegate:self];
     
@@ -89,7 +89,7 @@
     
     // Set the challenge selection delegate
     WMChallengesListViewController *challengeSelection = 
-    (WMChallengesListViewController *) [segue destinationViewController];
+        (WMChallengesListViewController *) [segue destinationViewController];
     [challengeSelection setChallengeSelectionDelegate:self];
     
     // If challenge is already selected, tell challenge selection to mark down
@@ -133,7 +133,8 @@
     else if ([indexPath row] == 2) return [self alarmSoundCell];
   }
   
-  return [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+  return [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle 
+                                reuseIdentifier:CellIdentifier];
 }
 
 /*
