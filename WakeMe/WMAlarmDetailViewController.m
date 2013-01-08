@@ -50,21 +50,6 @@
   // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
   // self.navigationItem.rightBarButtonItem = self.editButtonItem;
   
-  
-  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){    
-    // HACK (to deal with initialization delay):
-    // Initial setup of audio player
-    // Pass the Silent.caf (blank audio file) just to help the with the
-    // setup (acts as dummy)
-    NSString *audioPath = [[NSBundle mainBundle] pathForResource:@"Silent" 
-                                                          ofType:@"caf"];
-    // Play and stop the player straight away
-    if ([self setupAudioPlayerWithAudioPath:audioPath]) {
-      [_audioPlayer play];
-      [_audioPlayer stop];
-    }
-  });
-  
   /**
    * Set the detail of the alarm to the view
    */
@@ -205,19 +190,9 @@
 
 #pragma mark - Sound selection delegate
 
-- (void)soundSelectionPlaySound:(NSString *)audioPath {
-  if ([self setupAudioPlayerWithAudioPath:audioPath])
-    [_audioPlayer play];
-}
-
 - (void)soundSelectionSelectSound:(NSString *)selectedSound {
   _selectedSound = selectedSound;
   _soundLabel.text = _selectedSound;
-}
-
-- (void)soundSelectionStopSound {
-  if (_audioPlayer != nil && [_audioPlayer isPlaying])
-    [_audioPlayer stop];
 }
 
 
@@ -241,21 +216,20 @@
   /**
    * Set alarm entity and save it into core data
    */
-  // If alarm is not null then it is editing existing alarm else creating new alarm
+  // If alarm is null then it is creating a new alarm else editing existing alarm
+  if (_alarm == nil) {
+    _alarm = [NSEntityDescription insertNewObjectForEntityForName:@"Alarm" 
+                                           inManagedObjectContext:context];
+  }
+  // If alarm is not null then it has been successfully created above
   if (_alarm != nil) {
     _alarm.name = _nameTextField.text;
     _alarm.snoozable = [NSNumber numberWithBool:_snoozeSwitch.on];
     _alarm.challenge = _challengeLabel.text;
     _alarm.sound = _soundLabel.text;
-    _alarm.time = _timePicker.date;
-  } else {
-    WMAlarm *newAlarm = [NSEntityDescription insertNewObjectForEntityForName:@"Alarm" 
-                                                      inManagedObjectContext:context];
-    newAlarm.name = _nameTextField.text;
-    newAlarm.snoozable = [NSNumber numberWithBool:_snoozeSwitch.on];
-    newAlarm.challenge = _challengeLabel.text;
-    newAlarm.sound = _soundLabel.text;
-    newAlarm.time = _timePicker.date;
+    NSTimeInterval timeInterval = floor([_timePicker.date timeIntervalSinceReferenceDate] / 60) * 60;
+    _alarm.time = [NSDate dateWithTimeIntervalSinceReferenceDate:timeInterval];
+    _alarm.active = [NSNumber numberWithBool:YES];
   }
   NSError *error;
   if (![context save:&error]) {
@@ -267,41 +241,18 @@
                                                otherButtonTitles:nil];
     [errorAlert show];
   } else {
+    WakeMeAppDelegate *app = [[UIApplication sharedApplication] delegate];
+    // Delete notification if any
+    [app deleteNotificationOfAlarm:_alarm];
+    // Create notification for the alarm
+    [app createNotificationForAlarm:_alarm];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
   }
 }
 
 - (IBAction)cancelAlarm:(id)sender {
   [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-
-#pragma mark - Private methods
-
-/**
- * Setup and prepare the audio player for playback for
- * the supplied audio file's path
- */
-- (BOOL)setupAudioPlayerWithAudioPath:(NSString *)audioPath {
-  
-  if (_audioPlayer != nil && _audioPlayer.playing) {
-    [_audioPlayer stop];
-  }
-  
-  NSError *playbackError;
-  
-  NSURL *audioUrl = [NSURL fileURLWithPath:audioPath];
-  _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioUrl
-                                                        error:&playbackError];
-  
-  if (_audioPlayer != nil && !playbackError) {
-    [_audioPlayer prepareToPlay];
-    [_audioPlayer setNumberOfLoops:4];
-  } else {
-    NSLog(@"%@", playbackError);
-  }
-  
-  return (_audioPlayer != nil && !playbackError);
 }
 
 @end

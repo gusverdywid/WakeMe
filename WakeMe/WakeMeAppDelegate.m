@@ -8,6 +8,8 @@
 
 #import "WakeMeAppDelegate.h"
 
+#import "WMSoundsListViewController.h"
+
 @implementation WakeMeAppDelegate
 
 @synthesize window = _window;
@@ -18,6 +20,23 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+  
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){    
+    // HACK (to deal with initialization delay):
+    // Initial setup of audio player
+    // Pass the Silent.caf (blank audio file) just to help the with the
+    // setup (acts as dummy)
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [[AVAudioSession sharedInstance] setActive:YES error:nil];
+    NSString *audioPath = [[NSBundle mainBundle] pathForResource:@"Silent" 
+                                                          ofType:AUDIO_TYPE];
+    // Play and stop the player straight away
+    if ([self playSoundWithAudioPath:audioPath numberOfLoops:1]) {
+      [_audioPlayer stop];
+    }
+  });
+  
     return YES;
 }
 							
@@ -143,6 +162,135 @@
 - (NSURL *)applicationDocumentsDirectory
 {
   return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+
+#pragma mark - Audio player management
+
+/**
+ * Setup audio player and play the sound in the specified path as many as the
+ * number of loops
+ * This method will return boolean value YES if the audio is successfully played
+ * and NO otherwise
+ */
+- (BOOL)playSoundWithAudioPath:(NSString *)audioPath numberOfLoops:(NSInteger)loops {
+  if (_audioPlayer != nil && _audioPlayer.playing) {
+    [_audioPlayer stop];
+  }
+  
+  NSError *playbackError;
+  
+  NSURL *audioUrl = [NSURL fileURLWithPath:audioPath];
+  _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioUrl
+                                                        error:&playbackError];
+  
+  BOOL success = NO;
+  if (_audioPlayer != nil && !playbackError) {
+    [_audioPlayer prepareToPlay];
+    [_audioPlayer setNumberOfLoops:loops];
+    success = [_audioPlayer play];
+  } else {
+    NSLog(@"%@", playbackError);
+  }
+  return success;
+}
+
+/**
+ * Tell the audio player to stop playing currently played audio file
+ */
+- (void)stopAudioPlayer {
+  if (_audioPlayer != nil && _audioPlayer.playing)
+    [_audioPlayer stop];
+}
+
+
+#pragma mark - Alarm notification
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+  /**
+   * Getting the alarm associated with the notification
+   */
+  WMAlarm *theAlarm = nil;
+  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+  NSEntityDescription *entity = [NSEntityDescription entityForName:@"Alarm" 
+                                            inManagedObjectContext:self.managedObjectContext];
+  fetchRequest.entity = entity;
+  NSError *error;
+  NSArray *alarms = [self.managedObjectContext executeFetchRequest:fetchRequest 
+                                                             error:&error];
+  // Show alert box in case any error occured
+  if (error) {
+    NSLog(@"Could not load the alarms: %@", [error localizedDescription]);
+    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Core Data Error" 
+                                                         message:@"Could not load alarms." 
+                                                        delegate:nil 
+                                               cancelButtonTitle:@"OK" 
+                                               otherButtonTitles:nil];
+    [errorAlert show];
+  }
+  NSString *notificationID = [notification.userInfo objectForKey:@"ID"];
+  for (WMAlarm *alarm in alarms) {
+    NSString *alarmID = [[alarm.objectID URIRepresentation] absoluteString];
+    if ([alarmID isEqual:notificationID]) {
+      theAlarm = alarm;
+      break;
+    }
+  }
+  // Show error alert if no alarm matching the notification
+  if (!theAlarm) {
+    NSLog(@"Could not find an alarm associated with notification: %@", notification);
+    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"System Error" 
+                                                         message:@"Notification error." 
+                                                        delegate:nil 
+                                               cancelButtonTitle:@"OK" 
+                                               otherButtonTitles:nil];
+    [errorAlert show];
+  }
+  
+  /**
+   * Play the alarm sound
+   */
+  if (theAlarm.sound != nil && theAlarm.sound.length > 0) {
+    NSString *audioPath = [[NSBundle mainBundle] pathForResource:theAlarm.sound
+                                                          ofType:AUDIO_TYPE];
+    [self playSoundWithAudioPath:audioPath numberOfLoops:-1];
+  }
+  
+}
+
+/**
+ * Create and register local notification
+ */
+- (void)createNotificationForAlarm:(WMAlarm *)alarm {
+  UILocalNotification *alarmNotification = [[UILocalNotification alloc] init];
+  alarmNotification.fireDate = alarm.time;
+  alarmNotification.repeatInterval = NSDayCalendarUnit;
+  alarmNotification.soundName = [NSString stringWithFormat:@"%@.%@", alarm.sound, AUDIO_TYPE];
+  alarmNotification.timeZone = [NSTimeZone defaultTimeZone];
+  alarmNotification.alertBody = alarm.name;
+  alarmNotification.alertAction = @"View";
+  NSString *alarmId = [[alarm.objectID URIRepresentation] absoluteString];
+  alarmNotification.userInfo = [NSDictionary dictionaryWithObject:alarmId
+                                                           forKey:@"ID"];
+  [[UIApplication sharedApplication] scheduleLocalNotification:alarmNotification];
+}
+
+/**
+ * Delete local notification
+ */
+- (void)deleteNotificationOfAlarm:(WMAlarm *)alarm {
+  NSString *alarmID = [[alarm.objectID URIRepresentation] absoluteString];
+  NSArray *registeredNotifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
+  UILocalNotification *tempNotification = nil;
+  for (UILocalNotification *localNotification in registeredNotifications) {
+    NSString *notificationID = [localNotification.userInfo objectForKey:@"ID"];
+    if ([notificationID isEqual:alarmID]) {
+      tempNotification = localNotification;
+      break;
+    }
+  }
+  if (tempNotification)
+    [[UIApplication sharedApplication] cancelLocalNotification:tempNotification];
 }
 
 @end

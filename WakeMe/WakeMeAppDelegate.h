@@ -7,8 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface WakeMeAppDelegate : UIResponder <UIApplicationDelegate>
+#import "WMAlarm.h"
+
+#define AUDIO_TYPE @"caf"
+
+@interface WakeMeAppDelegate : UIResponder <UIApplicationDelegate> {
+  AVAudioPlayer *_audioPlayer;
+  NSMutableArray *_timers;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
@@ -18,5 +26,11 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+
+- (BOOL)playSoundWithAudioPath:(NSString *)audioPath numberOfLoops:(NSInteger)loops;
+- (void)stopAudioPlayer;
+
+- (void)createNotificationForAlarm:(WMAlarm *)alarm;
+- (void)deleteNotificationOfAlarm:(WMAlarm *)alarm;
 
 @end
