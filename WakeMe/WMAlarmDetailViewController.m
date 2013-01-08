@@ -64,6 +64,20 @@
   } else {
     self.navigationItem.title = @"Create Alarm";
   }
+  
+  /**
+   * Tapping on the table view will dismiss the keyboard
+   */
+  UITapGestureRecognizer *dismissKeyboardTap = [[UITapGestureRecognizer alloc] 
+                                 initWithTarget:self
+                                 action:@selector(dismissKeyboard)];
+  dismissKeyboardTap.cancelsTouchesInView = NO;
+  [self.view addGestureRecognizer:dismissKeyboardTap];
+  
+  /**
+   * Pressing Return button will dismiss the keyboard
+   */
+  _nameTextField.delegate = self;
 }
 
 - (void)viewDidUnload {
@@ -210,6 +224,11 @@
 
 #pragma mark - Text field delegate
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+  [textField resignFirstResponder];
+  return YES;
+}
+
 
 #pragma mark - IBAction
 
@@ -265,5 +284,8 @@
 
 #pragma mark - Other private method and custom selector
 
+- (void)dismissKeyboard {
+  [_nameTextField resignFirstResponder];
+}
 
 @end

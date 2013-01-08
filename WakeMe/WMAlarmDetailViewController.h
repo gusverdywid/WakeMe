@@ -12,7 +12,7 @@
 #import "WMSoundsListViewController.h"
 #import "WMChallengesListViewController.h"
 
-@interface WMAlarmDetailViewController : UITableViewController<WMSoundsListViewControllerDelegate, WMChallengeSelectionViewControllerDelegate> {
+@interface WMAlarmDetailViewController : UITableViewController<WMSoundsListViewControllerDelegate, WMChallengeSelectionViewControllerDelegate, UITextFieldDelegate> {
   WMAlarm *_alarm;
   
   UITableViewCell *_alarmNameCell;
