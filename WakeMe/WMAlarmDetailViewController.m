@@ -277,7 +277,7 @@
   }
 }
 
-- (IBAction)cancelAlarm:(id)sender {
+- (IBAction)cancelCreatingOrEditingAlarm:(id)sender {
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -44,6 +44,6 @@
 @property(nonatomic, retain) IBOutlet UIDatePicker *timePicker;
 
 - (IBAction)saveAlarm:(id)sender;
-- (IBAction)cancelAlarm:(id)sender;
+- (IBAction)cancelCreatingOrEditingAlarm:(id)sender;
 
 @end

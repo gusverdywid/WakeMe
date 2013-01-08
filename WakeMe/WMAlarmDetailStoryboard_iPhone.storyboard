@@ -172,7 +172,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <navigationItem key="navigationItem" id="3T5-SP-HnL">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="437-XK-gIE">
                             <connections>
-                                <action selector="cancelAlarm:" destination="EX2-ey-ePk" id="fEY-3F-Xst"/>
+                                <action selector="cancelCreatingOrEditingAlarm:" destination="EX2-ey-ePk" id="ZI5-e7-ko1"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="fOs-uF-owS">
@@ -275,7 +275,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="WMAlarmDetailViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WMAlarmDetailViewController.h"/>
             <relationships>
-                <relationship kind="action" name="cancelAlarm:"/>
+                <relationship kind="action" name="cancelCreatingOrEditingAlarm:"/>
                 <relationship kind="action" name="saveAlarm:"/>
                 <relationship kind="outlet" name="alarmChallengeCell" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="alarmNameCell" candidateClass="UITableViewCell"/>
