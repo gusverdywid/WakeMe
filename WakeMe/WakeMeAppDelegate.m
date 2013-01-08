@@ -180,7 +180,7 @@
     [_audioPlayer setNumberOfLoops:loops];
     success = [_audioPlayer play];
   } else {
-    NSLog(@"%@", playbackError);
+    NSLog(@"%@", [playbackError localizedDescription]);
   }
   return success;
 }
