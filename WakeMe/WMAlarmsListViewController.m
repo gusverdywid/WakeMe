@@ -14,6 +14,8 @@
 
 @interface WMAlarmsListViewController ()
 
+- (void)__reloadAlarms;
+
 @end
 
 
@@ -54,7 +56,7 @@
    * only when it gets loaded into memory.
    * So it being done here to reload the alarms everytime view changes
    */
-  [self reloadAlarms];
+  [self __reloadAlarms];
   [self.tableView reloadData];
 }
 
@@ -144,7 +146,7 @@
     // Delete alarm from database
     [context deleteObject:alarm];
     // Reload array of alarms
-    [self reloadAlarms];
+    [self __reloadAlarms];
     NSError *error;
     [context save:&error];
     // Show alert box in case any error occured
@@ -275,7 +277,7 @@
 /**
  * Fetch alarms from core data and store it in an array
  */
-- (void)reloadAlarms {
+- (void)__reloadAlarms {
   /**
    * Load all alarms from core data.
    */
