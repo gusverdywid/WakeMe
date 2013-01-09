@@ -224,7 +224,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </tableView>
                     <navigationItem key="navigationItem" title="Challenges" id="862-EN-hON">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="tao-hC-VCa"/>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="yaB-uo-q4f">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="yaB-uo-q4f">
                             <connections>
                                 <action selector="finishSelectingChallenge:" destination="g80-VZ-8cU" id="LBO-20-Qr8"/>
                             </connections>
