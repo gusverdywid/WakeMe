@@ -25,9 +25,6 @@
   UILabel *_challengeLabel;
   UILabel *_soundLabel;
   UIDatePicker *_timePicker;
-  
-  NSString *_selectedChallenge;
-  NSString *_selectedSound;
 }
 
 @property (nonatomic, strong) WMAlarm *alarm;

@@ -97,8 +97,8 @@
     
     [soundSelection setSoundSelectionDelegate:self];
     
-    if ([_selectedSound length] != 0)
-      [soundSelection selectSoundWithName:_selectedSound];
+    if ([_soundLabel.text length] != 0)
+      [soundSelection selectSoundWithName:_soundLabel.text];
   } else if ([[segue identifier] isEqualToString:@"selectChallenge"]) {
     
     // Set the challenge selection delegate
@@ -108,8 +108,8 @@
     
     // If challenge is already selected, tell challenge selection to mark down
     // the row
-    if ([_selectedChallenge length] != 0)
-      [challengeSelection selectChallengeWithName:_selectedChallenge];
+    if ([_challengeLabel.text length] != 0)
+      [challengeSelection selectChallengeWithName:_challengeLabel.text];
   }
 }
 
@@ -209,16 +209,14 @@
 #pragma mark - Sound selection delegate
 
 - (void)soundSelectionSelectSound:(NSString *)selectedSound {
-  _selectedSound = selectedSound;
-  _soundLabel.text = _selectedSound;
+  _soundLabel.text = selectedSound;
 }
 
 
 #pragma mark - Challenge selection delegate
 
 - (void)challengeSelectionSelectChallengeWithName:(NSString *)selectedChallenge {
-  _selectedChallenge = selectedChallenge;
-  _challengeLabel.text = _selectedChallenge;
+  _challengeLabel.text = selectedChallenge;
 }
 
 
