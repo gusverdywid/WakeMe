@@ -17,13 +17,13 @@
 
 @interface WMChallengeSelectionViewController : UITableViewController {
   NSArray *_challengeNames;
-  NSInteger _selRow;
+  NSInteger _selectedRow;
   
   __weak id<WMChallengeSelectionViewControllerDelegate> _challengeSelectionDelegate;
 }
 
 @property(nonatomic, readonly) NSArray *challengeNames;
-@property(nonatomic, readonly) NSInteger selRow;
+@property(nonatomic, readonly) NSInteger selectedRow;
 
 @property(nonatomic, weak) id<WMChallengeSelectionViewControllerDelegate> challengeSelectionDelegate;
 

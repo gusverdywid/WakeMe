@@ -19,7 +19,7 @@
 
 
 @synthesize soundNames = _soundNames;
-@synthesize selRow = _selRow;
+@synthesize selectedRow = _selectedRow;
 @synthesize soundSelectionDelegate = _soundSelectionDelegate;
 
 
@@ -64,7 +64,7 @@
   _soundNames = [NSArray arrayWithArray:formattedFilenames];
   
   // Initialize to -1 (no sound selected)
-  _selRow = -1;
+  _selectedRow = -1;
 }
 
 - (void)viewDidLoad {
@@ -116,7 +116,7 @@
   // Configure the cell...
   if (indexPath.section == 0) {
     cell.textLabel.text = [_soundNames objectAtIndex:indexPath.row];
-    if (indexPath.row == _selRow) cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    if (indexPath.row == _selectedRow) cell.accessoryType = UITableViewCellAccessoryCheckmark;
     else cell.accessoryType = UITableViewCellAccessoryNone;
   }
   return cell;
@@ -173,13 +173,13 @@
    [self.navigationController pushViewController:detailViewController animated:YES];
    */
   
-  if (indexPath.section == 0 && indexPath.row != _selRow) {
-    _selRow = indexPath.row;
+  if (indexPath.section == 0 && indexPath.row != _selectedRow) {
+    _selectedRow = indexPath.row;
     
     [super.tableView reloadData];
     
     // Getting the name of the selected sound
-    NSString *selectedSound = [_soundNames objectAtIndex:_selRow];
+    NSString *selectedSound = [_soundNames objectAtIndex:_selectedRow];
     NSString *audioPath = [[NSBundle mainBundle] pathForResource:selectedSound 
                                                           ofType:AUDIO_TYPE];
     // Tell the delegate to play the sound
@@ -196,9 +196,9 @@
  */
 - (IBAction)finishSelectingSound:(id)sender {
   // In case user didn't select any sound
-  if (_selRow >= 0) {
+  if (_selectedRow >= 0) {
     // Getting the name of the selected sound
-    NSString *selectedSound = [_soundNames objectAtIndex:_selRow];
+    NSString *selectedSound = [_soundNames objectAtIndex:_selectedRow];
     [_soundSelectionDelegate soundSelectionSelectSound:selectedSound];
     // Pop itself
     [self.navigationController popViewControllerAnimated:YES];
@@ -215,8 +215,8 @@
   NSUInteger soundIndex = 0;
   for (NSString *soundName in _soundNames) {
     if ([soundName isEqualToString:selectedSoundName]) {
-      _selRow = soundIndex;
-      NSIndexPath *selectedIndex = [NSIndexPath indexPathForRow:_selRow inSection:0];
+      _selectedRow = soundIndex;
+      NSIndexPath *selectedIndex = [NSIndexPath indexPathForRow:_selectedRow inSection:0];
       [self.tableView selectRowAtIndexPath:selectedIndex
                                   animated:NO
                             scrollPosition:UITableViewScrollPositionTop];

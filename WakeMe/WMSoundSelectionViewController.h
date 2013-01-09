@@ -20,13 +20,13 @@
 
 @interface WMSoundSelectionViewController : UITableViewController {
   NSArray *_soundNames;
-  NSInteger _selRow;
+  NSInteger _selectedRow;
   
   __weak id<WMSoundSelectionViewControllerDelegate> _soundSelectionDelegate;
 }
 
 @property(nonatomic, readonly) NSArray *soundNames;
-@property(nonatomic, readonly) NSInteger selRow;
+@property(nonatomic, readonly) NSInteger selectedRow;
 
 @property(nonatomic, weak) id<WMSoundSelectionViewControllerDelegate> soundSelectionDelegate;
 
