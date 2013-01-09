@@ -92,8 +92,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([[segue identifier] isEqualToString:@"selectSound"]) {
-    WMSoundsListViewController *soundSelection = 
-        (WMSoundsListViewController *) [segue destinationViewController];
+    WMSoundSelectionViewController *soundSelection = 
+        (WMSoundSelectionViewController *) [segue destinationViewController];
     
     [soundSelection setSoundSelectionDelegate:self];
     
@@ -102,8 +102,8 @@
   } else if ([[segue identifier] isEqualToString:@"selectChallenge"]) {
     
     // Set the challenge selection delegate
-    WMChallengesListViewController *challengeSelection = 
-        (WMChallengesListViewController *) [segue destinationViewController];
+    WMChallengeSelectionViewController *challengeSelection = 
+        (WMChallengeSelectionViewController *) [segue destinationViewController];
     [challengeSelection setChallengeSelectionDelegate:self];
     
     // If challenge is already selected, tell challenge selection to mark down

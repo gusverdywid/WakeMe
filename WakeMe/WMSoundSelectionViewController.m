@@ -1,21 +1,21 @@
   //
-  //  WMSoundsListViewController.m
+  //  WMSoundSelectionViewController.m
   //  WakeMe
   //
   //  Created by Agustinus Verdy Widyawiradi on 8/7/12.
   //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
   //
 
-#import "WMSoundsListViewController.h"
+#import "WMSoundSelectionViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
 #import "WakeMeAppDelegate.h"
 
-@interface WMSoundsListViewController ()
+@interface WMSoundSelectionViewController ()
 
 @end
 
-@implementation WMSoundsListViewController
+@implementation WMSoundSelectionViewController
 
 
 @synthesize soundNames = _soundNames;
@@ -110,7 +110,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  static NSString *CellIdentifier = @"SoundsListCell";
+  static NSString *CellIdentifier = @"SoundCell";
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   
   // Configure the cell...

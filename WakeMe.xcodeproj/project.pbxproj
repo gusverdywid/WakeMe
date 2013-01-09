@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E702666815CFBA4D00E1A887 /* WMChallengesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E702666715CFBA4D00E1A887 /* WMChallengesListViewController.m */; };
-		E702666C15D0E81B00E1A887 /* WMSoundsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E702666B15D0E81B00E1A887 /* WMSoundsListViewController.m */; };
+		E702666815CFBA4D00E1A887 /* WMChallengeSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E702666715CFBA4D00E1A887 /* WMChallengeSelectionViewController.m */; };
+		E702666C15D0E81B00E1A887 /* WMSoundSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E702666B15D0E81B00E1A887 /* WMSoundSelectionViewController.m */; };
 		E70332A715C6C6360039DEB2 /* WMAlarmsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E70332A615C6C6360039DEB2 /* WMAlarmsListViewController.m */; };
 		E70332A815C6C6360039DEB2 /* WMAlarmsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E70332A615C6C6360039DEB2 /* WMAlarmsListViewController.m */; };
 		E70332A915C6C6360039DEB2 /* WMAlarmsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E70332A615C6C6360039DEB2 /* WMAlarmsListViewController.m */; };
@@ -66,10 +66,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E702666615CFBA4D00E1A887 /* WMChallengesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMChallengesListViewController.h; sourceTree = "<group>"; };
-		E702666715CFBA4D00E1A887 /* WMChallengesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMChallengesListViewController.m; sourceTree = "<group>"; };
-		E702666A15D0E81B00E1A887 /* WMSoundsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMSoundsListViewController.h; sourceTree = "<group>"; };
-		E702666B15D0E81B00E1A887 /* WMSoundsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMSoundsListViewController.m; sourceTree = "<group>"; };
+		E702666615CFBA4D00E1A887 /* WMChallengeSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = WMChallengeSelectionViewController.h; sourceTree = "<group>"; };
+		E702666715CFBA4D00E1A887 /* WMChallengeSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMChallengeSelectionViewController.m; sourceTree = "<group>"; };
+		E702666A15D0E81B00E1A887 /* WMSoundSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = WMSoundSelectionViewController.h; sourceTree = "<group>"; };
+		E702666B15D0E81B00E1A887 /* WMSoundSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMSoundSelectionViewController.m; sourceTree = "<group>"; };
 		E70332A515C6C6360039DEB2 /* WMAlarmsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMAlarmsListViewController.h; sourceTree = "<group>"; };
 		E70332A615C6C6360039DEB2 /* WMAlarmsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAlarmsListViewController.m; sourceTree = "<group>"; };
 		E737457215FEE889002C52EB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -164,10 +164,10 @@
 			children = (
 				E70332A515C6C6360039DEB2 /* WMAlarmsListViewController.h */,
 				E70332A615C6C6360039DEB2 /* WMAlarmsListViewController.m */,
-				E702666615CFBA4D00E1A887 /* WMChallengesListViewController.h */,
-				E702666715CFBA4D00E1A887 /* WMChallengesListViewController.m */,
-				E702666A15D0E81B00E1A887 /* WMSoundsListViewController.h */,
-				E702666B15D0E81B00E1A887 /* WMSoundsListViewController.m */,
+				E702666615CFBA4D00E1A887 /* WMChallengeSelectionViewController.h */,
+				E702666715CFBA4D00E1A887 /* WMChallengeSelectionViewController.m */,
+				E702666A15D0E81B00E1A887 /* WMSoundSelectionViewController.h */,
+				E702666B15D0E81B00E1A887 /* WMSoundSelectionViewController.m */,
 				E77109341692D58C00022F8A /* WMAlarmDetailViewController.h */,
 				E77109351692D58C00022F8A /* WMAlarmDetailViewController.m */,
 			);
@@ -502,8 +502,8 @@
 				E7F54D0C159A0A2200380EA5 /* WakeMeAppDelegate.m in Sources */,
 				E7A0705615C2CECA00F4D91A /* WakeMeModel.xcdatamodeld in Sources */,
 				E70332A715C6C6360039DEB2 /* WMAlarmsListViewController.m in Sources */,
-				E702666815CFBA4D00E1A887 /* WMChallengesListViewController.m in Sources */,
-				E702666C15D0E81B00E1A887 /* WMSoundsListViewController.m in Sources */,
+				E702666815CFBA4D00E1A887 /* WMChallengeSelectionViewController.m in Sources */,
+				E702666C15D0E81B00E1A887 /* WMSoundSelectionViewController.m in Sources */,
 				E7A5511D15DB845B0014BC0D /* WMAlarm+Helper.m in Sources */,
 				E7EB134C1689F8B200A5B8D3 /* WMAlarm.m in Sources */,
 				E77109361692D58C00022F8A /* WMAlarmDetailViewController.m in Sources */,

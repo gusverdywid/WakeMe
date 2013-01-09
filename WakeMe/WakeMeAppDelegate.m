@@ -8,7 +8,7 @@
 
 #import "WakeMeAppDelegate.h"
 
-#import "WMSoundsListViewController.h"
+#import "WMSoundSelectionViewController.h"
 
 @implementation WakeMeAppDelegate
 

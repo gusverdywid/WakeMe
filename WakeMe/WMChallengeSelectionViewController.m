@@ -1,18 +1,18 @@
 //
-//  WMChallengesListViewController.m
+//  WMChallengeSelectionViewController.m
 //  WakeMe
 //
 //  Created by Agustinus Verdy Widyawiradi on 8/6/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "WMChallengesListViewController.h"
+#import "WMChallengeSelectionViewController.h"
 
-@interface WMChallengesListViewController ()
+@interface WMChallengeSelectionViewController ()
 
 @end
 
-@implementation WMChallengesListViewController
+@implementation WMChallengeSelectionViewController
 
 
 @synthesize challengeNames = _challengeNames;
@@ -94,7 +94,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  static NSString *CellIdentifier = @"ChallengesListCell";
+  static NSString *CellIdentifier = @"ChallengeCell";
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...

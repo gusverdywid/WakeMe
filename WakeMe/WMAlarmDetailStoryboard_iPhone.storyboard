@@ -196,11 +196,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="1566" y="-60"/>
         </scene>
-        <!--Challenges List View Controller - Challenges-->
+        <!--Challenge Selection View Controller - Challenges-->
         <scene sceneID="1HJ-h0-0M2">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vi7-4f-ej9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="g80-VZ-8cU" customClass="WMChallengesListViewController" sceneMemberID="viewController">
+                <tableViewController id="g80-VZ-8cU" customClass="WMChallengeSelectionViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="wQT-cV-QK3">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -234,11 +234,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="2110" y="-380"/>
         </scene>
-        <!--Sounds List View Controller - Sounds-->
+        <!--Sound Selection View Controller - Sounds-->
         <scene sceneID="Bpn-Ud-n1J">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsZ-BE-pAA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="yJn-zq-S5d" customClass="WMSoundsListViewController" sceneMemberID="viewController">
+                <tableViewController id="yJn-zq-S5d" customClass="WMSoundSelectionViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Kgr-04-snK">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -286,18 +286,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="snoozeSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="soundLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="timePicker" candidateClass="UIDatePicker"/>
-            </relationships>
-        </class>
-        <class className="WMChallengesListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WMChallengesListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="finishSelectingChallenge:"/>
-            </relationships>
-        </class>
-        <class className="WMSoundsListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WMSoundsListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="finishSelectingSound:"/>
             </relationships>
         </class>
     </classes>

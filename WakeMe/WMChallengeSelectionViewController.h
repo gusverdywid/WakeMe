@@ -1,5 +1,5 @@
 //
-//  WMChallengesListViewController.h
+//  WMChallengeSelectionViewController.h
 //  WakeMe
 //
 //  Created by Agustinus Verdy Widyawiradi on 8/6/12.
@@ -15,7 +15,7 @@
 @end
 
 
-@interface WMChallengesListViewController : UITableViewController {
+@interface WMChallengeSelectionViewController : UITableViewController {
   NSArray *_challengeNames;
   NSInteger _selRow;
   

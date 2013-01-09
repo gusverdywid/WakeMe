@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 #import "WMAlarm.h"
-#import "WMSoundsListViewController.h"
-#import "WMChallengesListViewController.h"
+#import "WMSoundSelectionViewController.h"
+#import "WMChallengeSelectionViewController.h"
 
-@interface WMAlarmDetailViewController : UITableViewController<WMSoundsListViewControllerDelegate, WMChallengeSelectionViewControllerDelegate, UITextFieldDelegate> {
+@interface WMAlarmDetailViewController : UITableViewController<WMSoundSelectionViewControllerDelegate, WMChallengeSelectionViewControllerDelegate, UITextFieldDelegate> {
   WMAlarm *_alarm;
   
   UITableViewCell *_alarmNameCell;
