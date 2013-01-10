@@ -252,14 +252,7 @@
   WMAlarm *alarm = (WMAlarm *)[_alarms objectAtIndex:alarmIndex.row];
   alarm.active = [NSNumber numberWithBool:activeSwitch.on];
   
-  
   WakeMeAppDelegate *app = [[UIApplication sharedApplication] delegate];
-  
-  if ([alarm.active boolValue])
-    [app createNotificationForAlarm:alarm];
-  else
-    [app deleteNotificationOfAlarm:alarm];
-  
   NSManagedObjectContext *context = app.managedObjectContext;
   NSError *activationError;
   if (![context save:&activationError] || activationError) {
@@ -274,7 +267,20 @@
                                                cancelButtonTitle:@"OK" 
                                                otherButtonTitles:nil];
     [errorAlert show];
+    // Revert the change
+    [activeSwitch setOn:!activeSwitch.on animated:YES];
+    [context rollback];
   } else {
+    
+    /**
+     * Notification is updated when the save to core data has been
+     * successfully commited
+     */
+    if ([alarm.active boolValue])
+      [app createNotificationForAlarm:alarm];
+    else
+      [app deleteNotificationOfAlarm:alarm];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
   }
 }
