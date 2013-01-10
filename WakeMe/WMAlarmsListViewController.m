@@ -280,8 +280,6 @@
       [app createNotificationForAlarm:alarm];
     else
       [app deleteNotificationOfAlarm:alarm];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
   }
 }
 
