@@ -12,10 +12,10 @@
 
 - (BOOL)validateSound:(NSString *__autoreleasing *)soundName error:(NSError *__autoreleasing *)outError {
   if (*soundName == nil || [*soundName length] <= 0) {
-    if (*outError != nil) {
+    if (outError != NULL) {
       NSDictionary *errorDict = [NSDictionary dictionaryWithObject:@"Please select sound for the alarm" 
                                                             forKey:NSLocalizedDescriptionKey];
-      *outError = [[NSError alloc] initWithDomain:NSCocoaErrorDomain 
+      *outError = [[NSError alloc] initWithDomain:@"Alarm Sound Error" 
                                              code:WM_ALARM_SOUND_LENGTH_ERROR_CODE
                                          userInfo:errorDict];
     }
@@ -26,10 +26,10 @@
 
 - (BOOL)validateChallenge:(NSString *__autoreleasing *)challengeName error:(NSError *__autoreleasing *)outError {
   if (*challengeName == nil || [*challengeName length] <= 0) {
-    if (*outError != nil) {
+    if (outError != NULL) {
       NSDictionary *errorDict = [NSDictionary dictionaryWithObject:@"Please select challenge for the alarm" 
                                                             forKey:NSLocalizedDescriptionKey];
-      *outError = [[NSError alloc] initWithDomain:NSCocoaErrorDomain 
+      *outError = [[NSError alloc] initWithDomain:@"Alarm Challenge Error" 
                                              code:WM_ALARM_CHALLENGE_LENGTH_ERROR_CODE
                                          userInfo:errorDict];
     }
