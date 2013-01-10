@@ -8,6 +8,10 @@
 
 #import "WMAlarm.h"
 
+#define WM_ALARM_SOUND_LENGTH_ERROR_CODE 1
+
 @interface WMAlarm (Helper)
+
+- (BOOL)validateSound:(NSString **)soundName error:(NSError **)outError;
 
 @end

@@ -10,6 +10,20 @@
 
 @implementation WMAlarm (Helper)
 
+- (BOOL)validateSound:(NSString *__autoreleasing *)soundName error:(NSError *__autoreleasing *)outError {
+  if (*soundName == nil || [*soundName length] <= 0) {
+    if (*outError != nil) {
+      NSDictionary *errorDict = [NSDictionary dictionaryWithObject:@"Please select sound for the alarm" 
+                                                            forKey:NSLocalizedDescriptionKey];
+      *outError = [[NSError alloc] initWithDomain:NSCocoaErrorDomain 
+                                             code:WM_ALARM_SOUND_LENGTH_ERROR_CODE
+                                         userInfo:errorDict];
+    }
+    return NO;
+  }
+  return YES;
+}
+
 -(NSString *) description {
   return [NSString stringWithFormat:@"\
           Name:\t%@\n\
