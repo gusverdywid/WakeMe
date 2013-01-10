@@ -9,9 +9,11 @@
 #import "WMAlarm.h"
 
 #define WM_ALARM_SOUND_LENGTH_ERROR_CODE 1
+#define WM_ALARM_CHALLENGE_LENGTH_ERROR_CODE 2
 
 @interface WMAlarm (Helper)
 
 - (BOOL)validateSound:(NSString **)soundName error:(NSError **)outError;
+- (BOOL)validateChallenge:(NSString **)challengeName error:(NSError **)outError;
 
 @end

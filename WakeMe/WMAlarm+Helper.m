@@ -24,6 +24,21 @@
   return YES;
 }
 
+- (BOOL)validateChallenge:(NSString *__autoreleasing *)challengeName error:(NSError *__autoreleasing *)outError {
+  if (*challengeName == nil || [*challengeName length] <= 0) {
+    if (*outError != nil) {
+      NSDictionary *errorDict = [NSDictionary dictionaryWithObject:@"Please select challenge for the alarm" 
+                                                            forKey:NSLocalizedDescriptionKey];
+      *outError = [[NSError alloc] initWithDomain:NSCocoaErrorDomain 
+                                             code:WM_ALARM_CHALLENGE_LENGTH_ERROR_CODE
+                                         userInfo:errorDict];
+    }
+    return NO;
+  }
+  return YES;
+}
+
+
 -(NSString *) description {
   return [NSString stringWithFormat:@"\
           Name:\t%@\n\
