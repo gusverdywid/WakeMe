@@ -255,11 +255,15 @@
     _alarm.time = [NSDate dateWithTimeIntervalSinceReferenceDate:timeInterval];
     _alarm.active = [NSNumber numberWithBool:YES];
   }
-  NSError *error;
-  if (![context save:&error]) {
-    NSLog(@"Could not save the alarm: %@", [error localizedDescription]);
+  NSError *savingError;
+  if (![context save:&savingError] || savingError) {
+    NSLog(@"Could not save the alarm: %@", [savingError localizedDescription]);
+    NSString *message = @"Could not save the alarm. Please try again";
+    // Show only the first error, when multiple fields are validated
+    if ([[savingError localizedDescription] length] > 0)
+      message = [[app showFirstErrorOfError:savingError] localizedDescription];
     UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Core Data Error" 
-                                                         message:@"Could not save the alarm. Please try again" 
+                                                         message:message
                                                         delegate:nil 
                                                cancelButtonTitle:@"OK" 
                                                otherButtonTitles:nil];

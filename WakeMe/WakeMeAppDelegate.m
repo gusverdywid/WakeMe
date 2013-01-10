@@ -33,7 +33,8 @@
       NSString *audioPath = [[NSBundle mainBundle] pathForResource:@"Silent" 
                                                             ofType:AUDIO_TYPE];
       // Play and stop the player straight away
-      if ([self playSoundWithAudioPath:audioPath numberOfLoops:1]) {
+      NSError *setupError = [self playSoundWithAudioPath:audioPath numberOfLoops:1];
+      if (!setupError) {
         [_audioPlayer stop];
       }
   });
@@ -156,6 +157,24 @@
 }
 
 
+#pragma mark - Custom public method
+
+/**
+ * Will show the first error of NSError with multiple validation errors
+ * If it is not a multiple validation errors, the error will be returned
+ * straight away
+ */
+- (NSError *)showFirstErrorOfError:(NSError *)error {
+  if (error.code == NSValidationMultipleErrorsError) {
+    NSArray *detailedErrors = [error.userInfo objectForKey:NSDetailedErrorsKey];
+    for (NSError *detailError in detailedErrors) {
+      return detailError;
+    }
+  }
+  return error;
+}
+
+
 #pragma mark - Audio player management
 
 /**
@@ -164,25 +183,26 @@
  * This method will return boolean value YES if the audio is successfully played
  * and NO otherwise
  */
-- (BOOL)playSoundWithAudioPath:(NSString *)audioPath numberOfLoops:(NSInteger)loops {
+- (NSError *)playSoundWithAudioPath:(NSString *)audioPath numberOfLoops:(NSInteger)loops {
   if (_audioPlayer != nil && _audioPlayer.playing)
     [_audioPlayer stop];
   
-  NSError *playbackError;
+  NSError *playbackError = nil;
   
   NSURL *audioUrl = [NSURL fileURLWithPath:audioPath];
   _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioUrl
                                                         error:&playbackError];
   
-  BOOL success = NO;
   if (_audioPlayer != nil && !playbackError) {
     [_audioPlayer prepareToPlay];
     [_audioPlayer setNumberOfLoops:loops];
-    success = [_audioPlayer play];
-  } else {
-    NSLog(@"%@", [playbackError localizedDescription]);
+    if (![_audioPlayer play]) {
+      playbackError = [[NSError alloc] initWithDomain:@"Error Playing Audio" 
+                                                 code:WM_ERROR_PLAYING_AUDIO 
+                                             userInfo:nil];
+    }
   }
-  return success;
+  return playbackError;
 }
 
 /**
@@ -243,9 +263,23 @@
   if (theAlarm.sound != nil && theAlarm.sound.length > 0) {
     NSString *audioPath = [[NSBundle mainBundle] pathForResource:theAlarm.sound
                                                           ofType:AUDIO_TYPE];
-    [self playSoundWithAudioPath:audioPath numberOfLoops:-1];
+    NSError *playbackError = [self playSoundWithAudioPath:audioPath numberOfLoops:-1];
+    if (playbackError) {
+      NSLog(@"Could not play the sound with name %@: %@", theAlarm, [playbackError localizedDescription]);
+      NSString *message = @"Could not play alarm's sound.";
+      if ([[playbackError localizedDescription] length] > 0)
+        message = [playbackError localizedDescription];
+      UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Core Data Error" 
+                                                           message:message
+                                                          delegate:nil 
+                                                 cancelButtonTitle:@"OK" 
+                                                 otherButtonTitles:nil];
+      [errorAlert show];
+    }
+    
   }
   
+  // TODO: Show the challenge here
 }
 
 /**

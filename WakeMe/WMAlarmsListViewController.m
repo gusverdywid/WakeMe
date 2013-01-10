@@ -147,13 +147,16 @@
     [context deleteObject:alarm];
     // Reload array of alarms
     [self __reloadAlarms];
-    NSError *error;
-    [context save:&error];
+    NSError *deletionError;
     // Show alert box in case any error occured
-    if (error) {
-      NSLog(@"Could not delete the alarm: %@", [error localizedDescription]);
+    if (![context save:&deletionError] || deletionError) {
+      NSLog(@"Could not delete the alarm: %@", [deletionError localizedDescription]);
+      NSString *message = @"Could not delete alarm. Please try again";
+      // Show only the first error, when multiple fields are validated
+      if ([[deletionError localizedDescription] length] > 0)
+        message = [[app showFirstErrorOfError:deletionError] localizedDescription];
       UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Core Data Error" 
-                                                           message:@"Could not delete alarm." 
+                                                           message:message
                                                           delegate:nil 
                                                  cancelButtonTitle:@"OK" 
                                                  otherButtonTitles:nil];
@@ -258,11 +261,15 @@
     [app deleteNotificationOfAlarm:alarm];
   
   NSManagedObjectContext *context = app.managedObjectContext;
-  NSError *error;
-  if (![context save:&error]) {
-    NSLog(@"Could not save the alarm: %@", [error localizedDescription]);
+  NSError *activationError;
+  if (![context save:&activationError] || activationError) {
+    NSLog(@"Could not save the alarm: %@", [activationError localizedDescription]);
+    NSString *message = @"Could not save the alarm. Please try again";
+    // Show only the first error, when multiple fields are validated
+    if ([[activationError localizedDescription] length] > 0)
+      message = [[app showFirstErrorOfError:activationError] localizedDescription];
     UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Core Data Error" 
-                                                         message:@"Could not save the alarm. Please try again" 
+                                                         message:message
                                                         delegate:nil 
                                                cancelButtonTitle:@"OK" 
                                                otherButtonTitles:nil];
@@ -287,13 +294,17 @@
   NSEntityDescription *entity = [NSEntityDescription entityForName:@"Alarm" 
                                             inManagedObjectContext:context];
   fetchRequest.entity = entity;
-  NSError *error;
-  _alarms = [context executeFetchRequest:fetchRequest error:&error];
+  NSError *fetchingError;
+  _alarms = [context executeFetchRequest:fetchRequest error:&fetchingError];
   // Show alert box in case any error occured
-  if (error) {
-    NSLog(@"Could not load the alarms: %@", [error localizedDescription]);
+  if (fetchingError) {
+    NSLog(@"Could not load the alarms: %@", [fetchingError localizedDescription]);
+    NSString *message = @"Could not load alarms.";
+    // Show only the first error, when multiple fields are validated
+    if ([[fetchingError localizedDescription] length] > 0)
+      message = [[app showFirstErrorOfError:fetchingError] localizedDescription];
     UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Core Data Error" 
-                                                         message:@"Could not load alarms." 
+                                                         message:message
                                                         delegate:nil 
                                                cancelButtonTitle:@"OK" 
                                                otherButtonTitles:nil];

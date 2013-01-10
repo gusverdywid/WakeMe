@@ -184,7 +184,19 @@
                                                           ofType:AUDIO_TYPE];
     // Tell the delegate to play the sound
     WakeMeAppDelegate *app = [[UIApplication sharedApplication] delegate];
-    [app playSoundWithAudioPath:audioPath numberOfLoops:4];
+    NSError *playbackError = [app playSoundWithAudioPath:audioPath numberOfLoops:4];
+    if (playbackError) {
+      NSLog(@"Could not play the sound with name %@: %@", selectedSound, [playbackError localizedDescription]);
+      NSString *message = @"Could not play the sound.";
+      if ([[playbackError localizedDescription] length] > 0)
+        message = [playbackError localizedDescription];
+      UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Core Data Error" 
+                                                           message:message
+                                                          delegate:nil 
+                                                 cancelButtonTitle:@"OK" 
+                                                 otherButtonTitles:nil];
+      [errorAlert show];
+    }
   }
 }
 

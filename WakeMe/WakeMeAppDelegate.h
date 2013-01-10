@@ -11,6 +11,8 @@
 
 #import "WMAlarm.h"
 
+#define WM_ERROR_PLAYING_AUDIO 3
+
 #define AUDIO_TYPE @"caf"
 
 @interface WakeMeAppDelegate : UIResponder <UIApplicationDelegate> {
@@ -27,7 +29,9 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
-- (BOOL)playSoundWithAudioPath:(NSString *)audioPath numberOfLoops:(NSInteger)loops;
+- (NSError *)showFirstErrorOfError:(NSError *)error;
+
+- (NSError *)playSoundWithAudioPath:(NSString *)audioPath numberOfLoops:(NSInteger)loops;
 - (void)stopAudioPlayer;
 
 - (void)createNotificationForAlarm:(WMAlarm *)alarm;
